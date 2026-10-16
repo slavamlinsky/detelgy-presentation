@@ -1,0 +1,9 @@
+{
+  "productionRoute": 200,
+  "pdfDownload": "passed",
+  "pdfPages": 14,
+  "browserPrintPages": 14,
+  "unreleasedLocales": 404,
+  "mobileDefaultReading": true,
+  "reducedMotion": true
+}

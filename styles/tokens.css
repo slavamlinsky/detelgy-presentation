@@ -1,0 +1,38 @@
+:root {
+  --brand-navy: #01255a;
+  --website-main: #235784;
+  --website-main-hover: #4a6fa4;
+  --ink: #08182e;
+  --deep-blue: #102c53;
+  --paper: #ffffff;
+  --canvas: #f5f8fc;
+  --text: #14243b;
+  --muted: #63738a;
+  --sky: #5ca9e6;
+  --ice: #d8ecfa;
+  --line: #dce5ef;
+  --success: #27856d;
+  --font-sans: Geist, Arial, Helvetica, sans-serif;
+  --font-display: var(--font-sans);
+  --hero-size: 110px;
+  --title-size: 76px;
+  --lead-size: 38px;
+  --body-size: 30px;
+  --label-size: 24px;
+  --footnote-size: 20px;
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-6: 48px;
+  --space-8: 64px;
+  --space-12: 96px;
+  --slide-inset: 112px;
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --shadow-slide: 0 18px 70px #07182e16;
+  --motion-duration: 240ms;
+  --motion-ease: cubic-bezier(.2,.7,.2,1);
+  --slide-width: 1920px;
+  --slide-height: 1080px;
+}

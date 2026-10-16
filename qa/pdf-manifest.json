@@ -1,0 +1,16 @@
+{
+  "locale": "en",
+  "pages": 14,
+  "path": "public/downloads/detelgy-vision-en.pdf",
+  "createdAt": "2026-10-16T15:13:11.533Z",
+  "sourceHash": "f68542ed2838c8adc2fe367aa5a8688c99ee848ae8451bfdb6933a80312ee887",
+  "inputs": [
+    "content/locales/en.json",
+    "components/slide.tsx",
+    "components/diagrams.tsx",
+    "components/prototype-slides.tsx",
+    "components/story-slides.tsx",
+    "app/globals.css",
+    "styles/tokens.css"
+  ]
+}

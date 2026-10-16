@@ -1,0 +1,653 @@
+{
+  "locale": "en",
+  "title": "Detelgy Vision",
+  "description": "A professional growth ecosystem for polygraph examiners.",
+  "ui": {
+    "studio": "Presentation Studio",
+    "edition": "Vision / Release 1",
+    "overview": "All slides",
+    "present": "Present",
+    "exitFullscreen": "Exit fullscreen",
+    "download": "Download PDF",
+    "notes": "Speaker notes",
+    "read": "Reading view",
+    "slides": "Slide view",
+    "previous": "Previous slide",
+    "next": "Next slide",
+    "close": "Close",
+    "copy": "Copy slide link",
+    "copied": "Link copied",
+    "copyFailed": "Copy the URL from your address bar",
+    "fullscreenFailed": "Fullscreen is unavailable in this browser. Use your browser’s fullscreen command.",
+    "keyboard": "Use ← → to explore",
+    "of": "of",
+    "source": "Sources & evidence",
+    "english": "English",
+    "back": "Back to presentation",
+    "logoAlt": "Detelgy",
+    "portraitAlt": "AI-generated illustration of a fictional independent professional in a quiet office",
+    "notesHint": "Notes and evidence for this slide",
+    "overviewHint": "Choose a chapter in the story",
+    "visionLabel": "October 2026",
+    "status": {
+      "built": "Built",
+      "planned": "Planned",
+      "concept": "Concept"
+    },
+    "deckLength": "14 slides",
+    "duration": "8–12 min",
+    "localeCode": "EN",
+    "navigationLabel": "Presentation controls",
+    "directorySource": "APA member directory",
+    "seminarSource": "APA educational resources",
+    "sourceAccessed": "Existing channels · accessed 15 Oct 2026"
+  },
+  "slides": [
+    {
+      "id": "s01",
+      "chapter": "The promise",
+      "title": "Where expertise becomes opportunity",
+      "accent": "opportunity",
+      "lead": "Helping polygraph professionals grow, build reputation, expand their network, and unlock new opportunities.",
+      "eyebrow": "A professional future, connected",
+      "items": [],
+      "footer": "A global ecosystem for polygraph professionals",
+      "note": "We succeed when our professionals get tangible value. This is a stakeholder vision, not a validated fundraising pitch. Detelgy enables opportunities; it does not guarantee clients, income, professional standing or improved examination accuracy. Original promise: Helping polygraph professionals grow their expertise, reputation, connections and income opportunities.",
+      "sources": [
+        "Product brief §§1–3; Investor story S01."
+      ]
+    },
+    {
+      "id": "s02",
+      "chapter": "The landscape",
+      "title": "A global profession.\nStill disconnected.",
+      "accent": "",
+      "lead": "Profiles, clients, peers, and learning still live in separate places.",
+      "eyebrow": "The landscape today",
+      "items": [
+        {
+          "title": "Personal websites",
+          "body": "Professional identity"
+        },
+        {
+          "title": "Referrals",
+          "body": "Client introductions"
+        },
+        {
+          "title": "Messaging groups",
+          "body": "Everyday peer advice"
+        },
+        {
+          "title": "Associations",
+          "body": "Professional belonging"
+        },
+        {
+          "title": "Seminars",
+          "body": "Continuing education"
+        },
+        {
+          "title": "Social media",
+          "body": "Visibility and reach"
+        },
+        {
+          "title": "Local directories",
+          "body": "Service discovery"
+        }
+      ],
+      "footer": "Working hypothesis · sources in speaker notes",
+      "note": "The APA provides a professional directory and educational seminars, demonstrating existing channels. The broader fragmentation framing is a hypothesis from the supplied briefs, not a measured industry-wide finding. No market size is asserted. Four visual fragments group the existing channels: visibility (websites, directories and social), clients (referrals), peers (messaging groups and associations), and learning (seminars). Existing networks already provide value. Working hypothesis · sources in speaker notes. Validate the fragmentation framing through expert discovery and market learning.",
+      "sources": [
+        "Product brief §2; Investor story S02.",
+        "American Polygraph Association: prospective member resources and seminars. Accessed 15 October 2026. https://www.polygraph.org/for_prospective_members.php",
+        "APA member directory. Accessed 15 October 2026. https://members.polygraph.org/members/directory/search_bootstrap.php"
+      ],
+      "prompt": "What if expertise could move between them?",
+      "diagramAlt": "A prominent professional sits between four separate worlds: Visibility, Clients, Peers and Learning. Interrupted connections illustrate fragmentation.",
+      "displayItems": [
+        {
+          "title": "Visibility",
+          "body": "websites, directories, social"
+        },
+        {
+          "title": "Clients",
+          "body": "referrals, services, reviews"
+        },
+        {
+          "title": "Peers",
+          "body": "groups, discussions"
+        },
+        {
+          "title": "Learning",
+          "body": "seminars, associations"
+        }
+      ],
+      "center": "Polygraph Examiner"
+    },
+    {
+      "id": "s03",
+      "chapter": "Who we serve",
+      "title": "Different career stages.\nOne ambition to grow.",
+      "accent": "One ambition to grow.",
+      "lead": "We start with independent polygraph examiners and connect them with experienced leaders and emerging professionals.",
+      "eyebrow": "Our initial focus",
+      "items": [
+        {
+          "title": "Emerging Professional",
+          "label": "Learn & Connect",
+          "body": "Find guidance and build trusted professional connections."
+        },
+        {
+          "title": "Growth-oriented Examiner",
+          "label": "Build & Grow",
+          "body": "Build a credible presence and grow an independent practice."
+        },
+        {
+          "title": "Established Expert",
+          "label": "Share & Lead",
+          "body": "Share expertise and extend professional impact."
+        }
+      ],
+      "footer": "Strategic audience hypotheses · initial country focus: Ukraine and Spain",
+      "note": "These are behavioral archetypes, not demographic segments. Commercially active independent examiners are the initial ICP hypothesis. Institutional examiners may have restrictions on commercial work. Prioritize useful local density over claims of global marketplace liquidity. Strategic audience hypotheses · initial country focus: Ukraine and Spain. These are complementary audiences, not Basic / Specialist / Master levels or a fixed progression. The independent examiner is the primary ICP; emerging professionals and established experts create value alongside them. Portraits are AI-generated illustrative characters, not actual members or demographic definitions.",
+      "sources": [
+        "ICP / Personas §§2–7; Product brief §§4, 9; Investor story S03."
+      ]
+    },
+    {
+      "id": "s04",
+      "chapter": "The professional",
+      "title": "Skilled at the work.\nLimited by the system\naround it.",
+      "accent": "",
+      "lead": "The growth-oriented independent examiner",
+      "eyebrow": "Meet the primary persona",
+      "items": [
+        {
+          "title": "Wants",
+          "body": "Qualified inquiries and recognition beyond an existing circle."
+        },
+        {
+          "title": "Relies on",
+          "body": "Referrals, a personal website and informal peer groups."
+        },
+        {
+          "title": "Struggles with",
+          "body": "Scattered credentials, limited visibility and time for marketing."
+        },
+        {
+          "title": "Seeks",
+          "body": "A credible identity connected to useful people and opportunities."
+        }
+      ],
+      "footer": "Fictional composite persona · motivations are hypotheses, not interview findings",
+      "note": "The portrait is AI-generated and does not depict an actual Detelgy member. The persona is a composite based on the supplied brief, with an illustrative name, age, location and experience added for storytelling at the founder’s request. These details are fictional, not member data or interview findings. No income or performance result is asserted. The potential first value is a useful professional connection or a qualified inquiry. Fictional composite persona · motivations are hypotheses, not interview findings.",
+      "sources": [
+        "ICP / Personas §5; Investor story S04."
+      ],
+      "persona": {
+        "name": "Andrii · 42",
+        "detail": "Kyiv, Ukraine · 14 years of expertise",
+        "label": "Illustrative persona"
+      },
+      "displayItems": [
+        {
+          "title": "Recognition",
+          "body": "Be known beyond an existing circle."
+        },
+        {
+          "title": "Connection",
+          "body": "Find the right people to turn to."
+        },
+        {
+          "title": "Opportunity",
+          "body": "Make expertise easier to discover."
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "chapter": "Life today",
+      "title": "Too much depends\non individual effort",
+      "accent": "",
+      "lead": "A capable professional may have to connect every part of the journey alone.",
+      "eyebrow": "The cost of fragmentation",
+      "items": [
+        {
+          "title": "Learn"
+        },
+        {
+          "title": "Discuss"
+        },
+        {
+          "title": "Ask for help"
+        },
+        {
+          "title": "Publish"
+        },
+        {
+          "title": "Gain visibility"
+        },
+        {
+          "title": "Find clients"
+        }
+      ],
+      "center": "The professional",
+      "footer": "Illustrative workflow hypothesis · experiences vary by professional and market",
+      "note": "The surrounding islands represent different activities, not nonexistent support. Associations and established communities already create value. Expert Discovery interviews should test which connections are missing or costly for each segment. Illustrative workflow hypothesis · experiences vary by professional and market.",
+      "sources": [
+        "Product brief §§2, 10; Investor story S05."
+      ]
+    },
+    {
+      "id": "s06",
+      "chapter": "Core problems",
+      "title": "Expertise alone does not\nguarantee opportunity",
+      "accent": "",
+      "lead": "Visibility, trusted support and new opportunities can be hard to build alone.",
+      "eyebrow": "What gets in the way",
+      "items": [
+        {
+          "title": "Professional isolation",
+          "body": "Who can help with a difficult professional situation?"
+        },
+        {
+          "title": "Limited discoverability",
+          "body": "How can the right clients find me?"
+        },
+        {
+          "title": "Scattered trust signals",
+          "body": "How do I show the experience behind my work?"
+        },
+        {
+          "title": "Learning barriers",
+          "body": "Where can I find relevant guidance?"
+        },
+        {
+          "title": "Uncertain client flow",
+          "body": "How can I reach beyond existing referrals?"
+        },
+        {
+          "title": "Narrow earning paths",
+          "body": "How else could my knowledge create value?"
+        }
+      ],
+      "footer": "Illustrative research hypotheses · these are not customer quotations",
+      "note": "These pains are hypotheses from the supplied audience brief. Validate urgency, frequency, existing alternatives and willingness to pay through Expert Discovery. Do not present the first-person questions as verbatim testimony. Illustrative research hypotheses · these are not customer quotations.",
+      "sources": [
+        "ICP / Personas §§5–9, 16–17; Investor story S06."
+      ],
+      "displayItems": [
+        {
+          "title": "Hard to be seen.",
+          "body": "Limited discoverability and scattered trust signals.",
+          "detail": "Visibility"
+        },
+        {
+          "title": "Hard to grow alone.",
+          "body": "Professional isolation and barriers to relevant learning.",
+          "detail": "Support"
+        },
+        {
+          "title": "Hard to go further.",
+          "body": "Uncertain client flow and narrow earning paths.",
+          "detail": "Opportunity"
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "chapter": "Jobs to be done",
+      "title": "Four jobs.\nOne professional journey.",
+      "accent": "",
+      "lead": "People come for progress that matters to them.",
+      "eyebrow": "The progress professionals seek",
+      "items": [
+        {
+          "title": "Become better",
+          "label": "A new challenge",
+          "body": "Learn from experienced peers.",
+          "outcome": "Greater professional confidence"
+        },
+        {
+          "title": "Become known",
+          "label": "Valuable skills",
+          "body": "Build a credible professional reputation.",
+          "outcome": "Expertise others can discover"
+        },
+        {
+          "title": "Find opportunities",
+          "label": "A desire to grow",
+          "body": "Meet clients, collaborators and relevant peers.",
+          "outcome": "More relevant connections"
+        },
+        {
+          "title": "Monetize expertise",
+          "label": "Knowledge others value",
+          "body": "Offer consultations, mentoring or teaching.",
+          "outcome": "Additional earning possibilities"
+        }
+      ],
+      "footer": "Working JTBD hypotheses · paid peer services and education are planned",
+      "note": "One person can have several jobs and change priorities over time. The four jobs are not a mandatory funnel and do not imply guaranteed outcomes. Planned consultation and education mechanisms require demand validation. Working JTBD hypotheses · paid peer services and education are planned.",
+      "sources": [
+        "ICP / Personas §8; Investor story S07."
+      ]
+    },
+    {
+      "id": "s08",
+      "chapter": "The transformation",
+      "title": "From fragmented effort\nto connected professional growth",
+      "accent": "",
+      "lead": "Designed to make expertise easier to discover, share and put to work.",
+      "eyebrow": "Before / With Detelgy",
+      "columns": [
+        "Before",
+        "With Detelgy"
+      ],
+      "items": [
+        {
+          "title": "A mostly local circle",
+          "body": "Broader professional discovery",
+          "label": "Built foundation"
+        },
+        {
+          "title": "Knowledge kept in isolation",
+          "body": "Shared learning through peers",
+          "label": "Built foundation"
+        },
+        {
+          "title": "Credentials across many places",
+          "body": "One professional profile",
+          "label": "Built foundation"
+        },
+        {
+          "title": "Recognition within existing circles",
+          "body": "Visible contributions and publications",
+          "label": "Built + planned"
+        },
+        {
+          "title": "Income tied to personal services",
+          "body": "Consulting, mentorship and teaching",
+          "label": "Planned"
+        }
+      ],
+      "footer": "Intended transformation · access to opportunity does not guarantee outcomes",
+      "note": "Built foundation means the internal brief reports profiles, discussions and discovery as implemented, not that outcomes are proven. Publications, paid consultations, mentorship and education are planned. Production readiness still needs revalidation. The visual groups five original comparisons into identity, connections and opportunity. Publications and broader recognition include planned mechanisms. Intended transformation · access to opportunity does not guarantee outcomes.",
+      "sources": [
+        "Product brief §§5–6, 10; Investor story S08."
+      ],
+      "displayItems": [
+        {
+          "title": "Scattered identity",
+          "body": "One professional presence",
+          "label": "Profiles & discovery · built foundation"
+        },
+        {
+          "title": "Knowledge in isolation",
+          "body": "Useful peer connections",
+          "label": "Community · built foundation"
+        },
+        {
+          "title": "A narrow earning path",
+          "body": "More ways to create value",
+          "label": "Consulting, mentorship & teaching · planned"
+        }
+      ]
+    },
+    {
+      "id": "s09",
+      "chapter": "The growth system",
+      "title": "Different tools.\nOne purpose: professional success.",
+      "accent": "",
+      "lead": "Four ways to support the person behind the expertise.",
+      "eyebrow": "The platform as a growth system",
+      "items": [
+        {
+          "title": "Connect",
+          "body": "Community discussions and peer networking",
+          "detail": "Roundtables and peer matching",
+          "status": "built",
+          "secondaryStatus": "planned"
+        },
+        {
+          "title": "Grow",
+          "body": "Peer learning through useful exchanges",
+          "detail": "Consultations, mentorship and Academy",
+          "status": "built",
+          "secondaryStatus": "planned"
+        },
+        {
+          "title": "Build reputation",
+          "body": "Profiles, qualifications and reviews",
+          "detail": "Articles, cases and publications",
+          "status": "built",
+          "secondaryStatus": "planned"
+        },
+        {
+          "title": "Earn",
+          "body": "Service discovery and request flows",
+          "detail": "Paid transactions and peer services",
+          "status": "built",
+          "secondaryStatus": "planned"
+        }
+      ],
+      "foundation": "Global and multilingual by design",
+      "footer": "¹ Built per internal brief; production readiness unverified. Paid operations remain planned.",
+      "note": "The main product brief reports English, Spanish, Ukrainian and Russian support in the main application. This presentation release is English only. An implemented booking interface does not demonstrate payment collection, fulfillment or marketplace demand. Verification, reviews and recognition are distinct trust signals. Built per internal brief; production readiness unverified. Paid operations remain planned..",
+      "sources": [
+        "Product brief §§5–7; Investor story S09."
+      ]
+    },
+    {
+      "id": "s10",
+      "chapter": "The journey",
+      "title": "From joining to growing.",
+      "accent": "",
+      "lead": "The first valuable moment is different for every professional.",
+      "eyebrow": "A possible path to progress",
+      "items": [
+        {
+          "title": "Discover",
+          "body": "Is this for me?"
+        },
+        {
+          "title": "Join",
+          "body": "Create an identity"
+        },
+        {
+          "title": "Participate",
+          "body": "Start an exchange"
+        },
+        {
+          "title": "Connect & learn",
+          "body": "Find useful peers"
+        },
+        {
+          "title": "Build reputation",
+          "body": "Make expertise visible"
+        },
+        {
+          "title": "Find opportunities",
+          "body": "Receive relevant interest"
+        },
+        {
+          "title": "Earn / lead",
+          "body": "Create meaningful value"
+        },
+        {
+          "title": "Refer & contribute",
+          "body": "Help others progress"
+        }
+      ],
+      "moments": [
+        {
+          "title": "Practitioner",
+          "body": "First qualified inquiry"
+        },
+        {
+          "title": "Established expert",
+          "body": "First meaningful peer request"
+        },
+        {
+          "title": "Emerging professional",
+          "body": "First useful peer exchange"
+        }
+      ],
+      "footer": "Illustrative, non-linear journey · first-value moments are hypotheses",
+      "note": "Participation can create professional value without a paid transaction. Journeys may start at different points, loop or branch. A profile view is not a qualified lead, and activity is not proof of career improvement. Full underlying journey: Discover → Join → Participate → Connect & learn → Build reputation → Find opportunities → Earn / lead → Refer & contribute. The five visual milestones group this eight-step model; the route is illustrative, not a growth metric. Illustrative, non-linear journey · first-value moments are hypotheses.",
+      "sources": [
+        "ICP / Personas §§10–11; Investor story S10."
+      ],
+      "stages": [
+        "Discover",
+        "Join",
+        "Connect",
+        "Build reputation",
+        "Grow"
+      ],
+      "momentsLabel": "A first moment of value",
+      "diagramAlt": "A rising curved route links Discover, Join, Connect, Build reputation and Grow. Connect is the focal stage."
+    },
+    {
+      "id": "s11",
+      "chapter": "The value loop",
+      "title": "Every meaningful contribution\ncan create more value",
+      "accent": "",
+      "lead": "Useful knowledge can build visibility and trust. Relevant opportunities can give people a reason to return.",
+      "eyebrow": "The proposed flywheel",
+      "items": [
+        {
+          "title": "Contribute"
+        },
+        {
+          "title": "Become discoverable"
+        },
+        {
+          "title": "Build trust"
+        },
+        {
+          "title": "Find opportunities"
+        },
+        {
+          "title": "Earn / learn"
+        },
+        {
+          "title": "Contribute again"
+        }
+      ],
+      "center": "Professional\nprogress",
+      "footer": "Proposed mechanism · not a demonstrated network effect",
+      "note": "Every arrow is a hypothesis to measure. There is no guarantee that contributing increases orders. Test contribution-to-profile discovery, relevant relationships, attributed inquiries and repeat meaningful participation. Proposed mechanism · not a demonstrated network effect.",
+      "sources": [
+        "Product brief §12; Investor story S11."
+      ]
+    },
+    {
+      "id": "s12",
+      "chapter": "Paths to success",
+      "title": "Professional success\nhas more than one path",
+      "accent": "",
+      "lead": "A stronger practice. A wider impact. A lasting contribution.",
+      "eyebrow": "Different ambitions, shared progress",
+      "items": [
+        {
+          "title": "Practitioner",
+          "body": "Build a stronger practice",
+          "steps": [
+            "Discoverability",
+            "Qualified inquiries",
+            "Completed work",
+            "Reviews & reputation"
+          ]
+        },
+        {
+          "title": "Expert",
+          "body": "Make knowledge more useful",
+          "steps": [
+            "Participate",
+            "Publish",
+            "Consult",
+            "Recognition"
+          ]
+        },
+        {
+          "title": "Leader",
+          "body": "Help the profession progress",
+          "steps": [
+            "Mentor",
+            "Teach",
+            "Contribute",
+            "Professional influence"
+          ]
+        }
+      ],
+      "footer": "Complementary paths, not ranks · some mechanisms are planned",
+      "note": "Industry Leader recognition is distinct from transaction-based levels and does not automatically confer Master status. Professionals can follow more than one path. Teaching and paid peer consulting belong to phased expansion. Complementary paths, not ranks · some mechanisms are planned.",
+      "sources": [
+        "Product brief §§7, 11; ICP / Personas §12; Investor story S12."
+      ]
+    },
+    {
+      "id": "s13",
+      "chapter": "Economic alignment",
+      "title": "Create value first.\nMonetize the value created.",
+      "accent": "",
+      "lead": "Professional benefit is the premise of a sustainable business.",
+      "eyebrow": "The proposed business model",
+      "columns": [
+        "Value for the professional",
+        "Revenue for the platform"
+      ],
+      "items": [
+        {
+          "title": "A clearer professional presence",
+          "body": "Free / Plus / Pro memberships",
+          "detail": "Recurring membership model"
+        },
+        {
+          "title": "Client inquiries and completed work",
+          "body": "Service commissions",
+          "detail": "On completed marketplace services"
+        },
+        {
+          "title": "Useful expertise shared with others",
+          "body": "Peer services & education",
+          "detail": "Future consulting, mentoring and learning"
+        }
+      ],
+      "footer": "Proposed commercial model · pricing, payment operations and demand require validation",
+      "note": "Free, Plus and Pro are proposed memberships. The product brief includes draft prices, intentionally omitted here to avoid public commitments. No revenue, conversion, GMV, ARPU or earnings numbers are available. Measure net professional value as well as platform revenue. Proposed commercial model · pricing, payment operations and demand require validation.",
+      "sources": [
+        "Product brief §§6, 8, 13–14; Investor story S13."
+      ]
+    },
+    {
+      "id": "s14",
+      "chapter": "The invitation",
+      "title": "The professional home\nfor a global community",
+      "accent": "global community",
+      "lead": "One professional identity. One place to connect, contribute, learn and create opportunities.",
+      "eyebrow": "The Detelgy vision",
+      "items": [
+        {
+          "title": "Connect"
+        },
+        {
+          "title": "Grow"
+        },
+        {
+          "title": "Earn"
+        },
+        {
+          "title": "Lead"
+        }
+      ],
+      "closing": "When our professionals succeed, Detelgy succeeds.",
+      "cta": "Join us in building the next chapter",
+      "footer": "A future vision for the global polygraph community",
+      "note": "This is an invitation to partners, Industry Leaders and early supporters to help shape the ecosystem. Global professional home is an ambition, not an established market leadership claim. Next steps are Expert Discovery, validation of professional value and phased service delivery. A future vision for the global polygraph community.",
+      "sources": [
+        "Product brief §3; Investor story S14."
+      ]
+    }
+  ]
+}

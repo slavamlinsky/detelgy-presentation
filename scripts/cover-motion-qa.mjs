@@ -1,0 +1,31 @@
+import {launchBrowser,baseURL,ready} from './browser.mjs';
+import assert from 'node:assert/strict';
+const browser=await launchBrowser();
+try{
+ const page=await browser.newPage({viewport:{width:1366,height:768},reducedMotion:'no-preference'});
+ await page.goto(`${baseURL}/en/vision#s01`);await ready(page);
+ const cover=page.locator('.scaled-slide .v2-s01');
+ await cover.waitFor();
+ const timing=await cover.evaluate(el=>el.getAnimations({subtree:true}).map(a=>a.effect.getTiming()));
+ assert(timing.some(t=>t.delay===1450&&t.duration===250),'Final node ends at 1700 ms');
+ await cover.evaluate(el=>Promise.all(el.getAnimations({subtree:true}).map(a=>a.finished)));
+ const nodes=cover.locator('.growth-node');
+ assert.equal(await nodes.count(),5);
+ const radii=await nodes.locator('.growth-node-surface').evaluateAll(es=>es.map(e=>Number(e.getAttribute('r'))));
+ assert.deepEqual(radii,[18,25,32,39,48]);
+ await nodes.nth(2).locator('.growth-node-surface').hover();
+ await page.waitForTimeout(220);
+ assert.equal(await nodes.nth(2).locator('.growth-halo').evaluate(e=>getComputedStyle(e).opacity),'0.55');
+ assert.equal(await nodes.nth(2).locator('.growth-node-label').evaluate(e=>getComputedStyle(e).opacity),'1');
+ await page.screenshot({path:'qa/v2/s01-hover.png'});
+ await page.mouse.move(0,0);await nodes.nth(3).focus();
+ assert(await nodes.nth(3).evaluate(e=>e.matches(':focus-visible')));
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.waitForFunction(()=>document.querySelector('.scaled-slide .v2-s01').getAnimations({subtree:true}).length===0);
+ assert.equal(await nodes.last().locator('.growth-node-reveal').evaluate(e=>getComputedStyle(e).opacity),'1');
+ await page.emulateMedia({media:'print',reducedMotion:'no-preference'});
+ const printed=page.locator('.print-only .v2-s01');
+ assert.equal(await printed.locator('.growth-node-reveal').last().evaluate(e=>getComputedStyle(e).opacity),'1');
+ assert.equal(await printed.locator('.growth-trajectory').evaluate(e=>getComputedStyle(e).strokeDasharray),'none');
+ console.log('Passed: 1700ms timing, node scaling, hover, keyboard focus, reduced motion, print.');
+}finally{await browser.close();}
