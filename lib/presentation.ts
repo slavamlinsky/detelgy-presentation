@@ -5,7 +5,7 @@ export const releasedLocales: readonly Locale[] = ['en'];
 export type SlideId = `s${string}`;
 export type FeatureStatus = 'built' | 'planned' | 'concept';
 export interface SlideItem { title: string; body?: string; label?: string; outcome?: string; detail?: string; status?: string; secondaryStatus?: string; steps?: string[]; }
-export interface SlideContent { id: string; chapter: string; title: string; accent: string; lead: string; eyebrow: string; items: SlideItem[]; footer: string; note: string; sources: string[]; displayItems?: SlideItem[]; persona?: {name:string;detail:string;label:string}; stages?: string[]; prompt?: string; diagramAlt?: string; momentsLabel?: string; columns?: string[]; center?: string; foundation?: string; moments?: SlideItem[]; closing?: string; cta?: string; }
+export interface SlideContent { id: string; chapter: string; title: string; accent: string; lead: string; eyebrow: string; items: SlideItem[]; footer: string; note: string; sources: string[]; displayItems?: SlideItem[]; persona?: {name:string;detail:string;label:string;profession?:string}; stages?: string[]; prompt?: string; diagramAlt?: string; momentsLabel?: string; columns?: string[]; center?: string; foundation?: string; moments?: SlideItem[]; closing?: string; cta?: string; }
 export interface Deck { locale: string; title: string; description: string; ui: typeof english.ui; slides: SlideContent[]; }
 export function getDeck(locale: string): Deck | undefined { return locale === 'en' ? english : undefined; }
 export function slideHref(locale: Locale, id: string) { return `/${locale}/vision#${id}`; }

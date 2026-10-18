@@ -1,0 +1,27 @@
+import {launchBrowser,baseURL,ready} from './browser.mjs';
+import assert from 'node:assert/strict';
+import {readFile} from 'node:fs/promises';
+const persona=JSON.parse(await readFile('content/locales/en.json','utf8')).slides[3].persona;
+const browser=await launchBrowser();
+try {
+ const page=await browser.newPage({viewport:{width:1920,height:1080}});
+ await page.goto(`${baseURL}/en/vision/print`);await ready(page);await page.emulateMedia({media:'print'});
+ const printed=page.locator('[data-slide="s04"]');
+ await printed.screenshot({path:'qa/v2/s04.png'});
+ if(process.argv.includes('--pdf'))await page.pdf({path:'qa/v2/s04-review.pdf',pageRanges:'4',printBackground:true,preferCSSPageSize:true});
+ assert((await printed.textContent()).includes(persona.name));
+ const bounds=await printed.locator('.story-title,.persona-tensions,.story-portrait').evaluateAll(es=>es.map(e=>{const r=e.getBoundingClientRect(),s=e.closest('article').getBoundingClientRect();return {left:r.left-s.left,right:r.right-s.left,bottom:r.bottom-s.top}}));
+ bounds.forEach(r=>assert(r.left>=112&&r.right<=1808&&r.bottom<995));
+ await page.emulateMedia({media:'screen'});await page.setViewportSize({width:1366,height:768});
+ await page.goto(`${baseURL}/en/vision#s04`);await ready(page);
+ const slide=page.locator('.scaled-slide .story-s04');await slide.waitFor();
+ const timings=await slide.evaluate(el=>el.getAnimations({subtree:true}).map(a=>a.effect.getTiming()));
+ assert.equal(timings.length,6);
+ assert.deepEqual(timings.map(t=>t.delay).sort((a,b)=>a-b),[0,450,800,1150,1330,1510]);assert(timings.every(t=>t.iterations===1));
+ await slide.evaluate(el=>Promise.all(el.getAnimations({subtree:true}).map(a=>a.finished)));
+ await page.screenshot({path:'qa/v2/s04-laptop.png'});
+ assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''),'04/14');
+ await page.emulateMedia({reducedMotion:'reduce'});
+ await page.waitForFunction(()=>document.querySelector('.scaled-slide .story-s04').getAnimations({subtree:true}).length===0);
+ console.log('Passed: persona copy, composition bounds, entrance sequence, reduced motion, folio, static print styling.');
+}finally{await browser.close()}

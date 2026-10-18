@@ -110,3 +110,11 @@ Ice-blue #E6F2FC canvas, navy #102541 headline and #24699E second line, with #52
 
 ### Slide 03 growth motif
 The compass rose was removed after user feedback about its resemblance to the NATO emblem. A faint, asymmetric botanical sprout now supports the growth message behind the secondary copy. Portraits and layout remain unchanged.
+
+
+## Slide 04 — Meet David, primary persona
+Slide 04 now introduces who the independent examiner is and what he wants; barriers remain for Slide 05. The existing portrait occupies 38% of the content width on #E8F3FC. David · 46, Kyiv, Ukraine, Independent Polygraph Examiner and the Illustrative persona label remain legible over the portrait. The headline is two lines with a deeper-blue second line. Experience, Goal and Ambition are large, unboxed editorial blocks. Existing sources and notes are preserved, with David's fictional narrative context added. Portrait → headline → three dimensions reveal in 1.15 seconds, with reduced-motion and print fallbacks. Only a single-slide review PDF is generated for this request; the full deck PDF remains deferred.
+
+
+### Slide 04 entrance refinement
+Sequence: photo (0–450ms), caption (450–800ms), headline (800–1150ms), Experience / Goal / Ambition at 1150 / 1330 / 1510ms. Fully revealed by 1860ms. Reduced motion and print remain fully visible. Review PDF export is now opt-in via `node scripts/persona-qa.mjs --pdf`.

@@ -2770,3 +2770,38 @@ svg {
   object-position: bottom;
   border-radius: 0 0 26px 26px;
 }
+
+/* S04 — a successful local practitioner with ambitions beyond his current reach. */
+.story-s04 { background: #FAF9F6; color: #102541; }
+.story-s04 .story-title { top: 225px; left: 855px; width: 953px; }
+.story-s04 .story-title h2 { font-size: 78px; line-height: 1.1; }
+.story-s04 .story-title h2 em { color: #24699E; }
+.story-s04 .story-portrait { top: 210px; height: 730px; border-radius: 16px; }
+.story-s04 .story-portrait > div { padding: 100px 38px 35px; gap: 10px; }
+.story-s04 .story-portrait strong { font-size: 44px; }
+.story-s04 .story-portrait .persona-profession { font-size: 25px; margin: 5px 0; }
+.story-s04 .persona-tensions { top: 485px; left: 855px; width: 900px; gap: 38px; }
+.story-s04 .persona-tensions section { display: block; }
+.story-s04 .persona-tensions section > span { font-size: 20px; letter-spacing: .12em; color: #526D86; padding: 0; margin-bottom: 12px; }
+.story-s04 .persona-tensions h3 { font-size: 42px; line-height: 1.2; font-weight: 500; max-width: 880px; letter-spacing: -.025em; }
+@media screen and (prefers-reduced-motion: no-preference) {
+  .scaled-slide .story-s04 { animation: none; }
+  .scaled-slide .story-s04 .story-portrait { animation: cover-reveal 450ms ease-out both; }
+  .scaled-slide .story-s04 .story-portrait > div { animation: cover-reveal 350ms 450ms ease-out both; }
+  .scaled-slide .story-s04 .story-title { animation: cover-reveal 350ms 800ms ease-out both; }
+  .scaled-slide .story-s04 .persona-tensions section { animation: cover-reveal 350ms ease-out both; }
+  .scaled-slide .story-s04 .persona-tensions [data-tension="0"] { animation-delay: 1150ms; }
+  .scaled-slide .story-s04 .persona-tensions [data-tension="1"] { animation-delay: 1330ms; }
+  .scaled-slide .story-s04 .persona-tensions [data-tension="2"] { animation-delay: 1510ms; }
+}
+@media print { .story-s04 * { animation: none !important; opacity: 1; } }
+
+.story-s04 .persona-tensions section > span {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.story-s04 .persona-tensions section > span svg {
+  flex: none;
+  color: #24699E;
+}
