@@ -1933,22 +1933,26 @@ svg {
 .story-s08 .story-title h2 { font-size: 80px; max-width: 1600px; }
 .story-s08 .story-title h2 em { color: #9BD3F5; }
 .story-s08 .story-title > p { display: block; color: #B9CFE0; font-size: 29px; max-width: 1480px; margin-top: 22px; }
-.transformation-world { position: absolute; left: 112px; top: 460px; width: 1696px; height: 480px; }
-.world-state { position: absolute; top: 0; width: 790px; height: 480px; margin: 0; isolation: isolate; }
-.world-before { left: 0; }
-.world-connected { right: 0; }
+.transformation-world { position: absolute; left: 112px; top: 440px; width: 1696px; height: 540px; }
+.world-state { position: absolute; top: 0; width: 620px; height: 385px; margin: 0; isolation: isolate; }
+.world-before { left: 190px; }
+.world-connected { right: 190px; }
 .world-state-title { position: absolute; z-index: 4; left: 0; top: 0; font-size: 23px; letter-spacing: .12em; text-transform: uppercase; color: #A0B7CB; }
 .world-connected .world-state-title { color: #9BD3F5; }
-.world-scene { position: absolute; inset: 42px 0 0; overflow: hidden; border-radius: 12px; border: 1px solid #8FB2CF55; background: #193149; box-shadow: 0 22px 50px #010E1D5C; }
+.world-scene { position: absolute; left: 0; top: 36px; width: 620px; height: 349px; overflow: hidden; border-radius: 10px; border: 1px solid #8FB2CF55; background: #193149; box-shadow: 0 18px 40px #010E1D5C; }
 .world-connected .world-scene { border-color: #83C7EB80; box-shadow: 0 24px 52px #010E1D66, 0 0 48px #2B91CB26; }
-.world-scene::after { content: ""; position: absolute; inset: 42% 0 0; background: linear-gradient(transparent 18%, #06182CD6 100%); pointer-events: none; }
-.world-scene img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-.world-scene-caption { position: absolute; z-index: 1; left: 30px; bottom: 28px; color: #F4F9FD; font-size: 28px; font-weight: 550; letter-spacing: -.015em; text-shadow: 0 2px 14px #061527; }
-.world-connected .world-scene-caption { color: #E0F3FF; }
-.world-outcomes-accessible { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
-.world-seam { position: absolute; z-index: 5; left: 790px; top: 0; width: 116px; height: 480px; display: grid; place-items: center; }
-.world-seam::before { content: ""; width: 2px; height: 270px; background: linear-gradient(transparent,#7DC8F4 50%,transparent); box-shadow: 0 0 25px #66B9E36B; }
-.world-seam span { position: absolute; width: 34px; height: 34px; border-top: 2px solid #9BD3F5; border-right: 2px solid #9BD3F5; transform: rotate(45deg); filter: drop-shadow(0 0 10px #51A7D8); }
+.world-scene img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.world-seam { position: absolute; z-index: 5; left: 810px; top: 36px; width: 76px; height: 349px; display: grid; place-items: center; }
+.world-seam::before { content: ""; width: 2px; height: 240px; background: linear-gradient(transparent,#7DC8F4 50%,transparent); box-shadow: 0 0 25px #66B9E36B; }
+.world-seam span { position: absolute; width: 27px; height: 27px; border-top: 2px solid #9BD3F5; border-right: 2px solid #9BD3F5; transform: rotate(45deg); filter: drop-shadow(0 0 10px #51A7D8); }
+.world-comparisons { position: absolute; left: 190px; top: 405px; width: 1316px; display: grid; gap: 2px; }
+.world-comparison { display: grid; grid-template-columns: 620px 76px 620px; align-items: center; min-height: 43px; color: #AEC3D5; font-size: 25px; line-height: 1.18; outline: none; }
+.world-comparison-before { padding-left: 3px; }
+.world-comparison-arrow { text-align: center; color: #79BDE8; font-size: 24px; }
+.world-comparison-after { padding-left: 3px; color: #E1F2FC; font-weight: 550; }
+.world-comparison:is(:hover,:focus-visible) .world-comparison-before { color: #D4E1EA; }
+.world-comparison:is(:hover,:focus-visible) .world-comparison-after { color: #9BD3F5; }
+.world-comparison:focus-visible { outline: 1px solid #82C9EF; outline-offset: 3px; border-radius: 3px; }
 .story-s09 .story-title {
   width: 700px;
   top: 270px;
@@ -3001,7 +3005,7 @@ svg {
 @media (prefers-reduced-motion: reduce) { .story-s07 * { transition: none !important; } }
 @media print { .story-s07 * { animation: none !important; transition: none !important; opacity: 1 !important; } }
 
-/* S08: two scenes of the same David reveal a change in professional context. */
+/* S08: wide scenes and three paired outcomes reveal a change in professional context. */
 @media screen and (prefers-reduced-motion: no-preference) {
   .scaled-slide .story-s08 { animation: none; }
   .scaled-slide .story-s08 .transformation-headline-first { display: block; animation: world-appear 280ms ease-out both; }
@@ -3009,11 +3013,13 @@ svg {
   .scaled-slide .story-s08 .story-title > p { animation: world-appear 280ms 340ms ease-out both; }
   .scaled-slide .story-s08 .world-before .world-state-title { animation: world-appear 250ms 570ms ease-out both; }
   .scaled-slide .story-s08 .world-before .world-scene { animation: world-appear 430ms 630ms ease-out both; }
-  .scaled-slide .story-s08 .world-before .world-scene-caption { animation: world-appear 280ms 850ms ease-out both; }
-  .scaled-slide .story-s08 .world-seam { animation: world-appear 330ms 1020ms ease-out both; }
-  .scaled-slide .story-s08 .world-connected .world-state-title { animation: world-appear 250ms 1170ms ease-out both; }
-  .scaled-slide .story-s08 .world-connected .world-scene { animation: world-appear 450ms 1230ms ease-out both; }
-  .scaled-slide .story-s08 .world-connected .world-scene-caption { animation: world-appear 300ms 1560ms ease-out both; }
+  .scaled-slide .story-s08 .world-seam { animation: world-appear 300ms 940ms ease-out both; }
+  .scaled-slide .story-s08 .world-connected .world-state-title { animation: world-appear 250ms 1000ms ease-out both; }
+  .scaled-slide .story-s08 .world-connected .world-scene { animation: world-appear 420ms 1060ms ease-out both; }
+  .scaled-slide .story-s08 .world-comparison { animation: world-appear 280ms ease-out both; }
+  .scaled-slide .story-s08 .world-comparison[data-pair="0"] { animation-delay: 1420ms; }
+  .scaled-slide .story-s08 .world-comparison[data-pair="1"] { animation-delay: 1530ms; }
+  .scaled-slide .story-s08 .world-comparison[data-pair="2"] { animation-delay: 1640ms; }
   @keyframes world-appear {
     from { opacity: 0; transform: translateY(9px); }
     to { opacity: 1; transform: translateY(0); }

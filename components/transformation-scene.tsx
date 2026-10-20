@@ -3,15 +3,13 @@ import type { SlideContent } from '@/lib/presentation';
 const scenes = [
   {
     className: 'world-before',
-    image: '/assets/personas/david-before-office.png',
+    image: '/assets/personas/david-before-office-wide.png',
     alt: 'David working at a modest desk with handwritten notes, printed pages and folders',
-    caption: 'Capable, but constrained',
   },
   {
     className: 'world-connected',
-    image: '/assets/personas/david-connected-office.png',
+    image: '/assets/personas/david-connected-office-wide.png',
     alt: 'The same David at an organized desk with a laptop in a bright modern workspace',
-    caption: 'Same expertise, stronger possibilities',
   },
 ] as const;
 
@@ -21,12 +19,15 @@ export function TransformationScene({ slide }: { slide: SlideContent }) {
       <figcaption className="world-state-title">{slide.columns?.[index]}</figcaption>
       <div className="world-scene">
         <img src={scene.image} alt={scene.alt} />
-        <span className="world-scene-caption">{scene.caption}</span>
       </div>
     </figure>)}
     <div className="world-seam" aria-hidden="true"><span /></div>
-    <ul className="world-outcomes-accessible">
-      {slide.items.map(item => <li key={item.title}>{item.title} becomes {item.body}.</li>)}
-    </ul>
+    <div className="world-comparisons" aria-label="Three possible professional transformations">
+      {slide.items.map((item, index) => <div className="world-comparison" key={item.title} data-pair={index} tabIndex={0}>
+        <span className="world-comparison-before">{item.title}</span>
+        <span className="world-comparison-arrow" aria-label="to">→</span>
+        <span className="world-comparison-after">{item.body}</span>
+      </div>)}
+    </div>
   </div>;
 }
