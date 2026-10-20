@@ -1914,15 +1914,14 @@ svg {
 .story-s07 .story-title h2 em { display: inline; color: #24699E; }
 .story-s07 .story-title > p { color: #526D86; font-size: 30px; max-width: 1420px; margin-top: 28px; text-wrap: balance; }
 .ambition-field { position: absolute; left: 112px; right: 112px; top: 470px; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); grid-auto-rows: 210px; column-gap: 96px; row-gap: 68px; }
-.ambition { display: grid; grid-template-columns: 180px minmax(0,1fr); column-gap: 23px; align-items: center; outline: none; }
-.ambition-art, .ambition-art svg { width: 180px; height: 180px; }
+.ambition { display: grid; grid-template-columns: 202px minmax(0,1fr); column-gap: 20px; align-items: center; outline: none; }
+.ambition-art, .ambition-art svg { width: 202px; height: 202px; }
 .ambition-art svg { transition: transform 220ms ease; }
 .ambition-wash { fill: #E5F0F8; transition: fill 220ms ease; }
 .ambition-ink { stroke: #24699E; stroke-width: 3; transition: stroke 220ms ease; }
 .ambition-accent-stroke { stroke: #64A5CE; stroke-width: 3.5; }
 .ambition-copy { align-self: center; }
-.ambition-index { color: #6B8AA2; font-size: 22px; letter-spacing: .12em; font-weight: 600; }
-.story-s07 .ambition h3 { color: #102541; font-size: 45px; line-height: 1.1; font-weight: 500; letter-spacing: -.035em; margin: 10px 0 15px; transition: color 220ms ease; }
+.story-s07 .ambition h3 { color: #102541; font-size: 45px; line-height: 1.1; font-weight: 500; letter-spacing: -.035em; margin: 0 0 15px; transition: color 220ms ease; }
 .story-s07 .ambition p { color: #526D86; font-size: 27px; line-height: 1.28; max-width: 490px; }
 .ambition:is(:hover,:focus-visible) .ambition-art svg { transform: translateY(-4px) scale(1.025); }
 .ambition:is(:hover,:focus-visible) .ambition-wash { fill: #D3E9F8; }

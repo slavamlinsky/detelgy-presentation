@@ -19,6 +19,9 @@ try {
   assert.equal(await slide.locator('.ambition').count(), 4);
   assert.deepEqual(await slide.locator('.ambition h3').allTextContents(), titles);
   assert.deepEqual(await slide.locator('.ambition p').allTextContents(), descriptions);
+  assert.equal(await slide.locator('.story-title > p').textContent(), 'Every professional defines success differently.');
+  assert.equal(await slide.locator('.ambition-index').count(), 0);
+  assert.equal(await slide.locator('.ambition-art svg').first().evaluate(el => Math.round(el.getBoundingClientRect().width)), 202);
   assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g, ''), '07/14');
   assert.equal(await slide.evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(250, 249, 246)');
   assert((await slide.locator('.ambition-art,.ambition-copy').evaluateAll(els => els.map(el => getComputedStyle(el).opacity))).every(v => v === '1'));

@@ -21,10 +21,15 @@ function AmbitionIllustration({ kind }: { kind: number }) {
         <path className="ambition-accent-stroke" d="M71 51c7-8 16-12 27-12M82 39l16 0-3 16M80 137c17 10 36 10 53 0" />
       </>}
       {kind === 3 && <>
-        <circle cx="90" cy="64" r="34" />
-        <path className="ambition-accent-stroke" d="M90 42v44M103 49c-6-4-13-5-19-3-13 4-11 17 2 20l8 2c13 3 15 16 2 20-7 2-15 1-21-4" />
-        <path d="M42 124c12-11 25-12 38-3l9 6 25-3c16-2 24 5 23 13-1 6-7 10-15 11l-33 7c-9 2-17 1-24-3l-23-12" />
-        <path d="M25 118h17v36H25" />
+        <circle cx="90" cy="39" r="23" />
+        <path d="M78 42c5-7 9-10 12-10s7 3 12 10M90 30v18" />
+        <path className="ambition-accent-stroke" d="M90 62v24M31 86h118M31 86v17M90 86v17M149 86v17" />
+        <rect x="13" y="106" width="36" height="50" rx="4" />
+        <path d="M24 106v-5h14v5M21 120h20M21 130h20M21 140h13" />
+        <path d="M72 108h36a5 5 0 0 1 5 5v29a5 5 0 0 1-5 5H88l-12 9v-9h-4a5 5 0 0 1-5-5v-29a5 5 0 0 1 5-5Z" />
+        <path d="M78 120h24M78 131h18" />
+        <circle cx="139" cy="120" r="6" /><circle cx="158" cy="120" r="6" />
+        <path d="M128 151c0-11 5-17 11-17s11 6 11 17M147 139c2-3 6-5 11-5 7 0 12 6 12 17" />
       </>}
     </g>
   </svg>;
@@ -41,7 +46,6 @@ export function AmbitionScene({ slide }: { slide: SlideContent }) {
     >
       <div className="ambition-art"><AmbitionIllustration kind={index} /></div>
       <div className="ambition-copy">
-        <span className="ambition-index">{String(index + 1).padStart(2, '0')}</span>
         <h3>{item.title}</h3>
         <p>{item.body}</p>
       </div>
