@@ -1947,9 +1947,14 @@ svg {
 .world-seam span { position: absolute; width: 27px; height: 27px; border-top: 2px solid #9BD3F5; border-right: 2px solid #9BD3F5; transform: rotate(45deg); filter: drop-shadow(0 0 10px #51A7D8); }
 .world-comparisons { position: absolute; left: 190px; top: 405px; width: 1316px; display: grid; gap: 2px; }
 .world-comparison { display: grid; grid-template-columns: 620px 76px 620px; align-items: center; min-height: 43px; color: #AEC3D5; font-size: 25px; line-height: 1.18; outline: none; }
-.world-comparison-before { padding-left: 3px; }
+.world-comparison-before,
+.world-comparison-after { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; padding-left: 3px; }
 .world-comparison-arrow { text-align: center; color: #79BDE8; font-size: 24px; }
-.world-comparison-after { padding-left: 3px; color: #E1F2FC; font-weight: 550; }
+.world-comparison-after { color: #E1F2FC; font-weight: 550; }
+.world-progress { display: block; width: 280px; height: 3px; overflow: hidden; border-radius: 3px; background: #6B829480; }
+.world-progress-fill { display: block; height: 100%; border-radius: inherit; transform-origin: left center; }
+.world-comparison-before .world-progress-fill { width: 34%; background: #819FB5; }
+.world-comparison-after .world-progress-fill { width: 80%; background: #91D2F3; }
 .world-comparison:is(:hover,:focus-visible) .world-comparison-before { color: #D4E1EA; }
 .world-comparison:is(:hover,:focus-visible) .world-comparison-after { color: #9BD3F5; }
 .world-comparison:focus-visible { outline: 1px solid #82C9EF; outline-offset: 3px; border-radius: 3px; }
@@ -3020,9 +3025,17 @@ svg {
   .scaled-slide .story-s08 .world-comparison[data-pair="0"] { animation-delay: 1420ms; }
   .scaled-slide .story-s08 .world-comparison[data-pair="1"] { animation-delay: 1530ms; }
   .scaled-slide .story-s08 .world-comparison[data-pair="2"] { animation-delay: 1640ms; }
+  .scaled-slide .story-s08 .world-progress-fill { animation: world-progress-fill 620ms cubic-bezier(.22,.7,.28,1) both; }
+  .scaled-slide .story-s08 .world-comparison[data-pair="0"] .world-progress-fill { animation-delay: 1700ms; }
+  .scaled-slide .story-s08 .world-comparison[data-pair="1"] .world-progress-fill { animation-delay: 1810ms; }
+  .scaled-slide .story-s08 .world-comparison[data-pair="2"] .world-progress-fill { animation-delay: 1920ms; }
   @keyframes world-appear {
     from { opacity: 0; transform: translateY(9px); }
     to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes world-progress-fill {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
   }
 }
 @media (prefers-reduced-motion: reduce) { .story-s08 * { animation: none !important; } }

@@ -24,9 +24,15 @@ export function TransformationScene({ slide }: { slide: SlideContent }) {
     <div className="world-seam" aria-hidden="true"><span /></div>
     <div className="world-comparisons" aria-label="Three possible professional transformations">
       {slide.items.map((item, index) => <div className="world-comparison" key={item.title} data-pair={index} tabIndex={0}>
-        <span className="world-comparison-before">{item.title}</span>
+        <span className="world-comparison-before">
+          <span>{item.title}</span>
+          <span className="world-progress" aria-hidden="true"><span className="world-progress-fill" /></span>
+        </span>
         <span className="world-comparison-arrow" aria-label="to">→</span>
-        <span className="world-comparison-after">{item.body}</span>
+        <span className="world-comparison-after">
+          <span>{item.body}</span>
+          <span className="world-progress" aria-hidden="true"><span className="world-progress-fill" /></span>
+        </span>
       </div>)}
     </div>
   </div>;
