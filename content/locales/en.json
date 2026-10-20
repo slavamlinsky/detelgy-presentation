@@ -282,38 +282,30 @@
     {
       "id": "s07",
       "chapter": "Jobs to be done",
-      "title": "Four jobs.\nOne professional journey.",
-      "accent": "",
-      "lead": "People come for progress that matters to them.",
+      "title": "What does professional success look like?",
+      "accent": "professional success",
+      "lead": "Every professional has different ambitions — from developing expertise and building reputation to discovering new opportunities.",
       "eyebrow": "The progress professionals seek",
       "items": [
         {
-          "title": "Become better",
-          "label": "A new challenge",
-          "body": "Learn from experienced peers.",
-          "outcome": "Greater professional confidence"
+          "title": "Become Better",
+          "body": "Learn from experienced peers."
         },
         {
-          "title": "Become known",
-          "label": "Valuable skills",
-          "body": "Build a credible professional reputation.",
-          "outcome": "Expertise others can discover"
+          "title": "Build Reputation",
+          "body": "Strengthen trust and professional credibility."
         },
         {
-          "title": "Find opportunities",
-          "label": "A desire to grow",
-          "body": "Meet clients, collaborators and relevant peers.",
-          "outcome": "More relevant connections"
+          "title": "Find Opportunities",
+          "body": "Connect with clients and collaborators."
         },
         {
-          "title": "Monetize expertise",
-          "label": "Knowledge others value",
-          "body": "Offer consultations, mentoring or teaching.",
-          "outcome": "Additional earning possibilities"
+          "title": "Monetize Expertise",
+          "body": "Create new ways to earn from what you know."
         }
       ],
       "footer": "Working JTBD hypotheses · paid peer services and education are planned",
-      "note": "One person can have several jobs and change priorities over time. The four jobs are not a mandatory funnel and do not imply guaranteed outcomes. Planned consultation and education mechanisms require demand validation. Working JTBD hypotheses · paid peer services and education are planned.",
+      "note": "These four Jobs To Be Done are illustrative professional aspirations, not verified outcomes for every Detelgy user. One person can have several ambitions, and priorities can change over time; this is not a mandatory sequence. Detelgy may enable access to opportunities, but does not guarantee income growth, client demand, or professional recognition. Paid consultation, mentorship and education mechanisms are planned and require demand validation. Working JTBD hypotheses · paid peer services and education are planned.",
       "sources": [
         "ICP / Personas §8; Investor story S07."
       ]

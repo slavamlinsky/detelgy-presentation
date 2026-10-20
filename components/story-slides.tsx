@@ -1,12 +1,12 @@
 import { WorkloadScene } from "./workload-scene";
 import { AudiencePersonas } from "./audience-personas";
+import { AmbitionScene } from "./ambition-scene";
 import {
   ArrowUpRight,
   ArrowRight,
   BookOpen,
   BadgeCheck,
   Users,
-  Search,
   Sprout,
   UserRound,
   Globe2,
@@ -49,8 +49,6 @@ function SceneLines({ kind }: { kind: string }) {
             />
             <path d="m1218 293 27 4-12 26" strokeWidth="4" />
           </>
-        ) : kind === "jobs" ? (
-          <path d="M170 590 C600 320 570 960 1020 610 S1420 390 1750 620" />
         ) : kind === "ecosystem" ? (
           <>
             {[
@@ -103,6 +101,7 @@ export function StorySlide({
 }) {
   const dark = slideMetadata[index].theme === "dark";
   const icons = [Users, BookOpen, BadgeCheck, BriefcaseBusiness];
+  const accentParts = s.accent ? s.title.split(s.accent) : null;
   return (
     <article
       className={`slide v2-slide story-slide story-${s.id} ${dark ? "dark" : "light"}`}
@@ -116,7 +115,9 @@ export function StorySlide({
       <main className="story-content">
         <div className="story-title">
           <h2>
-            {["s03", "s04", "s05", "s06"].includes(s.id) ? (
+            {s.id === "s07" && accentParts?.length === 2 ? (
+              <>{accentParts[0]}<em>{s.accent}</em>{accentParts[1]}</>
+            ) : ["s03", "s04", "s05", "s06"].includes(s.id) ? (
               <>
                 {s.id === "s06" ? <span className="barrier-headline-first">{s.title.split("\n")[0]}</span> : s.title.split("\n")[0]}
                 <em>{s.title.split("\n")[1]}</em>
@@ -170,23 +171,7 @@ export function StorySlide({
             })}
           </div>
         )}
-        {s.id === "s07" && (
-          <>
-            <SceneLines kind="jobs" />
-            <div className="job-landscape">
-              {s.items.map((a, i) => {
-                const Icon = [BookOpen, BadgeCheck, Search, Sprout][i];
-                return (
-                  <section key={a.title} data-job={i}>
-                    <Icon size={48} strokeWidth={1.3} />
-                    <h3>{a.title}</h3>
-                    <p>{a.body}</p>
-                  </section>
-                );
-              })}
-            </div>
-          </>
-        )}
+        {s.id === "s07" && <AmbitionScene slide={s} />}
         {s.id === "s08" && (
           <div className="transformation">
             <div className="before-landscape">

@@ -1908,47 +1908,27 @@ svg {
   font-size: 20px;
   color: #7c91a5;
 }
-.story-s07 .story-title {
-  top: 210px;
-}
-.story-s07 .story-title h2 {
-  white-space: normal;
-  max-width: 1450px;
-}
-.job-landscape section {
-  position: absolute;
-  width: 340px;
-}
-.job-landscape section:nth-child(1) {
-  left: 112px;
-  top: 480px;
-}
-.job-landscape section:nth-child(2) {
-  left: 555px;
-  top: 660px;
-}
-.job-landscape section:nth-child(3) {
-  left: 1000px;
-  top: 490px;
-}
-.job-landscape section:nth-child(4) {
-  left: 1440px;
-  top: 650px;
-}
-.job-landscape svg {
-  color: #235784;
-  background: #f8fafc;
-  margin-bottom: 24px;
-}
-.job-landscape h3 {
-  font-size: 43px;
-  background: #f8fafc;
-  padding-bottom: 20px;
-}
-.job-landscape section > p {
-  font-size: 27px;
-  background: #f8fafc;
-}
+.story-s07 { background: #FAF9F6; color: #102541; }
+.story-s07 .story-title { top: 190px; width: 1696px; }
+.story-s07 .story-title h2 { font-size: 82px; max-width: 1696px; }
+.story-s07 .story-title h2 em { display: inline; color: #24699E; }
+.story-s07 .story-title > p { color: #526D86; font-size: 30px; max-width: 1420px; margin-top: 28px; text-wrap: balance; }
+.ambition-field { position: absolute; left: 112px; right: 112px; top: 470px; display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); grid-auto-rows: 210px; column-gap: 96px; row-gap: 68px; }
+.ambition { display: grid; grid-template-columns: 180px minmax(0,1fr); column-gap: 23px; align-items: center; outline: none; }
+.ambition-art, .ambition-art svg { width: 180px; height: 180px; }
+.ambition-art svg { transition: transform 220ms ease; }
+.ambition-wash { fill: #E5F0F8; transition: fill 220ms ease; }
+.ambition-ink { stroke: #24699E; stroke-width: 3; transition: stroke 220ms ease; }
+.ambition-accent-stroke { stroke: #64A5CE; stroke-width: 3.5; }
+.ambition-copy { align-self: center; }
+.ambition-index { color: #6B8AA2; font-size: 22px; letter-spacing: .12em; font-weight: 600; }
+.story-s07 .ambition h3 { color: #102541; font-size: 45px; line-height: 1.1; font-weight: 500; letter-spacing: -.035em; margin: 10px 0 15px; transition: color 220ms ease; }
+.story-s07 .ambition p { color: #526D86; font-size: 27px; line-height: 1.28; max-width: 490px; }
+.ambition:is(:hover,:focus-visible) .ambition-art svg { transform: translateY(-4px) scale(1.025); }
+.ambition:is(:hover,:focus-visible) .ambition-wash { fill: #D3E9F8; }
+.ambition:is(:hover,:focus-visible) .ambition-ink { stroke: #145682; }
+.story-s07 .ambition:is(:hover,:focus-visible) h3 { color: #24699E; }
+.ambition:focus-visible { outline: 2px solid #24699E; outline-offset: 7px; border-radius: 8px; }
 .story-s08 .story-title {
   top: 205px;
 }
@@ -3037,3 +3017,26 @@ svg {
 }
 @media (prefers-reduced-motion: reduce) { .story-s06 * { transition: none !important; } }
 @media print { .story-s06 * { animation: none !important; transition: none !important; opacity: 1 !important; } }
+
+/* S07: four independent ambitions, revealed as editorial vignettes. */
+@media screen and (prefers-reduced-motion: no-preference) {
+  .scaled-slide .story-s07 { animation: none; }
+  .scaled-slide .story-s07 .story-title h2 { animation: ambition-reveal 380ms 80ms ease-out both; }
+  .scaled-slide .story-s07 .story-title > p { animation: ambition-reveal 420ms 530ms ease-out both; }
+  .scaled-slide .story-s07 .ambition-art,
+  .scaled-slide .story-s07 .ambition-copy { animation: ambition-reveal 400ms ease-out both; }
+  .scaled-slide .story-s07 [data-ambition="0"] .ambition-art { animation-delay: 1020ms; }
+  .scaled-slide .story-s07 [data-ambition="0"] .ambition-copy { animation-delay: 1150ms; }
+  .scaled-slide .story-s07 [data-ambition="1"] .ambition-art { animation-delay: 1190ms; }
+  .scaled-slide .story-s07 [data-ambition="1"] .ambition-copy { animation-delay: 1320ms; }
+  .scaled-slide .story-s07 [data-ambition="2"] .ambition-art { animation-delay: 1360ms; }
+  .scaled-slide .story-s07 [data-ambition="2"] .ambition-copy { animation-delay: 1490ms; }
+  .scaled-slide .story-s07 [data-ambition="3"] .ambition-art { animation-delay: 1530ms; }
+  .scaled-slide .story-s07 [data-ambition="3"] .ambition-copy { animation-delay: 1660ms; }
+  @keyframes ambition-reveal {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) { .story-s07 * { transition: none !important; } }
+@media print { .story-s07 * { animation: none !important; transition: none !important; opacity: 1 !important; } }
