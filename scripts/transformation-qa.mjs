@@ -25,6 +25,19 @@ try {
     return [measure('before'),measure('after')];
   }));
   assert(indicators.every(([b,a]) => b.width===a.width && b.width===280 && b.height===3 && a.height===3 && b.ratio>.25 && b.ratio<.4 && a.ratio>.75 && a.ratio<.85));
+  assert.equal(new Set(indicators.map(([b]) => Math.round(b.ratio*100))).size,3);
+  assert.equal(new Set(indicators.map(([,a]) => Math.round(a.ratio*100))).size,3);
+  const spacing=await slide.evaluate(el => {
+    const box=selector => el.querySelector(selector).getBoundingClientRect();
+    const rows=[...el.querySelectorAll('.world-comparison')].map(row => row.getBoundingClientRect());
+    return {
+      supportToImage: box('.world-before .world-scene').top-box('.story-title > p').bottom,
+      imageToRows: rows[0].top-box('.world-before .world-scene').bottom,
+      rowGaps: rows.slice(1).map((row,index) => row.top-rows[index].bottom),
+      footerGap: box('.slide-folio').top-rows.at(-1).bottom,
+    };
+  });
+  assert(spacing.supportToImage > 80 && spacing.imageToRows>=24 && spacing.rowGaps.every(gap=>gap>=5) && spacing.footerGap>=12, JSON.stringify(spacing));
   const bounds = await slide.locator('.story-title,.transformation-world').evaluateAll(els => els.map(el => {
     const r=el.getBoundingClientRect(), s=el.closest('article').getBoundingClientRect();
     return [r.left-s.left,r.right-s.left,r.top-s.top,r.bottom-s.top];

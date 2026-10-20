@@ -1929,7 +1929,7 @@ svg {
 .story-s07 .ambition:is(:hover,:focus-visible) h3 { color: #24699E; }
 .ambition:focus-visible { outline: 2px solid #24699E; outline-offset: 7px; border-radius: 8px; }
 .story-s08 { background: #07192F; }
-.story-s08 .story-title { top: 172px; width: 1696px; }
+.story-s08 .story-title { top: 160px; width: 1696px; }
 .story-s08 .story-title h2 { font-size: 80px; max-width: 1600px; }
 .story-s08 .story-title h2 em { color: #9BD3F5; }
 .story-s08 .story-title > p { display: block; color: #B9CFE0; font-size: 29px; max-width: 1480px; margin-top: 22px; }
@@ -1945,16 +1945,19 @@ svg {
 .world-seam { position: absolute; z-index: 5; left: 810px; top: 36px; width: 76px; height: 349px; display: grid; place-items: center; }
 .world-seam::before { content: ""; width: 2px; height: 240px; background: linear-gradient(transparent,#7DC8F4 50%,transparent); box-shadow: 0 0 25px #66B9E36B; }
 .world-seam span { position: absolute; width: 27px; height: 27px; border-top: 2px solid #9BD3F5; border-right: 2px solid #9BD3F5; transform: rotate(45deg); filter: drop-shadow(0 0 10px #51A7D8); }
-.world-comparisons { position: absolute; left: 190px; top: 405px; width: 1316px; display: grid; gap: 2px; }
+.world-comparisons { position: absolute; left: 190px; top: 409px; width: 1316px; display: grid; gap: 6px; }
 .world-comparison { display: grid; grid-template-columns: 620px 76px 620px; align-items: center; min-height: 43px; color: #AEC3D5; font-size: 25px; line-height: 1.18; outline: none; }
+.world-comparison[data-pair="0"] { --before-fill: 31%; --after-fill: 77%; }
+.world-comparison[data-pair="1"] { --before-fill: 38%; --after-fill: 82%; }
+.world-comparison[data-pair="2"] { --before-fill: 28%; --after-fill: 79%; }
 .world-comparison-before,
 .world-comparison-after { display: flex; flex-direction: column; align-items: flex-start; gap: 5px; padding-left: 3px; }
 .world-comparison-arrow { text-align: center; color: #79BDE8; font-size: 24px; }
 .world-comparison-after { color: #E1F2FC; font-weight: 550; }
 .world-progress { display: block; width: 280px; height: 3px; overflow: hidden; border-radius: 3px; background: #6B829480; }
 .world-progress-fill { display: block; height: 100%; border-radius: inherit; transform-origin: left center; }
-.world-comparison-before .world-progress-fill { width: 34%; background: #819FB5; }
-.world-comparison-after .world-progress-fill { width: 80%; background: #91D2F3; }
+.world-comparison-before .world-progress-fill { width: var(--before-fill); background: #819FB5; }
+.world-comparison-after .world-progress-fill { width: var(--after-fill); background: #91D2F3; }
 .world-comparison:is(:hover,:focus-visible) .world-comparison-before { color: #D4E1EA; }
 .world-comparison:is(:hover,:focus-visible) .world-comparison-after { color: #9BD3F5; }
 .world-comparison:focus-visible { outline: 1px solid #82C9EF; outline-offset: 3px; border-radius: 3px; }
