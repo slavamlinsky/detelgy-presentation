@@ -4,9 +4,9 @@ import assert from 'node:assert/strict';
 const titles = ['Become Better', 'Build Reputation', 'Find Opportunities', 'Monetize Expertise'];
 const descriptions = [
   'Learn from experienced peers.',
-  'Strengthen trust and professional credibility.',
-  'Connect with clients and collaborators.',
-  'Create new ways to earn from what you know.',
+  'Earn trust and professional recognition.',
+  'Connect with clients and partners.',
+  'Create new income opportunities.',
 ];
 const browser = await launchBrowser();
 try {
@@ -19,6 +19,8 @@ try {
   assert.equal(await slide.locator('.ambition').count(), 4);
   assert.deepEqual(await slide.locator('.ambition h3').allTextContents(), titles);
   assert.deepEqual(await slide.locator('.ambition p').allTextContents(), descriptions);
+  const descriptionLines = await slide.locator('.ambition p').evaluateAll(els => els.map(el => el.getBoundingClientRect().height / parseFloat(getComputedStyle(el).lineHeight)));
+  assert(descriptionLines.every(lines => lines < 1.1), `Descriptions should fit one line at 1920×1080: ${descriptionLines.join(', ')}`);
   assert.equal(await slide.locator('.story-title > p').textContent(), 'Every professional defines success differently.');
   assert.equal(await slide.locator('.ambition-index').count(), 0);
   assert.equal(await slide.locator('.ambition-art svg').first().evaluate(el => Math.round(el.getBoundingClientRect().width)), 202);

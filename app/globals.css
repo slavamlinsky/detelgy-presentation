@@ -1922,7 +1922,7 @@ svg {
 .ambition-accent-stroke { stroke: #64A5CE; stroke-width: 3.5; }
 .ambition-copy { align-self: center; }
 .story-s07 .ambition h3 { color: #102541; font-size: 45px; line-height: 1.1; font-weight: 500; letter-spacing: -.035em; margin: 0 0 15px; transition: color 220ms ease; }
-.story-s07 .ambition p { color: #526D86; font-size: 27px; line-height: 1.28; max-width: 490px; }
+.story-s07 .ambition p { color: #526D86; font-size: 27px; line-height: 1.28; max-width: 100%; }
 .ambition:is(:hover,:focus-visible) .ambition-art svg { transform: translateY(-4px) scale(1.025); }
 .ambition:is(:hover,:focus-visible) .ambition-wash { fill: #D3E9F8; }
 .ambition:is(:hover,:focus-visible) .ambition-ink { stroke: #145682; }
