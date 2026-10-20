@@ -16,6 +16,8 @@ import {
   BriefcaseBusiness,
   Target,
   TrendingUp,
+  ScanSearch,
+  UsersRound,
 } from "lucide-react";
 import {
   slideMetadata,
@@ -114,9 +116,9 @@ export function StorySlide({
       <main className="story-content">
         <div className="story-title">
           <h2>
-            {["s03", "s04", "s05"].includes(s.id) ? (
+            {["s03", "s04", "s05", "s06"].includes(s.id) ? (
               <>
-                {s.title.split("\n")[0]}
+                {s.id === "s06" ? <span className="barrier-headline-first">{s.title.split("\n")[0]}</span> : s.title.split("\n")[0]}
                 <em>{s.title.split("\n")[1]}</em>
               </>
             ) : (
@@ -154,14 +156,18 @@ export function StorySlide({
         )}
         {s.id === "s05" && <WorkloadScene slide={s}/>}
         {s.id === "s06" && (
-          <div className="pain-themes">
-            {s.displayItems?.map((a, i) => (
-              <section key={a.title} data-theme={i}>
-                <h3>{a.title}</h3>
-                <p>{a.body}</p>
-                <span>{a.detail}</span>
-              </section>
-            ))}
+          <div className="barrier-system" aria-label="Three illustrative barriers to professional growth">
+            {s.displayItems?.map((a, i) => {
+              const Icon = [ScanSearch, UsersRound, BriefcaseBusiness][i];
+              return <section className="barrier-panel" key={a.title} data-barrier={i} tabIndex={0} aria-label={`${a.title}: ${a.body} ${a.detail}`}>
+                <div className="barrier-panel-content">
+                  <Icon size={44} strokeWidth={1.25} aria-hidden="true" />
+                  <span className="barrier-category">{a.title}</span>
+                  <h3>{a.body}</h3>
+                  <p>{a.detail}</p>
+                </div>
+              </section>;
+            })}
           </div>
         )}
         {s.id === "s07" && (

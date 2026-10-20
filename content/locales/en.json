@@ -235,56 +235,47 @@
     {
       "id": "s06",
       "chapter": "Core problems",
-      "title": "Expertise alone does not\nguarantee opportunity",
-      "accent": "",
-      "lead": "Visibility, trusted support and new opportunities can be hard to build alone.",
+      "title": "You already have the expertise.\nBut growth isn't automatic.",
+      "accent": "But growth isn't automatic.",
+      "lead": "Three barriers can stand between your expertise and your next opportunity.",
       "eyebrow": "What gets in the way",
       "items": [
         {
-          "title": "Professional isolation",
-          "body": "Who can help with a difficult professional situation?"
+          "title": "Visibility",
+          "body": "Hard to be discovered",
+          "detail": "beyond existing networks."
         },
         {
-          "title": "Limited discoverability",
-          "body": "How can the right clients find me?"
+          "title": "Support",
+          "body": "Hard to find trusted peers",
+          "detail": "and relevant guidance."
         },
         {
-          "title": "Scattered trust signals",
-          "body": "How do I show the experience behind my work?"
-        },
-        {
-          "title": "Learning barriers",
-          "body": "Where can I find relevant guidance?"
-        },
-        {
-          "title": "Uncertain client flow",
-          "body": "How can I reach beyond existing referrals?"
-        },
-        {
-          "title": "Narrow earning paths",
-          "body": "How else could my knowledge create value?"
+          "title": "Opportunity",
+          "body": "Hard to reach new demand",
+          "detail": "and better earning paths."
         }
       ],
       "footer": "Illustrative research hypotheses · these are not customer quotations",
-      "note": "These pains are hypotheses from the supplied audience brief. Validate urgency, frequency, existing alternatives and willingness to pay through Expert Discovery. Do not present the first-person questions as verbatim testimony. Illustrative research hypotheses · these are not customer quotations.",
+      "note": "These pains are hypotheses from the supplied audience brief. Validate urgency, frequency, existing alternatives and willingness to pay through Expert Discovery. Do not present the first-person questions as verbatim testimony. Illustrative research hypotheses · these are not customer quotations. These three barriers are illustrative hypotheses, not universal conditions: established networks may already provide useful visibility, peers and opportunities. The earlier six exploratory pains grouped here were: Professional isolation, Limited discoverability, Scattered trust signals, Learning barriers, Uncertain client flow, Narrow earning paths. They require segment-specific validation through expert discovery. None is a claim that David or every examiner lacks professional skill.",
       "sources": [
         "ICP / Personas §§5–9, 16–17; Investor story S06."
       ],
       "displayItems": [
         {
-          "title": "Hard to be seen.",
-          "body": "Limited discoverability and scattered trust signals.",
-          "detail": "Visibility"
+          "title": "Visibility",
+          "body": "Hard to be discovered",
+          "detail": "beyond existing networks."
         },
         {
-          "title": "Hard to grow alone.",
-          "body": "Professional isolation and barriers to relevant learning.",
-          "detail": "Support"
+          "title": "Support",
+          "body": "Hard to find trusted peers",
+          "detail": "and relevant guidance."
         },
         {
-          "title": "Hard to go further.",
-          "body": "Uncertain client flow and narrow earning paths.",
-          "detail": "Opportunity"
+          "title": "Opportunity",
+          "body": "Hard to reach new demand",
+          "detail": "and better earning paths."
         }
       ]
     },
