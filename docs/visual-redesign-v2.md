@@ -118,3 +118,9 @@ Slide 04 now introduces who the independent examiner is and what he wants; barri
 
 ### Slide 04 entrance refinement
 Sequence: photo (0–450ms), caption (450–800ms), headline (800–1150ms), Experience / Goal / Ambition at 1150 / 1330 / 1510ms. Fully revealed by 1860ms. Reduced motion and print remain fully visible. Review PDF export is now opt-in via `node scripts/persona-qa.mjs --pdf`.
+
+## Slide 05 — The hidden workload
+The takeaway is that a capable examiner faces competing responsibilities beyond examinations. The six-island network is replaced with an illustrated David at his desk surrounded by four unboxed demands: Serve Clients, Find New Business, Build Connections, Keep Growing. The existing dark navy canvas, white headline and sky-blue second line retain editorial hierarchy. No connector network, orbit, or continuous motion. David reveals first, followed by the four demands at 250ms intervals; everything is visible by 1.6 seconds. Reduced motion and print show the complete state. Notes preserve the hypothesis qualification and the value of existing communities. Slides 04 and 06 are unchanged from the Slide 04 checkpoint. Screenshot QA at 1920×1080 and laptop scale, static print visibility, animation timings and reduced motion verified. Full-deck PDF remains deferred.
+
+### Slide 05 structured two-column refinement
+Supersedes the floating-demand composition at the user's request. David anchors the left column; the right column contains the two-line headline, balanced two-line supporting copy, and a strict 2×2 grid. Four lightly bordered cards each have a small icon, title and concise supporting sentence. Content remains visible without hover; hover/focus adds tonal, border and icon emphasis. Entrance order is headline, subline, David, then the four cards, completed in 1.65 seconds. Screenshots, hover/focus, reduced motion and fully visible print styling verified. No other slide content changed.

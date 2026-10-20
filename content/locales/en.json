@@ -203,33 +203,31 @@
     {
       "id": "s05",
       "chapter": "Life today",
-      "title": "Too much depends\non individual effort",
-      "accent": "",
-      "lead": "A capable professional may have to connect every part of the journey alone.",
+      "title": "More than a polygraph expert.\nHe's running his own business.",
+      "accent": "He's running his own business.",
+      "lead": "From examinations and clients to administration and continuous learning, David has to manage it all.",
       "eyebrow": "The cost of fragmentation",
       "items": [
         {
-          "title": "Learn"
+          "title": "Professional Practice",
+          "body": "Conduct examinations, manage cases and deliver quality services."
         },
         {
-          "title": "Discuss"
+          "title": "Marketing & Clients",
+          "body": "Build visibility, attract clients and maintain a trusted reputation."
         },
         {
-          "title": "Ask for help"
+          "title": "Business Management",
+          "body": "Handle bookings, payments, workflows and daily administration."
         },
         {
-          "title": "Publish"
-        },
-        {
-          "title": "Gain visibility"
-        },
-        {
-          "title": "Find clients"
+          "title": "Professional Growth",
+          "body": "Learn from peers, exchange knowledge and develop new skills."
         }
       ],
-      "center": "The professional",
+      "center": "David",
       "footer": "Illustrative workflow hypothesis · experiences vary by professional and market",
-      "note": "The surrounding islands represent different activities, not nonexistent support. Associations and established communities already create value. Expert Discovery interviews should test which connections are missing or costly for each segment. Illustrative workflow hypothesis · experiences vary by professional and market.",
+      "note": "The four cards represent different responsibilities, not nonexistent support. Associations and established communities already create value. Expert Discovery interviews should test which connections are missing or costly for each segment. Illustrative workflow hypothesis · experiences vary by professional and market. David is a fictional illustrative persona, not a verified customer. His workload represents competing responsibilities and limited time, not a lack of professional skill or total absence of support. The four responsibilities cover professional practice, marketing and clients, business management, and professional growth. The AI-generated illustration adapts the Slide 04 portrait; it is not a customer photograph. This slide describes the responsibilities of an independent examiner, not Detelgy’s currently available features. Future solution slides must distinguish verified current capabilities from roadmap proposals, especially CRM, internal payments, automation, mentorship and training. A responsibility shown here does not imply that Detelgy currently provides that capability.",
       "sources": [
         "Product brief §§2, 10; Investor story S05."
       ]

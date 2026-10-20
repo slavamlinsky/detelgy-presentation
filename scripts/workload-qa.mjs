@@ -1,0 +1,32 @@
+import {launchBrowser,baseURL,ready} from './browser.mjs';
+import assert from 'node:assert/strict';
+const browser=await launchBrowser();
+try {
+ const page=await browser.newPage({viewport:{width:1920,height:1080}});
+ await page.goto(`${baseURL}/en/vision/print`);await ready(page);await page.emulateMedia({media:'print'});
+ const printed=page.locator('[data-slide="s05"]');
+ await printed.screenshot({path:'qa/v2/s05.png'});
+ if(process.argv.includes('--pdf'))await page.pdf({path:'qa/v2/s05-review.pdf',pageRanges:'5',printBackground:true,preferCSSPageSize:true});
+ assert.equal(await printed.locator('.workload-demand').count(),4);
+ const boxes=await printed.locator('.story-title,.workload-demand,.workload-person').evaluateAll(es=>es.map(el=>{const r=el.getBoundingClientRect(),s=el.closest('article').getBoundingClientRect();return [r.left-s.left,r.right-s.left,r.bottom-s.top]}));
+ boxes.forEach(([l,r,b])=>assert(l>=112&&r<=1808&&b<995));
+ assert((await printed.locator('.workload-demand').evaluateAll(es=>es.map(e=>getComputedStyle(e).opacity))).every(v=>v==='1'));
+ await page.emulateMedia({media:'screen'});await page.setViewportSize({width:1366,height:768});
+ await page.goto(`${baseURL}/en/vision#s05`);await ready(page);
+ const slide=page.locator('.scaled-slide .story-s05');
+ const timing=await slide.evaluate(el=>el.getAnimations({subtree:true}).map(a=>a.effect.getTiming()));
+ assert.deepEqual(timing.map(t=>t.delay).sort((a,b)=>a-b),[0,250,500,850,1000,1150,1300]);
+ assert(timing.every(t=>t.iterations===1));
+ await slide.evaluate(el=>Promise.all(el.getAnimations({subtree:true}).map(a=>a.finished)));
+ await page.screenshot({path:'qa/v2/s05-laptop.png'});
+ const cards=slide.locator('.workload-demand');
+ const normal=await cards.first().evaluate(el=>getComputedStyle(el).borderColor);
+ await cards.first().hover();await page.waitForTimeout(220);
+ assert.notEqual(await cards.first().evaluate(el=>getComputedStyle(el).borderColor),normal);
+ await page.mouse.move(0,0);await page.keyboard.press('Tab');await cards.nth(1).focus();await page.waitForTimeout(220);
+ assert.notEqual(await cards.nth(1).evaluate(el=>getComputedStyle(el).borderColor),normal);
+ await page.screenshot({path:'qa/v2/s05-focus.png'});
+ assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''),'05/14');
+ await page.emulateMedia({reducedMotion:'reduce'});await page.waitForFunction(()=>document.querySelector('.scaled-slide .story-s05').getAnimations({subtree:true}).length===0);
+ console.log('Passed: four demands, safe bounds, stagger, no loops, reduced motion, static print and folio.');
+}finally{await browser.close()}

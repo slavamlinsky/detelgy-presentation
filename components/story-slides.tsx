@@ -1,3 +1,4 @@
+import { WorkloadScene } from "./workload-scene";
 import { AudiencePersonas } from "./audience-personas";
 import {
   ArrowUpRight,
@@ -113,7 +114,7 @@ export function StorySlide({
       <main className="story-content">
         <div className="story-title">
           <h2>
-            {["s03", "s04"].includes(s.id) ? (
+            {["s03", "s04", "s05"].includes(s.id) ? (
               <>
                 {s.title.split("\n")[0]}
                 <em>{s.title.split("\n")[1]}</em>
@@ -151,22 +152,7 @@ export function StorySlide({
             </div>
           </>
         )}
-        {s.id === "s05" && (
-          <>
-            <SceneLines kind="islands" />
-            <div className="isolated-professional">
-              <UserRound size={60} strokeWidth={1.2} />
-              <p>{s.center}</p>
-            </div>
-            <div className="island-words">
-              {s.items.map((a, i) => (
-                <h3 key={a.title} data-island={i}>
-                  {a.title}
-                </h3>
-              ))}
-            </div>
-          </>
-        )}
+        {s.id === "s05" && <WorkloadScene slide={s}/>}
         {s.id === "s06" && (
           <div className="pain-themes">
             {s.displayItems?.map((a, i) => (
