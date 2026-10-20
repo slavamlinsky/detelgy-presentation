@@ -313,9 +313,9 @@
     {
       "id": "s08",
       "chapter": "The transformation",
-      "title": "From fragmented effort\nto connected professional growth",
+      "title": "Same expertise.\nA world of new possibilities.",
       "accent": "",
-      "lead": "Designed to make expertise easier to discover, share and put to work.",
+      "lead": "Detelgy connects the people, tools and opportunities that support professional growth.",
       "eyebrow": "Before / With Detelgy",
       "columns": [
         "Before",
@@ -323,52 +323,22 @@
       ],
       "items": [
         {
-          "title": "A mostly local circle",
-          "body": "Broader professional discovery",
-          "label": "Built foundation"
+          "title": "Limited visibility",
+          "body": "Discoverable professional presence"
         },
         {
-          "title": "Knowledge kept in isolation",
-          "body": "Shared learning through peers",
-          "label": "Built foundation"
+          "title": "Working in isolation",
+          "body": "Connected professional community"
         },
         {
-          "title": "Credentials across many places",
-          "body": "One professional profile",
-          "label": "Built foundation"
-        },
-        {
-          "title": "Recognition within existing circles",
-          "body": "Visible contributions and publications",
-          "label": "Built + planned"
-        },
-        {
-          "title": "Income tied to personal services",
-          "body": "Consulting, mentorship and teaching",
-          "label": "Planned"
+          "title": "Limited earning channels",
+          "body": "More ways to create value"
         }
       ],
       "footer": "Intended transformation · access to opportunity does not guarantee outcomes",
-      "note": "Built foundation means the internal brief reports profiles, discussions and discovery as implemented, not that outcomes are proven. Publications, paid consultations, mentorship and education are planned. Production readiness still needs revalidation. The visual groups five original comparisons into identity, connections and opportunity. Publications and broader recognition include planned mechanisms. Intended transformation · access to opportunity does not guarantee outcomes.",
+      "note": "This is an intended, illustrative transformation, not a verified result for every examiner. The same fictional David appears in both states; the contrast does not imply he lacks skill before joining Detelgy. Profiles, discussions, community networking, service discovery and request flows are reported as a built foundation in the internal brief, but production readiness and professional outcomes still require validation. Publications, paid transactions, consultations, mentorship and education are planned; do not describe them as live. Access to opportunity does not guarantee clients, income growth or professional standing. The earlier five comparisons were: local circle to broader discovery; isolated knowledge to peer learning; scattered credentials to one profile; recognition within existing circles to visible contributions; and personal-service income to potential consulting, mentorship or teaching.",
       "sources": [
         "Product brief §§5–6, 10; Investor story S08."
-      ],
-      "displayItems": [
-        {
-          "title": "Scattered identity",
-          "body": "One professional presence",
-          "label": "Profiles & discovery · built foundation"
-        },
-        {
-          "title": "Knowledge in isolation",
-          "body": "Useful peer connections",
-          "label": "Community · built foundation"
-        },
-        {
-          "title": "A narrow earning path",
-          "body": "More ways to create value",
-          "label": "Consulting, mentorship & teaching · planned"
-        }
       ]
     },
     {

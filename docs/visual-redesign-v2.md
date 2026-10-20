@@ -9,7 +9,7 @@ The founder approved the three-slide direction and authorized the remaining slid
 - S05 places an isolated professional between disconnected activities.
 - S06 groups the six original pains into visibility, support and opportunity; original items remain in reading view.
 - S07 presents four independent professional ambitions in a spacious editorial field.
-- S08 groups five comparisons into identity, peer connection and value creation, preserving status distinctions and original detailed content.
+- S08 uses the same illustrative David in two contrasting professional environments. Three paired outcomes carry the intended transformation; the earlier five comparisons and capability status remain qualified in speaker notes.
 - S09 connects four product pillars around the professional, with built and planned mechanisms visible.
 - S11 uses an open value loop; the hypothesis caveat remains.
 - S12 branches into three complementary career paths.

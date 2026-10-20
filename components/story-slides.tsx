@@ -1,9 +1,9 @@
 import { WorkloadScene } from "./workload-scene";
 import { AudiencePersonas } from "./audience-personas";
 import { AmbitionScene } from "./ambition-scene";
+import { TransformationScene } from "./transformation-scene";
 import {
   ArrowUpRight,
-  ArrowRight,
   BookOpen,
   BadgeCheck,
   Users,
@@ -117,9 +117,9 @@ export function StorySlide({
           <h2>
             {s.id === "s07" && accentParts?.length === 2 ? (
               <>{accentParts[0]}<em>{s.accent}</em>{accentParts[1]}</>
-            ) : ["s03", "s04", "s05", "s06"].includes(s.id) ? (
+            ) : ["s03", "s04", "s05", "s06", "s08"].includes(s.id) ? (
               <>
-                {s.id === "s06" ? <span className="barrier-headline-first">{s.title.split("\n")[0]}</span> : s.title.split("\n")[0]}
+                {s.id === "s06" ? <span className="barrier-headline-first">{s.title.split("\n")[0]}</span> : s.id === "s08" ? <span className="transformation-headline-first">{s.title.split("\n")[0]}</span> : s.title.split("\n")[0]}
                 <em>{s.title.split("\n")[1]}</em>
               </>
             ) : (
@@ -172,28 +172,7 @@ export function StorySlide({
           </div>
         )}
         {s.id === "s07" && <AmbitionScene slide={s} />}
-        {s.id === "s08" && (
-          <div className="transformation">
-            <div className="before-landscape">
-              <span>{s.columns?.[0]}</span>
-              {s.displayItems?.map((a, i) => (
-                <p key={i} data-before={i}>
-                  {a.title}
-                </p>
-              ))}
-            </div>
-            <ArrowRight className="transform-arrow" size={76} strokeWidth={1} />
-            <div className="after-landscape">
-              <span>{s.columns?.[1]}</span>
-              {s.displayItems?.map((a, i) => (
-                <section key={i} data-after={i}>
-                  <h3>{a.body}</h3>
-                  <small>{a.label}</small>
-                </section>
-              ))}
-            </div>
-          </div>
-        )}
+        {s.id === "s08" && <TransformationScene slide={s} />}
         {s.id === "s09" && (
           <>
             <SceneLines kind="ecosystem" />
