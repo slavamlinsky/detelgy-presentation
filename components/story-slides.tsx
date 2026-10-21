@@ -49,21 +49,6 @@ function SceneLines({ kind }: { kind: string }) {
             />
             <path d="m1218 293 27 4-12 26" strokeWidth="4" />
           </>
-        ) : kind === "ecosystem" ? (
-          <>
-            {[
-              [1060, 350],
-              [1570, 350],
-              [1060, 720],
-              [1570, 720],
-            ].map(([x, y], i) => (
-              <path
-                key={i}
-                data-connection={i}
-                d={`M1320 550 Q${x} 550 ${x} ${y}`}
-              />
-            ))}
-          </>
         ) : (
           <>
             {[
@@ -175,33 +160,43 @@ export function StorySlide({
         {s.id === "s08" && <TransformationScene slide={s} />}
         {s.id === "s09" && (
           <>
-            <SceneLines kind="ecosystem" />
-            <div className="ecosystem-center">
-              <UserRound size={55} strokeWidth={1.2} />
+            <p className="ecosystem-foundation">
+              <Globe2 size={23} strokeWidth={1.6} aria-hidden="true" />
+              {s.foundation}
+            </p>
+            <svg className="ecosystem-connections" viewBox="0 0 1920 1080" aria-hidden="true">
+              <path d="M1328 496 C1322 460 1323 435 1325 413" />
+              <path d="M1412 568 C1433 554 1449 540 1462 517" />
+              <path d="M1328 648 C1323 672 1320 688 1312 708" />
+              <path d="M1243 568 C1221 551 1207 535 1193 517" />
+              <circle cx="1325" cy="413" r="5" />
+              <circle cx="1462" cy="517" r="5" />
+              <circle cx="1312" cy="708" r="5" />
+              <circle cx="1193" cy="517" r="5" />
+            </svg>
+            <div className="ecosystem-center" aria-label="Professional growth connects all four areas">
+              <UserRound size={34} strokeWidth={1.4} aria-hidden="true" />
+              <strong>Professional<br />growth</strong>
             </div>
             <div className="ecosystem-pillars">
               {s.items.map((a, i) => {
                 const Icon = icons[i];
                 return (
-                  <section key={a.title} data-pillar={i}>
-                    <Icon size={36} strokeWidth={1.3} />
-                    <h3>{a.title}</h3>
-                    <p>
-                      <span>{ui.status.built}</span>
-                      {a.body}
+                  <section className="ecosystem-card" key={a.title} data-pillar={i}>
+                    <div className="ecosystem-card-heading">
+                      <Icon size={32} strokeWidth={1.5} aria-hidden="true" />
+                      <h3>{a.title}</h3>
+                    </div>
+                    <p className="ecosystem-card-built">
+                      <span>{ui.status.built}</span><span>{a.body}</span>
                     </p>
-                    <p>
-                      <span>{ui.status.planned}</span>
-                      {a.detail}
+                    <p className="ecosystem-card-planned">
+                      <span>{ui.status.planned}</span><span>{a.detail}</span>
                     </p>
                   </section>
                 );
               })}
             </div>
-            <p className="ecosystem-foundation">
-              <Globe2 size={28} />
-              {s.foundation}
-            </p>
           </>
         )}
         {s.id === "s11" && (
