@@ -30,7 +30,7 @@ try {
   const spacing=await slide.evaluate(el => {
     const box=selector => el.querySelector(selector).getBoundingClientRect();
     const before=box('.world-before .world-scene'), after=box('.world-connected .world-scene');
-    const overlay=box('.world-before .world-overlay'), arrow=box('.world-seam');
+    const overlay=box('.world-before .world-overlay'), connectedOverlay=box('.world-connected .world-overlay'), arrow=box('.world-seam');
     const rows=[...el.querySelectorAll('.world-before .world-comparison')].map(row=>row.getBoundingClientRect());
     const tracks=[...el.querySelectorAll('.world-before .world-progress')].map(track=>track.getBoundingClientRect());
     const labels=[...el.querySelectorAll('.world-before .world-comparison > span:first-child')].map(label=>label.getBoundingClientRect());
@@ -38,18 +38,20 @@ try {
       supportToImage: before.top-box('.story-title > p').bottom,
       sectionToImage: before.top-box('.world-before .world-state-title').bottom,
       panelGap: after.left-before.right,
-      overlayRatio: overlay.height/before.height,
-      overlayInImage: overlay.bottom<=before.bottom && overlay.bottom>=before.bottom-2 && overlay.left>=before.left && overlay.right<=before.right,
+      cardWidthRatio: overlay.width/before.width,
+      cardCentered: Math.abs((overlay.left+overlay.right)/2-(before.left+before.right)/2)<1 && Math.abs((connectedOverlay.left+connectedOverlay.right)/2-(after.left+after.right)/2)<1,
+      cardOverlapRatio: (before.bottom-overlay.top)/overlay.height,
+      cardBelowImage: overlay.bottom>before.bottom && connectedOverlay.bottom>after.bottom,
       overlayPadTop: rows[0].top-overlay.top,
       overlayPadBottom: overlay.bottom-rows.at(-1).bottom,
       rowGaps: rows.slice(1).map((row,index)=>row.top-rows[index].bottom),
       labelLineGaps: tracks.map((track,index)=>track.top-labels[index].bottom),
       linesInside: tracks.every(track=>track.top>=overlay.top && track.bottom<=overlay.bottom),
       arrowInGap: arrow.left>=before.right && arrow.right<=after.left,
-      footerGap: box('.slide-folio').top-before.bottom,
+      footerGap: box('.slide-folio').top-Math.max(overlay.bottom,connectedOverlay.bottom),
     };
   });
-  assert(spacing.supportToImage > 90 && spacing.sectionToImage>=18 && spacing.panelGap>=120 && spacing.overlayRatio<.45 && spacing.overlayInImage && spacing.overlayPadTop>=18 && spacing.overlayPadBottom>=16 && spacing.rowGaps.every(gap=>gap>=14 && gap<=18) && spacing.labelLineGaps.every(gap=>gap>=6 && gap<=8) && spacing.linesInside && spacing.arrowInGap && spacing.footerGap>=100, JSON.stringify(spacing));
+  assert(spacing.supportToImage > 90 && spacing.sectionToImage>=18 && spacing.panelGap>=120 && spacing.cardWidthRatio>=.6 && spacing.cardWidthRatio<=.75 && spacing.cardCentered && spacing.cardOverlapRatio>=.4 && spacing.cardOverlapRatio<=.6 && spacing.cardBelowImage && spacing.overlayPadTop>=18 && spacing.overlayPadBottom>=16 && spacing.rowGaps.every(gap=>gap>=14 && gap<=18) && spacing.labelLineGaps.every(gap=>gap>=6 && gap<=8) && spacing.linesInside && spacing.arrowInGap && spacing.footerGap>=20, JSON.stringify(spacing));
   const bounds = await slide.locator('.story-title,.transformation-world').evaluateAll(els => els.map(el => {
     const r=el.getBoundingClientRect(), s=el.closest('article').getBoundingClientRect();
     return [r.left-s.left,r.right-s.left,r.top-s.top,r.bottom-s.top];
@@ -65,7 +67,7 @@ try {
   await ready(page);
   const live=page.locator('.scaled-slide [data-slide="s08"]');
   const timings=await live.evaluate(el => el.getAnimations({subtree:true}).map(a => a.effect.getTiming()));
-  assert.equal(timings.length,20);
+  assert.equal(timings.length,22);
   assert(timings.every(t => t.iterations===1 && t.delay+t.duration<=2600));
   const frame=async(time,path) => {
     await live.evaluate((el,ms) => el.getAnimations({subtree:true}).forEach(a => {a.pause();a.currentTime=ms}),time);
