@@ -7,6 +7,8 @@ try {
  const printed=page.locator('[data-slide="s05"]');
  await printed.screenshot({path:'qa/v2/s05.png'});
  if(process.argv.includes('--pdf'))await page.pdf({path:'qa/v2/s05-review.pdf',pageRanges:'5',printBackground:true,preferCSSPageSize:true});
+ assert((await printed.textContent()).includes('Dmytro has to manage it all.'));
+ assert.match(await printed.locator('.workload-person img').getAttribute('alt'),/Dmytro/);
  assert.equal(await printed.locator('.workload-demand').count(),4);
  const boxes=await printed.locator('.story-title,.workload-demand,.workload-person').evaluateAll(es=>es.map(el=>{const r=el.getBoundingClientRect(),s=el.closest('article').getBoundingClientRect();return [r.left-s.left,r.right-s.left,r.bottom-s.top]}));
  boxes.forEach(([l,r,b])=>assert(l>=112&&r<=1808&&b<995));

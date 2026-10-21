@@ -3,10 +3,10 @@ import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 const slideContent=JSON.parse(await readFile('content/locales/en.json','utf8')).slides[3];
 const persona=slideContent.persona;
-assert.equal(persona.name,'David · 41');
+assert.equal(persona.name,'Dmytro · 41');
 assert.equal(slideContent.items[0].body,'12 years in practice');
 assert.equal(slideContent.displayItems[0].body,slideContent.items[0].body);
-assert.match(slideContent.note,/David, 41[\s\S]*12 years in practice/);
+assert.match(slideContent.note,/Dmytro, 41[\s\S]*12 years in practice/);
 const browser=await launchBrowser();
 try {
  const page=await browser.newPage({viewport:{width:1920,height:1080}});

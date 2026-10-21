@@ -9,7 +9,7 @@ The founder approved the three-slide direction and authorized the remaining slid
 - S05 places an isolated professional between disconnected activities.
 - S06 groups the six original pains into visibility, support and opportunity; original items remain in reading view.
 - S07 presents four independent professional ambitions in a spacious editorial field.
-- S08 uses two wide editorial scenes of the same illustrative David: a modest manual office and a brighter organized workspace. A narrow comparison card is centered across the lower edge of each photograph, with roughly one quarter overlapping the image and the rest below it, so the environment remains the focal point. Each card carries three concise icon-led comparisons and thin illustrative indicators. The earlier five comparisons, capability status, and non-metric nature of the indicators remain qualified in speaker notes.
+- S08 uses two wide editorial scenes of the same illustrative Dmytro: a modest manual office and a brighter organized workspace. A narrow comparison card is centered across the lower edge of each photograph, with roughly one quarter overlapping the image and the rest below it, so the environment remains the focal point. Each card carries three concise icon-led comparisons and thin illustrative indicators. The earlier five comparisons, capability status, and non-metric nature of the indicators remain qualified in speaker notes.
 - S09 connects four product pillars around the professional, with built and planned mechanisms visible.
 - S11 uses an open value loop; the hypothesis caveat remains.
 - S12 branches into three complementary career paths.
@@ -112,9 +112,9 @@ Ice-blue #E6F2FC canvas, navy #102541 headline and #24699E second line, with #52
 
 The compass rose was removed after user feedback about its resemblance to the NATO emblem. A faint, asymmetric botanical sprout now supports the growth message behind the secondary copy. Portraits and layout remain unchanged.
 
-## Slide 04 — Meet David, primary persona
+## Slide 04 — Meet Dmytro, primary persona
 
-Slide 04 introduces who the independent examiner is and what he wants; barriers remain for Slide 05. The portrait occupies 38% of the content width on warm off-white. David · 41, Kyiv, Ukraine, and Independent Polygraph Examiner remain legible over the portrait, with 12 years in practice shown in the editorial text. The illustrative nature of the fictional persona stays in speaker notes rather than a visible label. The headline is two lines with a deeper-blue second line. Experience, Goal and Ambition are large, unboxed editorial blocks. The entrance sequence and reduced-motion and print fallbacks remain intact. The full-deck PDF remains deferred.
+Slide 04 introduces who the independent examiner is and what he wants; barriers remain for Slide 05. The portrait occupies 38% of the content width on warm off-white. Dmytro · 41, Kyiv, Ukraine, and Independent Polygraph Examiner remain legible over the portrait, with 12 years in practice shown in the editorial text. The illustrative nature of the fictional persona stays in speaker notes rather than a visible label. The headline is two lines with a deeper-blue second line. Experience, Goal and Ambition are large, unboxed editorial blocks. The entrance sequence and reduced-motion and print fallbacks remain intact. The full-deck PDF remains deferred.
 
 ### Slide 04 entrance refinement
 
@@ -122,11 +122,11 @@ Sequence: photo (0–450ms), caption (450–800ms), headline (800–1150ms), Exp
 
 ## Slide 05 — The hidden workload
 
-The takeaway is that a capable examiner faces competing responsibilities beyond examinations. The six-island network is replaced with an illustrated David at his desk surrounded by four unboxed demands: Serve Clients, Find New Business, Build Connections, Keep Growing. The existing dark navy canvas, white headline and sky-blue second line retain editorial hierarchy. No connector network, orbit, or continuous motion. David reveals first, followed by the four demands at 250ms intervals; everything is visible by 1.6 seconds. Reduced motion and print show the complete state. Notes preserve the hypothesis qualification and the value of existing communities. Slides 04 and 06 are unchanged from the Slide 04 checkpoint. Screenshot QA at 1920×1080 and laptop scale, static print visibility, animation timings and reduced motion verified. Full-deck PDF remains deferred.
+The takeaway is that a capable examiner faces competing responsibilities beyond examinations. The six-island network is replaced with an illustrated Dmytro at his desk surrounded by four unboxed demands: Serve Clients, Find New Business, Build Connections, Keep Growing. The existing dark navy canvas, white headline and sky-blue second line retain editorial hierarchy. No connector network, orbit, or continuous motion. Dmytro reveals first, followed by the four demands at 250ms intervals; everything is visible by 1.6 seconds. Reduced motion and print show the complete state. Notes preserve the hypothesis qualification and the value of existing communities. Slides 04 and 06 are unchanged from the Slide 04 checkpoint. Screenshot QA at 1920×1080 and laptop scale, static print visibility, animation timings and reduced motion verified. Full-deck PDF remains deferred.
 
 ### Slide 05 structured two-column refinement
 
-Supersedes the floating-demand composition at the user's request. David anchors the left column; the right column contains the two-line headline, balanced two-line supporting copy, and a strict 2×2 grid. Four lightly bordered cards each have a small icon, title and concise supporting sentence. Content remains visible without hover; hover/focus adds tonal, border and icon emphasis. Entrance order is headline, subline, David, then the four cards, completed in 1.65 seconds. Screenshots, hover/focus, reduced motion and fully visible print styling verified. No other slide content changed.
+Supersedes the floating-demand composition at the user's request. Dmytro anchors the left column; the right column contains the two-line headline, balanced two-line supporting copy, and a strict 2×2 grid. Four lightly bordered cards each have a small icon, title and concise supporting sentence. Content remains visible without hover; hover/focus adds tonal, border and icon emphasis. Entrance order is headline, subline, Dmytro, then the four cards, completed in 1.65 seconds. Screenshots, hover/focus, reduced motion and fully visible print styling verified. No other slide content changed.
 
 ## Slide 06 — barriers to growth
 
