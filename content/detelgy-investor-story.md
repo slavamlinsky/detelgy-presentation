@@ -55,6 +55,7 @@ These are working options, not approved final legal or brand copy.
 Each slide has a canonical `id`, an English working headline, a key audience takeaway, a design direction, and an evidence/claim requirement. IDs are stable across every language.
 
 ### S01 — The promise
+
 - **Headline:** Where expertise becomes opportunity.
 - **Supporting line:** Helping polygraph professionals connect, grow, build reputation and unlock professional opportunities.
 - **Single takeaway:** This is about professional outcomes, not software features.
@@ -63,6 +64,7 @@ Each slide has a canonical `id`, an English working headline, a key audience tak
 - **Presenter note:** We succeed when our professionals get tangible value.
 
 ### S02 — A global profession, a fragmented journey
+
 - **Headline:** A global profession. A fragmented ecosystem.
 - **Single takeaway:** Professional identity, communication, discovery, learning and commercial services live in disconnected places.
 - **Visual:** Diagram showing disconnected channels: personal sites, referrals, messaging groups, associations, seminars, social media and local directories.
@@ -70,6 +72,7 @@ Each slide has a canonical `id`, an English working headline, a key audience tak
 - **Presenter note:** The opportunity is to connect parts of a professional journey, not to pretend existing networks are absent.
 
 ### S03 — Who we serve first
+
 - **Headline:** Start with professionals who want to grow.
 - **Single takeaway:** Primary ICP is the independent/commercially active examiner; recognized experts and emerging professionals complement the ecosystem.
 - **Visual:** Three persona columns, with the primary ICP visibly emphasized, not stereotypes or demographic claims.
@@ -77,6 +80,7 @@ Each slide has a canonical `id`, an English working headline, a key audience tak
 - **Evidence:** Personas are fictional composites / working hypotheses until validated through Expert Discovery.
 
 ### S04 — Our primary persona
+
 - **Headline:** Skilled at the work. Limited by the system around it.
 - **Single takeaway:** A capable examiner can lack time, visibility or access to a larger professional network.
 - **Visual:** One believable fictional examiner portrait plus concise profile cards (goals, alternatives, frustrations, desired progress).
@@ -84,19 +88,22 @@ Each slide has a canonical `id`, an English working headline, a key audience tak
 - **Evidence:** Clearly label 'illustrative persona'.
 
 ### S05 — How the professional works today
+
 - **Headline:** Too much depends on individual effort and personal connections.
 - **Single takeaway:** Professional growth currently requires stitching together multiple disconnected tools and relationships.
 - **Visual:** Examiner in center with six surrounding islands: learn, discuss, ask for help, publish, gain visibility, find clients.
-- **Avoid:** Claim that *all* examiners work alone, or that associations and communities offer no value.
+- **Avoid:** Claim that _all_ examiners work alone, or that associations and communities offer no value.
 
 ### S06 — The underlying pains
+
 - **Headline:** Expertise alone does not guarantee opportunity.
 - **Single takeaway:** Frictions are isolation, discoverability, trust building, learning access, client acquisition and limited monetization paths.
 - **Visual:** 5–6 short pain cards with believable first-person phrasing.
 - **Example quotes:** 'Who can I ask about a difficult professional situation?' / 'How can the right clients find me?' / 'How can I demonstrate my expertise outside my existing circle?'
-- **Evidence:** These are *illustrative hypotheses*, not real verbatim interview quotations. Label accordingly or paraphrase without quotation marks.
+- **Evidence:** These are _illustrative hypotheses_, not real verbatim interview quotations. Label accordingly or paraphrase without quotation marks.
 
 ### S07 — Four Jobs To Be Done
+
 - **Headline:** Four jobs. One professional journey.
 - **Single takeaway:** Become better; become known; find opportunities; monetize expertise.
 - **Visual:** Four connected blocks, each anchored in a short situation → motivation → desired outcome.
@@ -108,13 +115,15 @@ Each slide has a canonical `id`, an English working headline, a key audience tak
 - **Evidence:** Working JTBD hypotheses from the companion personas document.
 
 ### S08 — Before / With Detelgy
+
 - **Headline:** From fragmented effort to connected professional growth.
 - **Single takeaway:** Detelgy can make professional participation more discoverable, trusted and economically useful.
 - **Visual:** Two-column transformation with parallel items, e.g. local-only reach → cross-border discovery, isolated knowledge → shared learning, fragmented credentials → centralized professional profile, informal visibility → publications/reviews.
 - **Copy rules:** Use 'can', 'enables', 'designed to' where outcomes are not proven. Do not imply all planned features are already live.
 
 ### S09 — The platform as a growth system
-- **Headline:** Different tools. One purpose: professional success.
+
+- **Headline:** Different tools. One goal: professional success.
 - **Single takeaway:** Features are coordinated around user progress.
 - **Visual:** Four equally legible pillars around the professional:
   - **Connect:** community discussions, roundtables, mastermind conversations, peer networking.
@@ -125,20 +134,23 @@ Each slide has a canonical `id`, an English working headline, a key audience tak
 - **Product reality:** Some community/profile/discovery workflows are built; many consultation/Academy mechanisms are planned. Add an optional `status` attribute to features.
 
 ### S10 — Customer Journey
+
 - **Headline:** The journey from joining to leading.
 - **Single takeaway:** Participation leads toward several kinds of professional value, not only booked tests.
 - **Visual:** Horizontal or winding progression: Discover → Join → Participate → Connect & Learn → Build Reputation → Find Opportunities → Earn / Lead → Refer & Contribute.
 - **Aha Moments:** Practitioner: first qualified inquiry; Established Expert: first meaningful peer consultation request; Emerging Professional: first useful exchange with a peer or mentor.
-- **Evidence:** Aha Moments are *hypotheses* until supported by usage data/interviews.
+- **Evidence:** Aha Moments are _hypotheses_ until supported by usage data/interviews.
 - **Accessibility:** Never require a microscopic eight-step chain; allow two-row layout on narrow screens.
 
 ### S11 — Compounding value / flywheel
+
 - **Headline:** Every meaningful contribution can create more value.
 - **Single takeaway:** Knowledge-sharing, reputation and qualified marketplace activity may reinforce each other.
 - **Visual:** Circular loop: Contribute → Become Discoverable → Build Trust → Connect / Receive Opportunities → Earn / Learn → Contribute Again.
 - **Risk note:** This is a **proposed flywheel**, not a demonstrated network effect. Do not promise more orders with every contribution.
 
 ### S12 — Multiple paths to success
+
 - **Headline:** Professional success has more than one path.
 - **Single takeaway:** Professionals may build a practice, deepen their expertise, or become mentors/leaders; these paths are complementary.
 - **Visual:** Three parallel paths:
@@ -148,6 +160,7 @@ Each slide has a canonical `id`, an English working headline, a key audience tak
 - **Important:** 'Industry Leader' recognition is distinct from transaction-based levels; do not assign Master level automatically by title.
 
 ### S13 — Value for the professional and business model
+
 - **Headline:** Create value first. Monetize the value created.
 - **Single takeaway:** Detelgy offers pathways to benefit for members and sustainable revenue opportunities for the platform.
 - **Visual:** Two connected panels:
@@ -157,6 +170,7 @@ Each slide has a canonical `id`, an English working headline, a key audience tak
 - **Optional expansion later:** Verified metrics, unit economics and realistic bottom-up market model.
 
 ### S14 — The vision / invitation
+
 - **Headline:** The professional home for the global polygraph community.
 - **Supporting line:** One professional identity. One place to connect, contribute, learn and create opportunities.
 - **Closing line:** When our professionals succeed, Detelgy succeeds.
@@ -168,16 +182,16 @@ Each slide has a canonical `id`, an English working headline, a key audience tak
 
 Maintain a structured register before the first public presentation:
 
-| Claim | Type | Current treatment | What would validate it |
-|---|---|---|---|
-| Professional activity is fragmented | Hypothesis / partly observable | Present as problem framing | Expert interviews, alternative workflow analysis |
-| Growth-oriented independent examiner is the primary ICP | Strategic hypothesis | Label as initial focus | Interview patterns, onboarding/conversion |
-| Verified profiles improve buyer trust | Hypothesis | Use 'designed to support' | Buyer studies, conversion outcomes |
-| Content/discussions drive service demand | Hypothesis | Illustrate proposed mechanism | Attribution and cohort analysis |
-| Marketplace increases examiner income | Desired outcome | Say 'new earning opportunities' | Actual fulfilled orders and payouts |
-| Cross-language access drives participation | Hypothesis | Capability / opportunity | Cohort comparison, language usage |
-| Market size and CAGR | Unknown | No numbers | Cited market research and bottom-up sizing |
-| Traction and revenue | Unknown | Do not invent | Product analytics and accounting records |
+| Claim                                                   | Type                           | Current treatment               | What would validate it                           |
+| ------------------------------------------------------- | ------------------------------ | ------------------------------- | ------------------------------------------------ |
+| Professional activity is fragmented                     | Hypothesis / partly observable | Present as problem framing      | Expert interviews, alternative workflow analysis |
+| Growth-oriented independent examiner is the primary ICP | Strategic hypothesis           | Label as initial focus          | Interview patterns, onboarding/conversion        |
+| Verified profiles improve buyer trust                   | Hypothesis                     | Use 'designed to support'       | Buyer studies, conversion outcomes               |
+| Content/discussions drive service demand                | Hypothesis                     | Illustrate proposed mechanism   | Attribution and cohort analysis                  |
+| Marketplace increases examiner income                   | Desired outcome                | Say 'new earning opportunities' | Actual fulfilled orders and payouts              |
+| Cross-language access drives participation              | Hypothesis                     | Capability / opportunity        | Cohort comparison, language usage                |
+| Market size and CAGR                                    | Unknown                        | No numbers                      | Cited market research and bottom-up sizing       |
+| Traction and revenue                                    | Unknown                        | Do not invent                   | Product analytics and accounting records         |
 
 Use source notes / footnotes for externally sourced quantitative claims, including publication date and URL. This deck does not include investor-ready TAM, traction or forecast slides until separately verified.
 
@@ -292,16 +306,16 @@ The English file is canonical. Use a schema validator (Zod or similar) to detect
 
 The film is a separate creative treatment of the same promise, with one recurring **fictional composite** professional:
 
-| Scene | Approx. time | Visual purpose | Script direction |
-|---|---:|---|---|
-| 01. Alone but capable | 0–10s | Competence without broad reach | Great at the work does not always mean widely recognized |
-| 02. Fragmented landscape | 10–20s | Separate islands of people, information and opportunity | Professional growth is spread across disconnected channels |
-| 03. Network awakens | 20–29s | Detelgy introduced as connection layer | Imagine a professional ecosystem without borders |
-| 04. Connect / Learn | 29–42s | Discussions, peer learning and mentoring | Meet peers and learn from experience |
-| 05. Build reputation | 42–53s | Professional profile, contributions, credible recognition | Make expertise easier to discover and understand |
-| 06. Create opportunity | 53–66s | Qualified inquiries, consultations and collaboration | Connect with clients and new ways to use expertise |
-| 07. Become a contributor | 66–77s | Expert helps others, contributes to community | Your knowledge can help others succeed |
-| 08. Brand close | 77–85s | Global community and clean Detelgy logo | Where expertise becomes opportunity |
+| Scene                    | Approx. time | Visual purpose                                            | Script direction                                           |
+| ------------------------ | -----------: | --------------------------------------------------------- | ---------------------------------------------------------- |
+| 01. Alone but capable    |        0–10s | Competence without broad reach                            | Great at the work does not always mean widely recognized   |
+| 02. Fragmented landscape |       10–20s | Separate islands of people, information and opportunity   | Professional growth is spread across disconnected channels |
+| 03. Network awakens      |       20–29s | Detelgy introduced as connection layer                    | Imagine a professional ecosystem without borders           |
+| 04. Connect / Learn      |       29–42s | Discussions, peer learning and mentoring                  | Meet peers and learn from experience                       |
+| 05. Build reputation     |       42–53s | Professional profile, contributions, credible recognition | Make expertise easier to discover and understand           |
+| 06. Create opportunity   |       53–66s | Qualified inquiries, consultations and collaboration      | Connect with clients and new ways to use expertise         |
+| 07. Become a contributor |       66–77s | Expert helps others, contributes to community             | Your knowledge can help others succeed                     |
+| 08. Brand close          |       77–85s | Global community and clean Detelgy logo                   | Where expertise becomes opportunity                        |
 
 **Image production:** storyboard → style frames/keyframes → image-to-video scene by scene → edit with genuine brand typography/logo and carefully verified product screenshots. AI visuals must not be represented as documentary evidence of real users, real orders or operational platform screens.
 
@@ -321,7 +335,7 @@ The film is a separate creative treatment of the same promise, with one recurrin
 ## 12. Remaining founder decisions
 
 - Confirm the exact headline/brand line and glossary before all-language translation.
-- Decide whether the initial online deck is primarily **stakeholder vision** or requires additional *fundraising-only* pages.
+- Decide whether the initial online deck is primarily **stakeholder vision** or requires additional _fundraising-only_ pages.
 - Supply approved logo/brand tokens and selected screenshots.
 - Decide whether audience viewing is public or restricted; if restricted, use access controls rather than obscurity.
 - Decide whether to include a 'Meet the founders / Why this team' slide in a later investor version.

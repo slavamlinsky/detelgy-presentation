@@ -98,7 +98,7 @@ export function StorySlide({
         <span>{ui.visionLabel}</span>
       </header>
       <main className="story-content">
-        <div className="story-title">
+        <div className="story-title" key={s.id === "s09" ? "s09-title" : "story-title"}>
           <h2>
             {s.id === "s09" ? (
               <>
@@ -169,18 +169,14 @@ export function StorySlide({
               <Globe2 size={23} strokeWidth={1.6} aria-hidden="true" />
               {s.foundation}
             </p>
-            <div className="ecosystem-orbit">
-              <svg className="ecosystem-connections" viewBox="0 0 1920 1080" aria-hidden="true">
-                <path d="M1328 496 C1330 460 1345 438 1350 418" />
-                <path d="M1413 572 C1425 548 1430 522 1431 500" />
-                <path d="M1328 648 C1344 674 1384 688 1420 681" />
-                <path d="M1243 572 C1254 588 1256 600 1249 630" />
-                <circle cx="1350" cy="418" r="5" />
-                <circle cx="1431" cy="500" r="5" />
-                <circle cx="1420" cy="681" r="5" />
-                <circle cx="1249" cy="630" r="5" />
+            <div className="ecosystem-system">
+              <svg className="ecosystem-connections" viewBox="0 0 1030 780" preserveAspectRatio="none" aria-hidden="true">
+                <path pathLength="1" d="M390 238 C414 261 442 303 467 336" />
+                <path pathLength="1" d="M670 285 C640 289 612 310 587 336" />
+                <path pathLength="1" d="M700 520 C657 508 614 477 587 444" />
+                <path pathLength="1" d="M416 520 C433 507 451 470 467 444" />
               </svg>
-              <div className="ecosystem-center" aria-label="Professional growth connects all four areas">
+              <div className="ecosystem-center" tabIndex={0} aria-label="Professional growth connects all four areas">
                 <UserRound size={34} strokeWidth={1.4} aria-hidden="true" />
                 <strong>Professional<br />growth</strong>
               </div>
@@ -188,7 +184,7 @@ export function StorySlide({
                 {s.items.map((a, i) => {
                   const Icon = icons[i];
                   return (
-                    <section className="ecosystem-card" key={a.title} data-pillar={i}>
+                    <section className="ecosystem-card" key={a.title} data-pillar={i} tabIndex={0}>
                       <div className="ecosystem-card-heading">
                         <Icon size={32} strokeWidth={1.5} aria-hidden="true" />
                         <h3>{a.title}</h3>
