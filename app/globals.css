@@ -1966,13 +1966,25 @@ svg {
   top: 292px;
 }
 .story-s09 .story-title h2 {
-  font-size: 76px;
+  font-size: 74px;
   line-height: 1.06;
+}
+.story-s09 .ecosystem-headline-line { display: block; }
+.story-s09 .story-title h2 em {
+  display: block;
+  color: #24699e;
+  font-size: 68px;
 }
 .story-s09 .story-title > p {
   max-width: 565px;
   margin-top: 30px;
   color: #5e7189;
+}
+.ecosystem-orbit {
+  position: absolute;
+  inset: 0;
+  transform: rotate(12deg);
+  transform-origin: 1328px 572px;
 }
 .ecosystem-connections {
   position: absolute;
@@ -2006,6 +2018,7 @@ svg {
   text-align: center;
   box-shadow: 0 16px 30px #1d4e7927, 0 0 0 12px #dceefa;
   z-index: 2;
+  transform: rotate(-12deg);
 }
 .ecosystem-center strong {
   font-size: 18px;
@@ -2027,6 +2040,7 @@ svg {
   border-radius: 15px;
   box-shadow: 0 13px 34px #2b5a8215;
   z-index: 1;
+  transform: rotate(-12deg);
 }
 .ecosystem-pillars section::before {
   content: "";
@@ -2039,23 +2053,23 @@ svg {
   pointer-events: none;
 }
 .ecosystem-pillars section:nth-child(1) {
-  left: 1148px;
-  top: 188px;
+  left: 1171px;
+  top: 191px;
   --card-tilt: -5deg;
 }
 .ecosystem-pillars section:nth-child(2) {
-  left: 1458px;
-  top: 430px;
+  left: 1431px;
+  top: 386px;
   --card-tilt: 5deg;
 }
 .ecosystem-pillars section:nth-child(3) {
-  left: 1148px;
-  top: 706px;
+  left: 1241px;
+  top: 681px;
   --card-tilt: 4deg;
 }
 .ecosystem-pillars section:nth-child(4) {
-  left: 846px;
-  top: 430px;
+  left: 891px;
+  top: 516px;
   --card-tilt: -4deg;
 }
 .ecosystem-card-heading {

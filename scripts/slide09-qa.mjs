@@ -9,11 +9,16 @@ try {
   await ready(page);
   const slide = page.locator('[data-slide="s09"]');
   assert.equal(await slide.locator('.ecosystem-card').count(), 4);
-  for (const title of ['Connect', 'Grow', 'Build reputation', 'Earn']) {
+  assert.deepEqual(await slide.locator('.ecosystem-card h3').allTextContents(), ['Connect', 'Grow', 'Earn', 'Build reputation']);
+  for (const title of ['Connect', 'Grow', 'Earn', 'Build reputation']) {
     assert.equal(await slide.getByRole('heading', { name: title, exact: true }).count(), 1);
   }
   assert.equal(await slide.locator('.ecosystem-card-built').count(), 4);
   assert.equal(await slide.locator('.ecosystem-card-planned').count(), 4);
+  assert.deepEqual(await slide.locator('.ecosystem-card-built > span:first-child').allTextContents(), ['Live', 'Live', 'Live', 'Live']);
+  assert.deepEqual(await slide.locator('.ecosystem-card-planned > span:first-child').allTextContents(), ['Planned', 'Planned', 'Planned', 'Planned']);
+  assert.deepEqual(await slide.locator('.ecosystem-headline-line').allTextContents(), ['Different tools.', 'One goal:']);
+  assert.equal(await slide.locator('.story-title h2 em').innerText(), 'professional success.');
   assert.match(await slide.locator('.ecosystem-center').innerText(), /Professional\s+growth/);
   assert.match(await slide.locator('.ecosystem-foundation').innerText(), /Global and multilingual by design/);
 

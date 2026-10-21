@@ -85,7 +85,7 @@ export function StorySlide({
   brand: React.ReactNode;
 }) {
   const dark = slideMetadata[index].theme === "dark";
-  const icons = [Users, BookOpen, BadgeCheck, BriefcaseBusiness];
+  const icons = [Users, BookOpen, BriefcaseBusiness, BadgeCheck];
   const accentParts = s.accent ? s.title.split(s.accent) : null;
   return (
     <article
@@ -100,7 +100,12 @@ export function StorySlide({
       <main className="story-content">
         <div className="story-title">
           <h2>
-            {s.id === "s07" && accentParts?.length === 2 ? (
+            {s.id === "s09" ? (
+              <>
+                {s.title.split("\n").slice(0, -1).map((line) => <span className="ecosystem-headline-line" key={line}>{line}</span>)}
+                <em>{s.accent}</em>
+              </>
+            ) : s.id === "s07" && accentParts?.length === 2 ? (
               <>{accentParts[0]}<em>{s.accent}</em>{accentParts[1]}</>
             ) : ["s03", "s04", "s05", "s06", "s08"].includes(s.id) ? (
               <>
@@ -164,38 +169,40 @@ export function StorySlide({
               <Globe2 size={23} strokeWidth={1.6} aria-hidden="true" />
               {s.foundation}
             </p>
-            <svg className="ecosystem-connections" viewBox="0 0 1920 1080" aria-hidden="true">
-              <path d="M1328 496 C1322 460 1323 435 1325 413" />
-              <path d="M1412 568 C1433 554 1449 540 1462 517" />
-              <path d="M1328 648 C1323 672 1320 688 1312 708" />
-              <path d="M1243 568 C1221 551 1207 535 1193 517" />
-              <circle cx="1325" cy="413" r="5" />
-              <circle cx="1462" cy="517" r="5" />
-              <circle cx="1312" cy="708" r="5" />
-              <circle cx="1193" cy="517" r="5" />
-            </svg>
-            <div className="ecosystem-center" aria-label="Professional growth connects all four areas">
-              <UserRound size={34} strokeWidth={1.4} aria-hidden="true" />
-              <strong>Professional<br />growth</strong>
-            </div>
-            <div className="ecosystem-pillars">
-              {s.items.map((a, i) => {
-                const Icon = icons[i];
-                return (
-                  <section className="ecosystem-card" key={a.title} data-pillar={i}>
-                    <div className="ecosystem-card-heading">
-                      <Icon size={32} strokeWidth={1.5} aria-hidden="true" />
-                      <h3>{a.title}</h3>
-                    </div>
-                    <p className="ecosystem-card-built">
-                      <span>{ui.status.built}</span><span>{a.body}</span>
-                    </p>
-                    <p className="ecosystem-card-planned">
-                      <span>{ui.status.planned}</span><span>{a.detail}</span>
-                    </p>
-                  </section>
-                );
-              })}
+            <div className="ecosystem-orbit">
+              <svg className="ecosystem-connections" viewBox="0 0 1920 1080" aria-hidden="true">
+                <path d="M1328 496 C1330 460 1345 438 1350 418" />
+                <path d="M1413 572 C1425 548 1430 522 1431 500" />
+                <path d="M1328 648 C1344 674 1384 688 1420 681" />
+                <path d="M1243 572 C1254 588 1256 600 1249 630" />
+                <circle cx="1350" cy="418" r="5" />
+                <circle cx="1431" cy="500" r="5" />
+                <circle cx="1420" cy="681" r="5" />
+                <circle cx="1249" cy="630" r="5" />
+              </svg>
+              <div className="ecosystem-center" aria-label="Professional growth connects all four areas">
+                <UserRound size={34} strokeWidth={1.4} aria-hidden="true" />
+                <strong>Professional<br />growth</strong>
+              </div>
+              <div className="ecosystem-pillars">
+                {s.items.map((a, i) => {
+                  const Icon = icons[i];
+                  return (
+                    <section className="ecosystem-card" key={a.title} data-pillar={i}>
+                      <div className="ecosystem-card-heading">
+                        <Icon size={32} strokeWidth={1.5} aria-hidden="true" />
+                        <h3>{a.title}</h3>
+                      </div>
+                      <p className="ecosystem-card-built">
+                        <span>{ui.status.built}</span><span>{a.body}</span>
+                      </p>
+                      <p className="ecosystem-card-planned">
+                        <span>{ui.status.planned}</span><span>{a.detail}</span>
+                      </p>
+                    </section>
+                  );
+                })}
+              </div>
             </div>
           </>
         )}

@@ -30,7 +30,7 @@
     "overviewHint": "Choose a chapter in the story",
     "visionLabel": "October 2026",
     "status": {
-      "built": "Built",
+      "built": "Live",
       "planned": "Planned",
       "concept": "Concept"
     },
@@ -343,8 +343,8 @@
     {
       "id": "s09",
       "chapter": "The growth system",
-      "title": "Different tools.\nOne purpose: professional success.",
-      "accent": "",
+      "title": "Different tools. One goal:\nprofessional success.",
+      "accent": "professional success.",
       "lead": "Four ways to support the person behind the expertise.",
       "eyebrow": "The platform as a growth system",
       "items": [
@@ -363,16 +363,16 @@
           "secondaryStatus": "planned"
         },
         {
-          "title": "Build reputation",
-          "body": "Profiles, qualifications and reviews",
-          "detail": "Articles, cases and publications",
+          "title": "Earn",
+          "body": "Service discovery and request flows",
+          "detail": "Paid transactions and peer services",
           "status": "built",
           "secondaryStatus": "planned"
         },
         {
-          "title": "Earn",
-          "body": "Service discovery and request flows",
-          "detail": "Paid transactions and peer services",
+          "title": "Build reputation",
+          "body": "Profiles, qualifications and reviews",
+          "detail": "Articles, cases and publications",
           "status": "built",
           "secondaryStatus": "planned"
         }
