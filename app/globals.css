@@ -1934,20 +1934,20 @@ svg {
 .story-s08 .story-title h2 em { color: #9BD3F5; }
 .story-s08 .story-title > p { display: block; color: #B9CFE0; font-size: 29px; max-width: 1480px; margin-top: 22px; }
 .transformation-world { position: absolute; left: 112px; top: 460px; width: 1696px; height: 460px; }
-.world-state { position: absolute; top: 0; width: 680px; height: 419px; margin: 0; isolation: isolate; }
+.world-state { position: absolute; top: 0; width: 680px; height: 437px; margin: 0; isolation: isolate; }
 .world-before { left: 100px; }
 .world-connected { right: 100px; }
 .world-state-title { position: absolute; z-index: 4; left: 0; top: 0; font-size: 23px; letter-spacing: .12em; text-transform: uppercase; color: #A0B7CB; }
 .world-connected .world-state-title { color: #9BD3F5; }
-.world-scene { position: absolute; left: 0; top: 36px; width: 680px; height: 383px; overflow: hidden; border-radius: 10px; border: 1px solid #8FB2CF55; background: #193149; box-shadow: 0 18px 40px #010E1D5C; }
+.world-scene { position: absolute; left: 0; top: 54px; width: 680px; height: 383px; overflow: hidden; border-radius: 10px; border: 1px solid #8FB2CF55; background: #193149; box-shadow: 0 18px 40px #010E1D5C; }
 .world-connected .world-scene { border-color: #83C7EB80; box-shadow: 0 24px 52px #010E1D66, 0 0 48px #2B91CB26; }
 .world-scene img { display: block; width: 100%; height: 100%; object-fit: contain; }
-.world-seam { position: absolute; z-index: 5; left: 780px; top: 36px; width: 136px; height: 383px; display: grid; place-items: center; }
+.world-seam { position: absolute; z-index: 5; left: 780px; top: 54px; width: 136px; height: 383px; display: grid; place-items: center; }
 .world-seam::before { content: ""; width: 2px; height: 240px; background: linear-gradient(transparent,#7DC8F4 50%,transparent); box-shadow: 0 0 25px #66B9E36B; }
 .world-seam span { position: absolute; width: 27px; height: 27px; border-top: 2px solid #9BD3F5; border-right: 2px solid #9BD3F5; transform: rotate(45deg); filter: drop-shadow(0 0 10px #51A7D8); }
-.world-overlay { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 107px; box-sizing: border-box; display: grid; grid-template-rows: repeat(3, 1fr); padding: 6px 22px; background: linear-gradient(180deg,#06192DB8,#06192FEA); }
-.world-connected .world-overlay { background: linear-gradient(180deg,#06192DA8,#06192FE6); }
-.world-comparison { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 3px; color: #D7E5EF; font-size: 22px; font-weight: 500; line-height: 1.1; outline: none; }
+.world-overlay { position: absolute; z-index: 1; left: 0; right: 0; bottom: 0; height: 164px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; padding: 20px 22px 18px; background: linear-gradient(180deg,#06192D98,#06192FDB); }
+.world-connected .world-overlay { background: linear-gradient(180deg,#06192DAA,#06192FDC); }
+.world-comparison { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; flex: none; color: #D7E5EF; font-size: 21px; font-weight: 500; line-height: 1.1; outline: none; }
 .world-connected .world-comparison { color: #F2F9FE; font-weight: 600; }
 .world-comparison[data-pair="0"] { --before-fill: 31%; --after-fill: 77%; }
 .world-comparison[data-pair="1"] { --before-fill: 38%; --after-fill: 82%; }

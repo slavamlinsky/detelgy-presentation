@@ -31,16 +31,25 @@ try {
     const box=selector => el.querySelector(selector).getBoundingClientRect();
     const before=box('.world-before .world-scene'), after=box('.world-connected .world-scene');
     const overlay=box('.world-before .world-overlay'), arrow=box('.world-seam');
+    const rows=[...el.querySelectorAll('.world-before .world-comparison')].map(row=>row.getBoundingClientRect());
+    const tracks=[...el.querySelectorAll('.world-before .world-progress')].map(track=>track.getBoundingClientRect());
+    const labels=[...el.querySelectorAll('.world-before .world-comparison > span:first-child')].map(label=>label.getBoundingClientRect());
     return {
       supportToImage: before.top-box('.story-title > p').bottom,
+      sectionToImage: before.top-box('.world-before .world-state-title').bottom,
       panelGap: after.left-before.right,
       overlayRatio: overlay.height/before.height,
       overlayInImage: overlay.bottom<=before.bottom && overlay.bottom>=before.bottom-2 && overlay.left>=before.left && overlay.right<=before.right,
+      overlayPadTop: rows[0].top-overlay.top,
+      overlayPadBottom: overlay.bottom-rows.at(-1).bottom,
+      rowGaps: rows.slice(1).map((row,index)=>row.top-rows[index].bottom),
+      labelLineGaps: tracks.map((track,index)=>track.top-labels[index].bottom),
+      linesInside: tracks.every(track=>track.top>=overlay.top && track.bottom<=overlay.bottom),
       arrowInGap: arrow.left>=before.right && arrow.right<=after.left,
       footerGap: box('.slide-folio').top-before.bottom,
     };
   });
-  assert(spacing.supportToImage > 80 && spacing.panelGap>=120 && spacing.overlayRatio>=.2 && spacing.overlayRatio<=.28 && spacing.overlayInImage && spacing.arrowInGap && spacing.footerGap>=100, JSON.stringify(spacing));
+  assert(spacing.supportToImage > 90 && spacing.sectionToImage>=18 && spacing.panelGap>=120 && spacing.overlayRatio<.45 && spacing.overlayInImage && spacing.overlayPadTop>=18 && spacing.overlayPadBottom>=16 && spacing.rowGaps.every(gap=>gap>=14 && gap<=18) && spacing.labelLineGaps.every(gap=>gap>=6 && gap<=8) && spacing.linesInside && spacing.arrowInGap && spacing.footerGap>=100, JSON.stringify(spacing));
   const bounds = await slide.locator('.story-title,.transformation-world').evaluateAll(els => els.map(el => {
     const r=el.getBoundingClientRect(), s=el.closest('article').getBoundingClientRect();
     return [r.left-s.left,r.right-s.left,r.top-s.top,r.bottom-s.top];
