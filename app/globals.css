@@ -1945,7 +1945,7 @@ svg {
 .world-seam { position: absolute; z-index: 5; left: 780px; top: 54px; width: 136px; height: 383px; display: grid; place-items: center; }
 .world-seam::before { content: ""; width: 2px; height: 240px; background: linear-gradient(transparent,#7DC8F4 50%,transparent); box-shadow: 0 0 25px #66B9E36B; }
 .world-seam span { position: absolute; width: 27px; height: 27px; border-top: 2px solid #9BD3F5; border-right: 2px solid #9BD3F5; transform: rotate(45deg); filter: drop-shadow(0 0 10px #51A7D8); }
-.world-overlay { position: absolute; z-index: 3; left: 105px; bottom: -110px; width: 470px; height: 156px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; padding: 15px 21px; border: 1px solid #94BAD25C; border-radius: 10px; background: linear-gradient(155deg,#0B223BEF,#07192FF2); box-shadow: 0 16px 34px #010D1DC2; }
+.world-overlay { position: absolute; z-index: 3; left: 125px; bottom: -110px; width: 430px; height: 156px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; padding: 15px 21px; border: 1px solid #94BAD25C; border-radius: 10px; background: linear-gradient(155deg,#0B223BEF,#07192FF2); box-shadow: 0 16px 34px #010D1DC2; }
 .world-connected .world-overlay { border-color: #9BD3F582; background: linear-gradient(155deg,#102D49EE,#081E37F2); }
 .world-comparison { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; flex: none; color: #D7E5EF; font-size: 21px; font-weight: 500; line-height: 1.1; outline: none; }
 .world-comparison-label { display: inline-flex; align-items: center; gap: 9px; }

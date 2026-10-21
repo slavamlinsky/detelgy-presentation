@@ -12,9 +12,11 @@ try {
   const slide = page.locator('[data-slide="s08"]');
   assert.deepEqual((await slide.locator('.world-before .world-comparison > span:first-child').allTextContents()), before);
   assert.deepEqual((await slide.locator('.world-connected .world-comparison > span:first-child').allTextContents()), after);
-  const icons=await slide.locator('.world-comparison-label svg').evaluateAll(els=>els.map(el=>({width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height,stroke:el.getAttribute('stroke-width')})));
+  const icons=await slide.locator('.world-comparison-label svg').evaluateAll(els=>els.map(el=>({width:el.getBoundingClientRect().width,height:el.getBoundingClientRect().height,stroke:el.getAttribute('stroke-width'),name:el.getAttribute('class')})));
   assert.equal(icons.length,6);
   assert(icons.every(icon=>icon.width===16 && icon.height===16 && icon.stroke==='1.75'));
+  assert.deepEqual(icons.slice(0,3).map(icon=>icon.name), icons.slice(3).map(icon=>icon.name));
+  assert.equal(await slide.locator('.world-progress svg').count(),0);
   assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''), '08/14');
   assert.deepEqual(await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => img.getAttribute('src'))), ['/assets/personas/david-before-office-wide.png','/assets/personas/david-connected-office-wide.png']);
   assert((await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => img.complete && img.naturalWidth>0))).every(Boolean));
@@ -54,7 +56,7 @@ try {
       footerGap: box('.slide-folio').top-Math.max(overlay.bottom,connectedOverlay.bottom),
     };
   });
-  assert(spacing.supportToImage > 90 && spacing.sectionToImage>=18 && spacing.panelGap>=120 && spacing.cardWidthRatio>=.6 && spacing.cardWidthRatio<=.75 && spacing.cardCentered && spacing.cardOverlapRatio>=.2 && spacing.cardOverlapRatio<=.3 && spacing.cardBelowImage && spacing.overlayPadTop>=14 && spacing.overlayPadBottom>=14 && spacing.rowGaps.every(gap=>gap>=11 && gap<=14) && spacing.labelLineGaps.every(gap=>gap>=6 && gap<=8) && spacing.linesInside && spacing.arrowInGap && spacing.footerGap>=20, JSON.stringify(spacing));
+  assert(spacing.supportToImage > 90 && spacing.sectionToImage>=18 && spacing.panelGap>=120 && spacing.cardWidthRatio>=.6 && spacing.cardWidthRatio<=.66 && spacing.cardCentered && spacing.cardOverlapRatio>=.2 && spacing.cardOverlapRatio<=.3 && spacing.cardBelowImage && spacing.overlayPadTop>=14 && spacing.overlayPadBottom>=14 && spacing.rowGaps.every(gap=>gap>=11 && gap<=14) && spacing.labelLineGaps.every(gap=>gap>=6 && gap<=8) && spacing.linesInside && spacing.arrowInGap && spacing.footerGap>=20, JSON.stringify(spacing));
   const bounds = await slide.locator('.story-title,.transformation-world').evaluateAll(els => els.map(el => {
     const r=el.getBoundingClientRect(), s=el.closest('article').getBoundingClientRect();
     return [r.left-s.left,r.right-s.left,r.top-s.top,r.bottom-s.top];
