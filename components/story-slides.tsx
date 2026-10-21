@@ -142,6 +142,7 @@ export function StorySlide({
                 <span className="persona-profession">
                   {s.persona?.profession}
                 </span>
+                <small>{s.persona?.label}</small>
               </div>
             </div>
             <div className="persona-tensions">

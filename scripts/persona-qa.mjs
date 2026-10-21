@@ -1,7 +1,12 @@
 import {launchBrowser,baseURL,ready} from './browser.mjs';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
-const persona=JSON.parse(await readFile('content/locales/en.json','utf8')).slides[3].persona;
+const slideContent=JSON.parse(await readFile('content/locales/en.json','utf8')).slides[3];
+const persona=slideContent.persona;
+assert.equal(persona.name,'David · 41');
+assert.equal(slideContent.items[0].body,'12 years in practice');
+assert.equal(slideContent.displayItems[0].body,slideContent.items[0].body);
+assert.match(slideContent.note,/David, 41[\s\S]*12 years in practice/);
 const browser=await launchBrowser();
 try {
  const page=await browser.newPage({viewport:{width:1920,height:1080}});
@@ -10,6 +15,8 @@ try {
  await printed.screenshot({path:'qa/v2/s04.png'});
  if(process.argv.includes('--pdf'))await page.pdf({path:'qa/v2/s04-review.pdf',pageRanges:'4',printBackground:true,preferCSSPageSize:true});
  assert((await printed.textContent()).includes(persona.name));
+ assert((await printed.textContent()).includes(slideContent.displayItems[0].body));
+ assert.equal(await printed.locator('.story-portrait small').textContent(),persona.label);
  const bounds=await printed.locator('.story-title,.persona-tensions,.story-portrait').evaluateAll(es=>es.map(e=>{const r=e.getBoundingClientRect(),s=e.closest('article').getBoundingClientRect();return {left:r.left-s.left,right:r.right-s.left,bottom:r.bottom-s.top}}));
  bounds.forEach(r=>assert(r.left>=112&&r.right<=1808&&r.bottom<995));
  await page.emulateMedia({media:'screen'});await page.setViewportSize({width:1366,height:768});
