@@ -16,7 +16,8 @@ try {
  if(process.argv.includes('--pdf'))await page.pdf({path:'qa/v2/s04-review.pdf',pageRanges:'4',printBackground:true,preferCSSPageSize:true});
  assert((await printed.textContent()).includes(persona.name));
  assert((await printed.textContent()).includes(slideContent.displayItems[0].body));
- assert.equal(await printed.locator('.story-portrait small').textContent(),persona.label);
+ assert.equal(await printed.locator('.story-portrait small').count(),0);
+ assert(!(await printed.textContent()).includes('Illustrative persona'));
  const bounds=await printed.locator('.story-title,.persona-tensions,.story-portrait').evaluateAll(es=>es.map(e=>{const r=e.getBoundingClientRect(),s=e.closest('article').getBoundingClientRect();return {left:r.left-s.left,right:r.right-s.left,bottom:r.bottom-s.top}}));
  bounds.forEach(r=>assert(r.left>=112&&r.right<=1808&&r.bottom<995));
  await page.emulateMedia({media:'screen'});await page.setViewportSize({width:1366,height:768});

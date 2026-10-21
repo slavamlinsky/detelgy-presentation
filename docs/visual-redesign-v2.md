@@ -114,7 +114,7 @@ The compass rose was removed after user feedback about its resemblance to the NA
 
 ## Slide 04 — Meet David, primary persona
 
-Slide 04 now introduces who the independent examiner is and what he wants; barriers remain for Slide 05. The existing portrait occupies 38% of the content width on #E8F3FC. David · 41, Kyiv, Ukraine, Independent Polygraph Examiner and the Illustrative persona label remain legible over the portrait. The headline is two lines with a deeper-blue second line. Experience, Goal and Ambition are large, unboxed editorial blocks. Existing sources and notes are preserved, with David's fictional narrative context added. Portrait → headline → three dimensions reveal in 1.15 seconds, with reduced-motion and print fallbacks. Only a single-slide review PDF is generated for this request; the full deck PDF remains deferred.
+Slide 04 introduces who the independent examiner is and what he wants; barriers remain for Slide 05. The portrait occupies 38% of the content width on warm off-white. David · 41, Kyiv, Ukraine, and Independent Polygraph Examiner remain legible over the portrait, with 12 years in practice shown in the editorial text. The illustrative nature of the fictional persona stays in speaker notes rather than a visible label. The headline is two lines with a deeper-blue second line. Experience, Goal and Ambition are large, unboxed editorial blocks. The entrance sequence and reduced-motion and print fallbacks remain intact. The full-deck PDF remains deferred.
 
 ### Slide 04 entrance refinement
 
