@@ -7,12 +7,12 @@ const scenes = [
   {
     className: 'world-before',
     image: '/assets/personas/david-before-office-wide.png',
-    alt: 'David working at a modest desk with handwritten notes, printed pages and folders',
+    alt: 'Dmytro working at a modest desk with handwritten notes, printed pages and folders',
   },
   {
     className: 'world-connected',
     image: '/assets/personas/david-connected-office-wide.png',
-    alt: 'The same David at an organized desk with a laptop in a bright modern workspace',
+    alt: 'Dmytro at an organized desk with a laptop in a bright modern workspace',
   },
 ] as const;
 

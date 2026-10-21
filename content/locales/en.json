@@ -175,15 +175,14 @@
         }
       ],
       "footer": "Fictional composite persona · motivations are hypotheses, not interview findings",
-      "note": "The portrait is AI-generated and does not depict an actual Detelgy member. The persona is a composite based on the supplied brief, with an illustrative name, age, location and experience added for storytelling at the founder’s request. These details are fictional, not member data or interview findings. No income or performance result is asserted. The potential first value is a useful professional connection or a qualified inquiry. Fictional composite persona · motivations are hypotheses, not interview findings. David, 41, represents an experienced independent polygraph examiner in Kyiv, Ukraine, with 12 years in practice and a successful local practice. This is fictional narrative context, not a verified Detelgy customer or performance claim. This slide introduces his identity and aspirations; Slide 05 covers the barriers.",
+      "note": "The portrait is AI-generated and does not depict an actual Detelgy member. The persona is a composite based on the supplied brief, with an illustrative name, age, location and experience added for storytelling at the founder’s request. These details are fictional, not member data or interview findings. No income or performance result is asserted. The potential first value is a useful professional connection or a qualified inquiry. Fictional composite persona · motivations are hypotheses, not interview findings. Dmytro, 41, represents an experienced independent polygraph examiner in Kyiv, Ukraine, with 12 years in practice and a successful local practice. This is fictional narrative context, not a verified Detelgy customer or performance claim. This slide introduces his identity and aspirations; Slide 05 covers the barriers.",
       "sources": [
         "ICP / Personas §5; Investor story S04."
       ],
       "persona": {
-        "name": "David · 41",
+        "name": "Dmytro · 41",
         "detail": "Kyiv, Ukraine",
-        "profession": "Independent Polygraph Examiner",
-        "label": "Illustrative persona"
+        "profession": "Independent Polygraph Examiner"
       },
       "displayItems": [
         {
@@ -205,7 +204,7 @@
       "chapter": "Life today",
       "title": "More than a polygraph expert.\nHe's running his own business.",
       "accent": "He's running his own business.",
-      "lead": "From examinations and clients to administration and continuous learning, David has to manage it all.",
+      "lead": "From examinations and clients to administration and continuous learning, Dmytro has to manage it all.",
       "eyebrow": "The cost of fragmentation",
       "items": [
         {
@@ -225,9 +224,9 @@
           "body": "Learn from peers, exchange knowledge and develop new skills."
         }
       ],
-      "center": "David",
+      "center": "Dmytro",
       "footer": "Illustrative workflow hypothesis · experiences vary by professional and market",
-      "note": "The four cards represent different responsibilities, not nonexistent support. Associations and established communities already create value. Expert Discovery interviews should test which connections are missing or costly for each segment. Illustrative workflow hypothesis · experiences vary by professional and market. David is a fictional illustrative persona, not a verified customer. His workload represents competing responsibilities and limited time, not a lack of professional skill or total absence of support. The four responsibilities cover professional practice, marketing and clients, business management, and professional growth. The AI-generated illustration adapts the Slide 04 portrait; it is not a customer photograph. This slide describes the responsibilities of an independent examiner, not Detelgy’s currently available features. Future solution slides must distinguish verified current capabilities from roadmap proposals, especially CRM, internal payments, automation, mentorship and training. A responsibility shown here does not imply that Detelgy currently provides that capability.",
+      "note": "The four cards represent different responsibilities, not nonexistent support. Associations and established communities already create value. Expert Discovery interviews should test which connections are missing or costly for each segment. Illustrative workflow hypothesis · experiences vary by professional and market. Dmytro is a fictional illustrative persona, not a verified customer. His workload represents competing responsibilities and limited time, not a lack of professional skill or total absence of support. The four responsibilities cover professional practice, marketing and clients, business management, and professional growth. The AI-generated illustration adapts the Slide 04 portrait; it is not a customer photograph. This slide describes the responsibilities of an independent examiner, not Detelgy’s currently available features. Future solution slides must distinguish verified current capabilities from roadmap proposals, especially CRM, internal payments, automation, mentorship and training. A responsibility shown here does not imply that Detelgy currently provides that capability.",
       "sources": [
         "Product brief §§2, 10; Investor story S05."
       ]
@@ -257,7 +256,7 @@
         }
       ],
       "footer": "Illustrative research hypotheses · these are not customer quotations",
-      "note": "These pains are hypotheses from the supplied audience brief. Validate urgency, frequency, existing alternatives and willingness to pay through Expert Discovery. Do not present the first-person questions as verbatim testimony. Illustrative research hypotheses · these are not customer quotations. These three barriers are illustrative hypotheses, not universal conditions: established networks may already provide useful visibility, peers and opportunities. The earlier six exploratory pains grouped here were: Professional isolation, Limited discoverability, Scattered trust signals, Learning barriers, Uncertain client flow, Narrow earning paths. They require segment-specific validation through expert discovery. None is a claim that David or every examiner lacks professional skill.",
+      "note": "These pains are hypotheses from the supplied audience brief. Validate urgency, frequency, existing alternatives and willingness to pay through Expert Discovery. Do not present the first-person questions as verbatim testimony. Illustrative research hypotheses · these are not customer quotations. These three barriers are illustrative hypotheses, not universal conditions: established networks may already provide useful visibility, peers and opportunities. The earlier six exploratory pains grouped here were: Professional isolation, Limited discoverability, Scattered trust signals, Learning barriers, Uncertain client flow, Narrow earning paths. They require segment-specific validation through expert discovery. None is a claim that Dmytro or every examiner lacks professional skill.",
       "sources": [
         "ICP / Personas §§5–9, 16–17; Investor story S06."
       ],
@@ -336,7 +335,7 @@
         }
       ],
       "footer": "Intended transformation · access to opportunity does not guarantee outcomes",
-      "note": "This is an intended, illustrative transformation, not a verified result for every examiner. The same fictional David appears in both states; the contrast does not imply he lacks skill before joining Detelgy. The comparative line lengths are illustrative visual emphasis, not measured performance or quantified outcomes. Profiles, discussions, community networking, service discovery and request flows are reported as a built foundation in the internal brief, but production readiness and professional outcomes still require validation. Publications, paid transactions, consultations, mentorship and education are planned; do not describe them as live. Access to opportunity does not guarantee clients, income growth or professional standing. The earlier five comparisons were: local circle to broader discovery; isolated knowledge to peer learning; scattered credentials to one profile; recognition within existing circles to visible contributions; and personal-service income to potential consulting, mentorship or teaching.",
+      "note": "This is an intended, illustrative transformation, not a verified result for every examiner. The same fictional Dmytro appears in both states; the contrast does not imply he lacks skill before joining Detelgy. The comparative line lengths are illustrative visual emphasis, not measured performance or quantified outcomes. Profiles, discussions, community networking, service discovery and request flows are reported as a built foundation in the internal brief, but production readiness and professional outcomes still require validation. Publications, paid transactions, consultations, mentorship and education are planned; do not describe them as live. Access to opportunity does not guarantee clients, income growth or professional standing. The earlier five comparisons were: local circle to broader discovery; isolated knowledge to peer learning; scattered credentials to one profile; recognition within existing circles to visible contributions; and personal-service income to potential consulting, mentorship or teaching.",
       "sources": [
         "Product brief §§5–6, 10; Investor story S08."
       ]

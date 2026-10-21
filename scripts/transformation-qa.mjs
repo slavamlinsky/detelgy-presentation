@@ -19,6 +19,7 @@ try {
   assert.equal(await slide.locator('.world-progress svg').count(),0);
   assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''), '08/14');
   assert.deepEqual(await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => img.getAttribute('src'))), ['/assets/personas/david-before-office-wide.png','/assets/personas/david-connected-office-wide.png']);
+  assert((await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => img.alt.startsWith('Dmytro')))).every(Boolean));
   assert((await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => img.complete && img.naturalWidth>0))).every(Boolean));
   assert((await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => Math.abs(img.naturalWidth/img.naturalHeight-16/9)<.08 && getComputedStyle(img).objectFit==='contain'))).every(Boolean));
   const indicators=await slide.locator('.world-state').evaluateAll(states => states.map(state =>
@@ -64,7 +65,7 @@ try {
   bounds.forEach(([left,right,top,bottom]) => assert(left>=100 && right<=1815 && top>=150 && bottom<995));
   assert((await slide.locator('.world-scene,.world-comparison').evaluateAll(els => els.map(el => getComputedStyle(el).opacity))).every(opacity => opacity==='1'));
   await slide.screenshot({ path: 'qa/v2/s08.png' });
-  await page.pdf({ path: 'qa/v2/s08-review.pdf', pageRanges: '8', printBackground: true, preferCSSPageSize: true });
+  if (process.argv.includes('--pdf')) await page.pdf({ path: 'qa/v2/s08-review.pdf', pageRanges: '8', printBackground: true, preferCSSPageSize: true });
 
   await page.emulateMedia({ media: 'screen' });
   await page.setViewportSize({ width: 1366, height: 768 });
@@ -96,7 +97,7 @@ try {
   const notes=await page.locator('.notes-panel').textContent();
   assert.match(notes, /not a verified result|planned|does not guarantee/i);
   assert.match(notes, /not measured performance or quantified outcomes/i);
-  console.log('Passed: paired labels, illustrative indicators, static PDF, safe bounds, staggered fills, reduced motion and speaker notes.');
+console.log('Passed: paired labels, illustrative indicators, static print styling, safe bounds, staggered fills, reduced motion and speaker notes.');
 } finally {
   await browser.close();
 }

@@ -1,6 +1,6 @@
 # Slide 05 illustration
 
-Generated with the built-in image generation tool. Reference 1: existing fictional David portrait. Reference 2: Slide 03 examiner portrait for rendering style. Final transparent asset: `public/assets/personas/david-workload.png`.
+Generated with the built-in image generation tool. Reference 1: existing fictional Dmytro portrait. Reference 2: Slide 03 examiner portrait for rendering style. Final transparent asset: `public/assets/personas/david-workload.png`. The original prompt below used the persona's former name, David; the image and internal asset filename are unchanged.
 
 ## Prompt
 

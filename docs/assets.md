@@ -24,5 +24,5 @@ For final illustrated assets: commission or generate one coordinated set of thre
 ### Slide 03 portrait replacement — 17 October 2026
 The earlier SVG prototype set is replaced with three coordinated dimensional character portraits generated using the built-in image tool, inspired by the user's reference. Final transparent PNG assets: `public/assets/personas/emerging-3d.png`, `examiner-3d.png`, and `expert-3d.png`. Full prompts and reference roles: `docs/persona-image-prompts.md`. These are fictional illustrated characters, not actual members; this qualification remains in speaker notes. The earlier commission brief is superseded by these integrated assets.
 
-### Slide 05 — David's competing responsibilities
-`public/assets/personas/david-workload.png` is a generated, transparent illustration adapting David's existing portrait to the dimensional visual direction. It is fictional, not customer evidence. Built-in image generation used; exact prompt and reference roles recorded in `docs/slide-05-image-prompt.md`.
+### Slide 05 — Dmytro's competing responsibilities
+`public/assets/personas/david-workload.png` is a generated, transparent illustration adapting Dmytro's existing portrait to the dimensional visual direction. It is fictional, not customer evidence. Built-in image generation used; exact prompt and reference roles recorded in `docs/slide-05-image-prompt.md`.
