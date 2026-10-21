@@ -1933,7 +1933,7 @@ svg {
 .story-s08 .story-title h2 { font-size: 80px; max-width: 1600px; }
 .story-s08 .story-title h2 em { color: #9BD3F5; }
 .story-s08 .story-title > p { display: block; color: #B9CFE0; font-size: 29px; max-width: 1480px; margin-top: 22px; }
-.transformation-world { position: absolute; left: 112px; top: 460px; width: 1696px; height: 460px; }
+.transformation-world { position: absolute; left: 112px; top: 433px; width: 1696px; height: 460px; }
 .world-state { position: absolute; top: 0; width: 680px; height: 437px; margin: 0; isolation: isolate; }
 .world-before { left: 100px; }
 .world-connected { right: 100px; }
@@ -1945,9 +1945,12 @@ svg {
 .world-seam { position: absolute; z-index: 5; left: 780px; top: 54px; width: 136px; height: 383px; display: grid; place-items: center; }
 .world-seam::before { content: ""; width: 2px; height: 240px; background: linear-gradient(transparent,#7DC8F4 50%,transparent); box-shadow: 0 0 25px #66B9E36B; }
 .world-seam span { position: absolute; width: 27px; height: 27px; border-top: 2px solid #9BD3F5; border-right: 2px solid #9BD3F5; transform: rotate(45deg); filter: drop-shadow(0 0 10px #51A7D8); }
-.world-overlay { position: absolute; z-index: 3; left: 105px; bottom: -84px; width: 470px; height: 168px; box-sizing: border-box; display: flex; flex-direction: column; gap: 16px; padding: 20px 22px 18px; border: 1px solid #94BAD25C; border-radius: 10px; background: linear-gradient(155deg,#0B223BEF,#07192FF2); box-shadow: 0 16px 34px #010D1DC2; }
+.world-overlay { position: absolute; z-index: 3; left: 105px; bottom: -110px; width: 470px; height: 156px; box-sizing: border-box; display: flex; flex-direction: column; gap: 12px; padding: 15px 21px; border: 1px solid #94BAD25C; border-radius: 10px; background: linear-gradient(155deg,#0B223BEF,#07192FF2); box-shadow: 0 16px 34px #010D1DC2; }
 .world-connected .world-overlay { border-color: #9BD3F582; background: linear-gradient(155deg,#102D49EE,#081E37F2); }
 .world-comparison { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; flex: none; color: #D7E5EF; font-size: 21px; font-weight: 500; line-height: 1.1; outline: none; }
+.world-comparison-label { display: inline-flex; align-items: center; gap: 9px; }
+.world-comparison-label svg { flex: none; color: #A5C9DC; }
+.world-connected .world-comparison-label svg { color: #A9D9F2; }
 .world-connected .world-comparison { color: #F2F9FE; font-weight: 600; }
 .world-comparison[data-pair="0"] { --before-fill: 31%; --after-fill: 77%; }
 .world-comparison[data-pair="1"] { --before-fill: 38%; --after-fill: 82%; }

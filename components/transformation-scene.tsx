@@ -1,4 +1,10 @@
 import type { SlideContent } from '@/lib/presentation';
+import { BadgeCheck, BookOpen, Coins, Eye, UsersRound, Wallet } from 'lucide-react';
+
+const comparisonIcons = [
+  [Eye, BookOpen, Wallet],
+  [BadgeCheck, UsersRound, Coins],
+] as const;
 
 const scenes = [
   {
@@ -21,10 +27,13 @@ export function TransformationScene({ slide }: { slide: SlideContent }) {
         <img src={scene.image} alt={scene.alt} />
       </div>
       <div className="world-overlay" aria-label={index === 0 ? 'Before conditions' : 'With Detelgy possibilities'}>
-        {slide.items.map((item, pair) => <div className="world-comparison" key={item.title} data-pair={pair} tabIndex={0}>
-          <span>{index === 0 ? item.title : item.body}</span>
-          <span className="world-progress" aria-hidden="true"><span className="world-progress-fill" /></span>
-        </div>)}
+        {slide.items.map((item, pair) => {
+          const Icon = comparisonIcons[index][pair];
+          return <div className="world-comparison" key={item.title} data-pair={pair} tabIndex={0}>
+            <span className="world-comparison-label"><Icon aria-hidden="true" size={16} strokeWidth={1.75} /><span>{index === 0 ? item.title : item.body}</span></span>
+            <span className="world-progress" aria-hidden="true"><span className="world-progress-fill" /></span>
+          </div>;
+        })}
       </div>
     </figure>)}
     <div className="world-seam" aria-hidden="true"><span /></div>
