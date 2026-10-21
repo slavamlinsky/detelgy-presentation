@@ -9,7 +9,7 @@ The founder approved the three-slide direction and authorized the remaining slid
 - S05 places an isolated professional between disconnected activities.
 - S06 groups the six original pains into visibility, support and opportunity; original items remain in reading view.
 - S07 presents four independent professional ambitions in a spacious editorial field.
-- S08 uses two wide editorial scenes of the same illustrative David: a modest manual office and a brighter organized workspace. Three aligned Before/With Detelgy comparisons sit below the images with thin, illustrative line indicators. The earlier five comparisons, capability status, and non-metric nature of the indicators remain qualified in speaker notes.
+- S08 uses two wide editorial scenes of the same illustrative David: a modest manual office and a brighter organized workspace. Each scene carries three concise comparisons and thin illustrative indicators inside a translucent bottom band. The earlier five comparisons, capability status, and non-metric nature of the indicators remain qualified in speaker notes.
 - S09 connects four product pillars around the professional, with built and planned mechanisms visible.
 - S11 uses an open value loop; the hypothesis caveat remains.
 - S12 branches into three complementary career paths.

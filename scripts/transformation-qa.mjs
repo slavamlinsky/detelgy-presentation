@@ -10,34 +10,37 @@ try {
   await ready(page);
   await page.emulateMedia({ media: 'print' });
   const slide = page.locator('[data-slide="s08"]');
-  assert.deepEqual(await slide.locator('.world-comparison-before').allTextContents(), before);
-  assert.deepEqual(await slide.locator('.world-comparison-after').allTextContents(), after);
+  assert.deepEqual((await slide.locator('.world-before .world-comparison > span:first-child').allTextContents()), before);
+  assert.deepEqual((await slide.locator('.world-connected .world-comparison > span:first-child').allTextContents()), after);
   assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''), '08/14');
   assert.deepEqual(await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => img.getAttribute('src'))), ['/assets/personas/david-before-office-wide.png','/assets/personas/david-connected-office-wide.png']);
   assert((await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => img.complete && img.naturalWidth>0))).every(Boolean));
   assert((await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => Math.abs(img.naturalWidth/img.naturalHeight-16/9)<.08 && getComputedStyle(img).objectFit==='contain'))).every(Boolean));
-  const indicators=await slide.locator('.world-comparison').evaluateAll(rows => rows.map(row => {
-    const measure = side => {
-      const track=row.querySelector(`.world-comparison-${side} .world-progress`);
+  const indicators=await slide.locator('.world-state').evaluateAll(states => states.map(state =>
+    [...state.querySelectorAll('.world-comparison')].map(row => {
+      const track=row.querySelector('.world-progress');
       const fill=track.querySelector('.world-progress-fill');
       return { width:track.getBoundingClientRect().width, height:track.getBoundingClientRect().height, ratio:fill.getBoundingClientRect().width/track.getBoundingClientRect().width };
-    };
-    return [measure('before'),measure('after')];
-  }));
-  assert(indicators.every(([b,a]) => b.width===a.width && b.width===280 && b.height===3 && a.height===3 && b.ratio>.25 && b.ratio<.4 && a.ratio>.75 && a.ratio<.85));
-  assert.equal(new Set(indicators.map(([b]) => Math.round(b.ratio*100))).size,3);
-  assert.equal(new Set(indicators.map(([,a]) => Math.round(a.ratio*100))).size,3);
+    })
+  ));
+  const [beforeIndicators,afterIndicators]=indicators;
+  assert(beforeIndicators.every((b,i) => b.width===220 && b.height===2 && b.ratio>.25 && b.ratio<.4 && afterIndicators[i].width===b.width && afterIndicators[i].height===2 && afterIndicators[i].ratio>.75 && afterIndicators[i].ratio<.85));
+  assert.equal(new Set(beforeIndicators.map(b => Math.round(b.ratio*100))).size,3);
+  assert.equal(new Set(afterIndicators.map(a => Math.round(a.ratio*100))).size,3);
   const spacing=await slide.evaluate(el => {
     const box=selector => el.querySelector(selector).getBoundingClientRect();
-    const rows=[...el.querySelectorAll('.world-comparison')].map(row => row.getBoundingClientRect());
+    const before=box('.world-before .world-scene'), after=box('.world-connected .world-scene');
+    const overlay=box('.world-before .world-overlay'), arrow=box('.world-seam');
     return {
-      supportToImage: box('.world-before .world-scene').top-box('.story-title > p').bottom,
-      imageToRows: rows[0].top-box('.world-before .world-scene').bottom,
-      rowGaps: rows.slice(1).map((row,index) => row.top-rows[index].bottom),
-      footerGap: box('.slide-folio').top-rows.at(-1).bottom,
+      supportToImage: before.top-box('.story-title > p').bottom,
+      panelGap: after.left-before.right,
+      overlayRatio: overlay.height/before.height,
+      overlayInImage: overlay.bottom<=before.bottom && overlay.bottom>=before.bottom-2 && overlay.left>=before.left && overlay.right<=before.right,
+      arrowInGap: arrow.left>=before.right && arrow.right<=after.left,
+      footerGap: box('.slide-folio').top-before.bottom,
     };
   });
-  assert(spacing.supportToImage > 80 && spacing.imageToRows>=24 && spacing.rowGaps.every(gap=>gap>=5) && spacing.footerGap>=12, JSON.stringify(spacing));
+  assert(spacing.supportToImage > 80 && spacing.panelGap>=120 && spacing.overlayRatio>=.2 && spacing.overlayRatio<=.28 && spacing.overlayInImage && spacing.arrowInGap && spacing.footerGap>=100, JSON.stringify(spacing));
   const bounds = await slide.locator('.story-title,.transformation-world').evaluateAll(els => els.map(el => {
     const r=el.getBoundingClientRect(), s=el.closest('article').getBoundingClientRect();
     return [r.left-s.left,r.right-s.left,r.top-s.top,r.bottom-s.top];
@@ -53,7 +56,7 @@ try {
   await ready(page);
   const live=page.locator('.scaled-slide [data-slide="s08"]');
   const timings=await live.evaluate(el => el.getAnimations({subtree:true}).map(a => a.effect.getTiming()));
-  assert.equal(timings.length,17);
+  assert.equal(timings.length,20);
   assert(timings.every(t => t.iterations===1 && t.delay+t.duration<=2600));
   const frame=async(time,path) => {
     await live.evaluate((el,ms) => el.getAnimations({subtree:true}).forEach(a => {a.pause();a.currentTime=ms}),time);
@@ -64,7 +67,7 @@ try {
   assert.equal(Number(await live.locator('.world-connected .world-scene').evaluate(el => getComputedStyle(el).opacity)),0);
   await frame(1250,'qa/v2/s08-motion-transition.png');
   assert(Number(await live.locator('.world-seam').evaluate(el => getComputedStyle(el).opacity))>.5);
-  assert.equal(Number(await live.locator('.world-comparison[data-pair="0"]').evaluate(el => getComputedStyle(el).opacity)),0);
+  assert.equal(Number(await live.locator('.world-connected .world-comparison[data-pair="0"]').evaluate(el => getComputedStyle(el).opacity)),0);
   await frame(2550,'qa/v2/s08-motion-connected.png');
   assert.equal(await live.locator('.world-connected .world-scene').evaluate(el => Math.round(Number(getComputedStyle(el).opacity))),1);
   assert((await live.locator('.world-comparison').evaluateAll(els => els.map(el => Number(getComputedStyle(el).opacity)))).every(value => value>.98));

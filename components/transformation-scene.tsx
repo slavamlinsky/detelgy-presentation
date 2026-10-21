@@ -19,21 +19,14 @@ export function TransformationScene({ slide }: { slide: SlideContent }) {
       <figcaption className="world-state-title">{slide.columns?.[index]}</figcaption>
       <div className="world-scene">
         <img src={scene.image} alt={scene.alt} />
+        <div className="world-overlay" aria-label={index === 0 ? 'Before conditions' : 'With Detelgy possibilities'}>
+          {slide.items.map((item, pair) => <div className="world-comparison" key={item.title} data-pair={pair} tabIndex={0}>
+            <span>{index === 0 ? item.title : item.body}</span>
+            <span className="world-progress" aria-hidden="true"><span className="world-progress-fill" /></span>
+          </div>)}
+        </div>
       </div>
     </figure>)}
     <div className="world-seam" aria-hidden="true"><span /></div>
-    <div className="world-comparisons" aria-label="Three possible professional transformations">
-      {slide.items.map((item, index) => <div className="world-comparison" key={item.title} data-pair={index} tabIndex={0}>
-        <span className="world-comparison-before">
-          <span>{item.title}</span>
-          <span className="world-progress" aria-hidden="true"><span className="world-progress-fill" /></span>
-        </span>
-        <span className="world-comparison-arrow" aria-label="to">→</span>
-        <span className="world-comparison-after">
-          <span>{item.body}</span>
-          <span className="world-progress" aria-hidden="true"><span className="world-progress-fill" /></span>
-        </span>
-      </div>)}
-    </div>
   </div>;
 }
