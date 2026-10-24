@@ -4,12 +4,13 @@ import { AmbitionScene } from "./ambition-scene";
 import { TransformationScene } from "./transformation-scene";
 import { MissionContent, CoopetitionContent } from "./mission-coopetition";
 import { GrowPieContent } from "./grow-pie";
+import { GrowthFlywheel } from "./growth-flywheel";
+import { SuccessPaths } from "./success-paths";
 import {
   ArrowUpRight,
   BookOpen,
   BadgeCheck,
   Users,
-  Sprout,
   UserRound,
   Globe2,
   MessageCircle,
@@ -111,9 +112,9 @@ export function StorySlide({
               </>
             ) : s.id === "s07" && accentParts?.length === 2 ? (
               <>{accentParts[0]}<em>{s.accent}</em>{accentParts[1]}</>
-            ) : ["s03", "s04", "s05", "s06", "s08"].includes(s.id) ? (
+            ) : ["s03", "s04", "s05", "s06", "s08", "s12", "s13"].includes(s.id) ? (
               <>
-                {s.id === "s06" ? <span className="barrier-headline-first">{s.title.split("\n")[0]}</span> : s.id === "s08" ? <span className="transformation-headline-first">{s.title.split("\n")[0]}</span> : s.title.split("\n")[0]}
+                {s.id === "s06" ? <span className="barrier-headline-first">{s.title.split("\n")[0]}</span> : s.id === "s08" ? <span className="transformation-headline-first">{s.title.split("\n")[0]}</span> : s.id === "s12" ? <span className="success-headline-first">{s.title.split("\n")[0]}</span> : s.id === "s13" ? <span className="business-headline-first">{s.title.split("\n")[0]}</span> : s.title.split("\n")[0]}
                 <em>{s.title.split("\n")[1]}</em>
               </>
             ) : (
@@ -211,48 +212,39 @@ export function StorySlide({
         )}
         {s.id === "s11" && (
           <>
-            <SceneLines kind="loop" />
-            <div className="loop-center">
-              <Sprout size={56} strokeWidth={1.3} />
-              <h3>{s.center}</h3>
-            </div>
-            <div className="loop-labels">
-              {s.items.map((a, i) => (
-                <h3 key={i} data-phase={i}>
-                  {a.title}
-                </h3>
-              ))}
-            </div>
+            <GrowthFlywheel slide={s} />
+            <p className="flywheel-microcopy">{s.microcopy}</p>
           </>
         )}
         {s.id === "s12" && (
-          <>
-            <SceneLines kind="branches" />
-            <div className="branch-paths">
-              {s.items.map((a, i) => (
-                <section key={i} data-path={i}>
-                  <h3>{a.title}</h3>
-                  <p>{a.body}</p>
-                  <span>{a.steps?.join(" → ")}</span>
-                </section>
-              ))}
-            </div>
-          </>
+          <SuccessPaths slide={s} />
         )}
         {s.id === "s13" && (
           <div className="value-landscape">
-            <p className="value-label">{s.columns?.[0]}</p>
-            <p className="revenue-label">{s.columns?.[1]}</p>
-            {s.items.map((a, i) => (
-              <section key={i} data-value={i}>
-                <p>{a.title}</p>
-                <ArrowUpRight size={45} strokeWidth={1.2} />
-                <div>
-                  <h3>{a.body}</h3>
-                  <span>{a.detail}</span>
-                </div>
-              </section>
-            ))}
+            <section className="business-column business-column-value" aria-label={s.columns?.[0]}>
+              <h3 className="business-column-heading">{s.columns?.[0]}</h3>
+              <div className="business-card-list">
+                {s.valueItems?.map((item, i) => (
+                  <article className="business-card" key={item.title} data-value-card={i}>
+                    <h4>{item.title}</h4>
+                    <p>{item.body}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
+            <section className="business-column business-column-revenue" aria-label={s.columns?.[1]}>
+              <h3 className="business-column-heading">{s.columns?.[1]}</h3>
+              <div className="business-card-list">
+                {s.items.map((item, i) => (
+                  <article className="business-card" key={item.title} data-revenue-card={i}>
+                    <div className="business-card-title">
+                      <h4>{item.title}</h4>
+                    </div>
+                    <p>{item.body}</p>
+                  </article>
+                ))}
+              </div>
+            </section>
           </div>
         )}
         {s.id === "s14" && (

@@ -5,7 +5,7 @@ export const releasedLocales: readonly Locale[] = ['en'];
 export type SlideId = `s${string}` | 'mission' | 'coopetition' | 'grow-pie';
 export type FeatureStatus = 'built' | 'planned' | 'concept';
 export interface SlideItem { title: string; body?: string; label?: string; outcome?: string; detail?: string; status?: string; secondaryStatus?: string; steps?: string[]; }
-export interface SlideContent { id: string; chapter: string; viewerTitle?: string; title: string; accent: string; lead: string; eyebrow: string; items: SlideItem[]; footer: string; note: string; sources: string[]; displayItems?: SlideItem[]; persona?: {name:string;detail:string;profession?:string}; stages?: string[]; prompt?: string; diagramAlt?: string; momentsLabel?: string; columns?: string[]; center?: string; foundation?: string; moments?: SlideItem[]; closing?: string; formula?: string; cta?: string; }
+export interface SlideContent { id: string; chapter: string; viewerTitle?: string; title: string; accent: string; lead: string; eyebrow: string; items: SlideItem[]; footer: string; note: string; sources: string[]; displayItems?: SlideItem[]; valueItems?: SlideItem[]; persona?: {name:string;detail:string;profession?:string}; stages?: string[]; prompt?: string; microcopy?: string; diagramAlt?: string; momentsLabel?: string; columns?: string[]; center?: string; foundation?: string; moments?: SlideItem[]; closing?: string; formula?: string; cta?: string; }
 export interface Deck { locale: string; title: string; description: string; ui: typeof english.ui; slides: SlideContent[]; }
 export function getDeck(locale: string): Deck | undefined { return locale === 'en' ? english : undefined; }
 export function slideHref(locale: Locale, id: string) { return `/${locale}/vision#${id}`; }
@@ -23,8 +23,8 @@ export const slideMetadata = [
   { id: 'mission', layout: 'mission', theme: 'light' },
   { id: 'coopetition', layout: 'coopetition', theme: 'dark' },
   { id: 's10', layout: 'journey', theme: 'light' },
-  { id: 's11', layout: 'flywheel', theme: 'dark' },
-  { id: 's12', layout: 'paths', theme: 'light' },
+  { id: 's11', layout: 'flywheel', theme: 'light' },
+  { id: 's12', layout: 'paths', theme: 'dark' },
   { id: 's13', layout: 'business', theme: 'light' },
   { id: 'grow-pie', layout: 'market-growth', theme: 'light' },
   { id: 's14', layout: 'closing', theme: 'dark' },
