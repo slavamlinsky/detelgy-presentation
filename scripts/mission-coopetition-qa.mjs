@@ -1,0 +1,122 @@
+import assert from 'node:assert/strict';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
+import { readFile } from 'node:fs/promises';
+import { PDFDocument } from 'pdf-lib';
+import { launchBrowser, baseURL, ready } from './browser.mjs';
+
+const deck = JSON.parse(await readFile('content/locales/en.json', 'utf8'));
+const browser = await launchBrowser();
+try {
+  const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, deviceScaleFactor: 1, reducedMotion: 'reduce' });
+  const errors = [];
+  page.on('pageerror', error => errors.push(error.message));
+  await page.goto(`${baseURL}/en/vision/print`);
+  await ready(page);
+  assert.equal(await page.locator('article.slide').count(), deck.slides.length);
+  const mission = page.locator('[data-slide="mission"]');
+  const illustration = mission.locator('.mission-illustration');
+  assert.equal(await illustration.count(), 1);
+  assert.equal(await illustration.evaluate(img => img.complete && img.naturalWidth > 0), true, 'Mission artwork must load');
+  assert.match(await illustration.getAttribute('alt'), /arrive individually at an elevator.*rise together/);
+  assert.equal(await mission.locator('.mission-transition').count(), 0);
+  assert.equal(await mission.locator('.mission-support').count(), 0);
+  assert.match(deck.slides.find(s => s.id === 'mission').note, /We build Detelgy around your professional success/);
+  assert.equal(await mission.evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(250, 249, 246)');
+  assert.equal(await mission.locator('h2 em').innerText(), 'comes first.');
+  const missionTextGap = await mission.evaluate(el => el.querySelector('.mission-promise').getBoundingClientRect().top - el.querySelector('h2').getBoundingClientRect().bottom);
+  assert(missionTextGap >= 20, `Mission support overlaps the headline: ${missionTextGap}`);
+  const missionLayout = await mission.evaluate(el => {
+    const image = el.querySelector('.mission-illustration').getBoundingClientRect();
+    const statement = el.querySelector('.mission-statement').getBoundingClientRect();
+    const footer = el.querySelector('.slide-footer').getBoundingClientRect();
+    return { imageBottom: image.bottom, statementTop: statement.top, statementBottom: statement.bottom, statementHeight: statement.height, footerTop: footer.top };
+  });
+  assert(missionLayout.statementHeight < 60, 'Closing thought should remain on one line');
+  assert(missionLayout.statementTop > missionLayout.imageBottom, 'Closing thought must sit below the artwork');
+  assert(missionLayout.statementBottom < missionLayout.footerTop, 'Closing thought must clear the folio');
+  const coopetition = page.locator('[data-slide="coopetition"]');
+  assert.equal(await coopetition.evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(8, 24, 46)');
+  assert.equal(await coopetition.locator('.coop-dimension').count(), 2);
+  assert.equal(await coopetition.locator('.coop-dimension h3 svg').count(), 2);
+  const iconMetrics = await coopetition.locator('.coop-dimension h3 svg').evaluateAll(icons => icons.map(icon => {
+    const style = getComputedStyle(icon);
+    return { width: style.width, height: style.height, strokeWidth: style.strokeWidth, color: style.color };
+  }));
+  assert.deepEqual(iconMetrics[0], iconMetrics[1], 'Heading icons should have the same visual treatment');
+  assert.equal(iconMetrics[0].width, '28px');
+  const network = coopetition.locator('.coop-network');
+  assert.equal(await network.count(), 1);
+  assert(Number(await network.evaluate(el => getComputedStyle(el).opacity)) <= 0.07, 'Background network should remain subtle');
+  assert.equal(await coopetition.locator('.coop-explainer').innerText(), 'Healthy competition improves services. Professional cooperation strengthens the entire field.');
+  assert.equal(await coopetition.locator('.coop-outcome span').innerText(), 'Coopetition = Cooperation + Competition');
+  assert.match(deck.slides.find(s => s.id === 'coopetition').note, /proposed way to frame professional relationships/);
+  for (const [id, folio] of [['mission', '10/17'], ['coopetition', '11/17'], ['s10', '12/17'], ['s11', '13/17']]) {
+    const slide = page.locator(`[data-slide="${id}"]`);
+    assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g, ''), folio);
+    const bounds = await slide.evaluate(el => {
+      const root = el.getBoundingClientRect(), footer = el.querySelector('.slide-footer').getBoundingClientRect();
+      const candidates = [...el.querySelectorAll('main h2, main h3, main p, main li, main .mission-eyebrow, main .coop-eyebrow')];
+      return candidates.filter(node => {const r = node.getBoundingClientRect(); return r.left < root.left + 80 || r.right > root.right - 80 || r.bottom > footer.top - 8;}).map(node => node.textContent);
+    });
+    assert.deepEqual(bounds, [], `${id} content overflows its safe area`);
+    if (id === 'mission' || id === 'coopetition') await slide.screenshot({ path: join(tmpdir(), `detelgy-${id}-1920.png`), animations: 'disabled' });
+  }
+  await page.emulateMedia({ media: 'print', reducedMotion: 'reduce' });
+  const print = await PDFDocument.load(await page.pdf({ printBackground: true, preferCSSPageSize: true }));
+  assert.equal(print.getPageCount(), deck.slides.length, 'Browser print must contain every slide');
+  await page.goto(`${baseURL}/en/vision#s09`);
+  await ready(page);
+  await page.keyboard.press('ArrowRight');
+  await page.waitForURL('**#mission');
+  await page.waitForTimeout(450);
+  await page.keyboard.press('ArrowRight');
+  await page.waitForURL('**#coopetition');
+  await page.waitForTimeout(450);
+  await page.keyboard.press('ArrowRight');
+  await page.waitForURL('**#s10');
+  await page.goBack();
+  await page.waitForURL('**#coopetition');
+  const mobile = await browser.newPage({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+  await mobile.goto(`${baseURL}/en/vision#mission`);
+  await ready(mobile);
+  assert.equal(await mobile.locator('.reading-content').isVisible(), true);
+  assert.match(await mobile.locator('.reading-content').innerText(), /When professionals succeed/);
+  await mobile.goto(`${baseURL}/en/vision#coopetition`);
+  assert.match(await mobile.locator('.reading-content').innerText(), /Knowledge sharing/);
+  await mobile.close();
+  const animated = await browser.newPage({ viewport: { width: 1440, height: 900 }, reducedMotion: 'no-preference' });
+  await animated.goto(`${baseURL}/en/vision#mission`);
+  await ready(animated);
+  const motion = await animated.locator('.scaled-slide .story-mission').evaluate(el => {
+    const animation = selector => {
+      const css = getComputedStyle(el.querySelector(selector));
+      return { name: css.animationName, delay: parseFloat(css.animationDelay), duration: parseFloat(css.animationDuration) };
+    };
+    return { first: animation('h2'), support: animation('.mission-promise'), illustration: animation('.mission-illustration'), conclusion: animation('.mission-statement') };
+  });
+  assert(motion.first.delay < motion.support.delay && motion.support.delay < motion.illustration.delay && motion.illustration.delay < motion.conclusion.delay);
+  assert(motion.illustration.name === 'statement-reveal');
+  assert(motion.conclusion.delay + motion.conclusion.duration >= 2 && motion.conclusion.delay + motion.conclusion.duration <= 3);
+  await animated.goto(`${baseURL}/en/vision#coopetition`);
+  await ready(animated);
+  const coopMotion = await animated.locator('.scaled-slide .story-coopetition').evaluate(el => {
+    const delay = selector => parseFloat(getComputedStyle(el.querySelector(selector)).animationDelay);
+    return ['.coop-eyebrow', 'h2 span', 'h2 em', '.coop-explainer', '.coop-dimension-0', '.coop-dimension-1', '.coop-convergence', '.coop-outcome span', '.coop-outcome p'].map(delay);
+  });
+  assert(coopMotion.every((delay, index) => index === 0 || delay > coopMotion[index - 1]), 'Coopetition entrance should reveal in reading order');
+  const panel = animated.locator('.scaled-slide .story-coopetition .coop-dimension-0');
+  const baseBorder = await panel.evaluate(el => getComputedStyle(el).borderTopColor);
+  await panel.focus();
+  await animated.waitForTimeout(250);
+  assert.notEqual(await panel.evaluate(el => getComputedStyle(el).borderTopColor), baseBorder, 'Focused panel should gain visual emphasis');
+  await animated.close();
+  const reduced = await browser.newPage({ viewport: { width: 1366, height: 768 }, reducedMotion: 'reduce' });
+  await reduced.goto(`${baseURL}/en/vision#mission`);
+  await ready(reduced);
+  assert.equal(await reduced.locator('.scaled-slide .mission-illustration').evaluate(el => getComputedStyle(el).animationName), 'none');
+  await reduced.screenshot({ path: join(tmpdir(), 'detelgy-mission-laptop.png') });
+  await reduced.close();
+  assert.deepEqual(errors, []);
+  console.log(`Slides 10–11: content, folios, safe areas, ${deck.slides.length}-page print, mobile reading, direct navigation, and history passed.`);
+} finally { await browser.close(); }

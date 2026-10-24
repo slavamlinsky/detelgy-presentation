@@ -3,7 +3,7 @@
   "title": "Detelgy Vision",
   "description": "A professional growth ecosystem for polygraph examiners.",
   "ui": {
-    "studio": "Presentation Studio",
+    "studio": "Vision",
     "edition": "Vision / Release 1",
     "overview": "All slides",
     "present": "Present",
@@ -30,11 +30,11 @@
     "overviewHint": "Choose a chapter in the story",
     "visionLabel": "October 2026",
     "status": {
-      "built": "Built",
+      "built": "Live",
       "planned": "Planned",
       "concept": "Concept"
     },
-    "deckLength": "14 slides",
+    "slideCountLabel": "slides",
     "duration": "8–12 min",
     "localeCode": "EN",
     "navigationLabel": "Presentation controls",
@@ -234,8 +234,8 @@
     {
       "id": "s06",
       "chapter": "Core problems",
-      "title": "You already have the expertise.\nBut growth isn't automatic.",
-      "accent": "But growth isn't automatic.",
+      "title": "You already have the expertise.\nBut growth is not automatic.",
+      "accent": "But growth is not automatic.",
       "lead": "Three barriers can stand between your expertise and your next opportunity.",
       "eyebrow": "What gets in the way",
       "items": [
@@ -343,9 +343,9 @@
     {
       "id": "s09",
       "chapter": "The growth system",
-      "title": "Different tools.\nOne purpose: professional success.",
-      "accent": "",
-      "lead": "Four ways to support the person behind the expertise.",
+      "title": "Different tools.\nOne ecosystem.\nProfessional success.",
+      "accent": "Professional success.",
+      "lead": "Everything works together to support your professional growth.",
       "eyebrow": "The platform as a growth system",
       "items": [
         {
@@ -363,16 +363,16 @@
           "secondaryStatus": "planned"
         },
         {
-          "title": "Build reputation",
-          "body": "Profiles, qualifications and reviews",
-          "detail": "Articles, cases and publications",
+          "title": "Earn",
+          "body": "Service discovery and request flows",
+          "detail": "Paid transactions and peer services",
           "status": "built",
           "secondaryStatus": "planned"
         },
         {
-          "title": "Earn",
-          "body": "Service discovery and request flows",
-          "detail": "Paid transactions and peer services",
+          "title": "Build reputation",
+          "body": "Profiles, qualifications and reviews",
+          "detail": "Articles, cases and publications",
           "status": "built",
           "secondaryStatus": "planned"
         }
@@ -385,11 +385,52 @@
       ]
     },
     {
+      "id": "mission",
+      "chapter": "Our mission",
+      "viewerTitle": "Your success comes first",
+      "title": "Your success comes first.",
+      "accent": "comes first.",
+      "lead": "More clients. Stronger reputation. Better opportunities to earn.",
+      "eyebrow": "OUR MISSION",
+      "items": [],
+      "closing": "When professionals succeed, the profession moves forward with them.",
+      "footer": "",
+      "note": "We build Detelgy around your professional success, because individual growth makes collective progress possible. Our mission starts with practical value for individual professionals, including established independent examiners. More clients, reputation and earning opportunities describe goals, not guaranteed results. Detelgy's built foundation supports profiles, peer connection and service discovery; paid transactions, consultations, mentorship and education remain planned. Individual progress can contribute to a stronger profession, but the collective outcome is an ambition to validate, not a measured effect.",
+      "sources": [
+        "Product brief §§3, 5–7; Investor story S09 and S14; Mission and Coopetition brief."
+      ]
+    },
+    {
+      "id": "coopetition",
+      "chapter": "Coopetition",
+      "title": "Compete for clients.\nCollaborate for growth.",
+      "accent": "Collaborate for growth.",
+      "lead": "Healthy competition improves services. Professional cooperation strengthens the entire field.",
+      "formula": "Coopetition = Cooperation + Competition",
+      "eyebrow": "A DIFFERENT WAY TO GROW",
+      "items": [
+        {
+          "title": "Competition",
+          "body": "Clients · Reputation · Service quality · Expertise"
+        },
+        {
+          "title": "Cooperation",
+          "body": "Knowledge sharing · Professional standards · Referrals · Mentorship"
+        }
+      ],
+      "closing": "A stronger profession creates more opportunities for everyone.",
+      "footer": "",
+      "note": "Coopetition is a proposed way to frame professional relationships, not a promise that every examiner will share clients or benefit equally. Established experts can retain their own practice while choosing useful exchanges, referrals, professional standards work or mentorship. Participation should create practical reciprocal value rather than an obligation to help competitors. Referral, mentorship and monetization mechanisms have different implementation states; do not imply all are live or guarantee additional demand or earnings.",
+      "sources": [
+        "Product brief §§5–7, 11–12; ICP / Personas §§10–12; Mission and Coopetition brief."
+      ]
+    },
+    {
       "id": "s10",
       "chapter": "The journey",
-      "title": "From joining to growing.",
-      "accent": "",
-      "lead": "The first valuable moment is different for every professional.",
+      "title": "Joining is just the beginning.\nReal value comes next.",
+      "accent": "Real value comes next.",
+      "lead": "The first meaningful experience is different for every professional.",
       "eyebrow": "A possible path to progress",
       "items": [
         {
@@ -427,32 +468,35 @@
       ],
       "moments": [
         {
-          "title": "Practitioner",
-          "body": "First qualified inquiry"
+          "title": "Emerging Professional",
+          "body": "First useful peer exchange",
+          "detail": "Get helpful advice from a colleague."
         },
         {
-          "title": "Established expert",
-          "body": "First meaningful peer request"
+          "title": "Independent Examiner",
+          "body": "First qualified client inquiry",
+          "detail": "Receive interest in your services."
         },
         {
-          "title": "Emerging professional",
-          "body": "First useful peer exchange"
+          "title": "Established Expert",
+          "body": "First meaningful peer request",
+          "detail": "Share expertise with another professional."
         }
       ],
       "footer": "Illustrative, non-linear journey · first-value moments are hypotheses",
-      "note": "Participation can create professional value without a paid transaction. Journeys may start at different points, loop or branch. A profile view is not a qualified lead, and activity is not proof of career improvement. Full underlying journey: Discover → Join → Participate → Connect & learn → Build reputation → Find opportunities → Earn / lead → Refer & contribute. The five visual milestones group this eight-step model; the route is illustrative, not a growth metric. Illustrative, non-linear journey · first-value moments are hypotheses.",
+      "note": "Participation can create professional value without a paid transaction. Journeys may start at different points, loop or branch; the five milestones are a conceptual engagement model, not a required sequence or growth metric. The three first-value moments are illustrative activation hypotheses, not validated Detelgy metrics or guaranteed outcomes. The mini portraits are fictional illustration assets reused from the audience slide, not depictions of actual Detelgy members. A profile view is not a qualified lead, and activity is not proof of career improvement. Full underlying journey: Discover → Join → Participate → Connect & learn → Build reputation → Find opportunities → Earn / lead → Refer & contribute. The five visual milestones group this eight-step model.",
       "sources": [
         "ICP / Personas §§10–11; Investor story S10."
       ],
       "stages": [
         "Discover",
         "Join",
-        "Connect",
-        "Build reputation",
+        "First Value",
+        "Engage",
         "Grow"
       ],
-      "momentsLabel": "A first moment of value",
-      "diagramAlt": "A rising curved route links Discover, Join, Connect, Build reputation and Grow. Connect is the focal stage."
+      "momentsLabel": "First Value examples",
+      "diagramAlt": "An illustrative ascending path links Discover, Join, First Value, Engage and Grow. First Value is the focal stage; the path is not a required sequence."
     },
     {
       "id": "s11",
@@ -565,6 +609,22 @@
       "note": "Free, Plus and Pro are proposed memberships. The product brief includes draft prices, intentionally omitted here to avoid public commitments. No revenue, conversion, GMV, ARPU or earnings numbers are available. Measure net professional value as well as platform revenue. Proposed commercial model · pricing, payment operations and demand require validation.",
       "sources": [
         "Product brief §§6, 8, 13–14; Investor story S13."
+      ]
+    },
+    {
+      "id": "grow-pie",
+      "chapter": "Our ambition",
+      "viewerTitle": "Grow the pie",
+      "title": "We don't just want a bigger slice of the pie.\nWe want to grow the pie.",
+      "accent": "We want to grow the pie.",
+      "lead": "We see an opportunity to build more trust, unlock new demand, and create greater value across the profession.",
+      "eyebrow": "OUR AMBITION",
+      "items": [],
+      "closing": "We want to succeed because you succeed. Not instead of you.",
+      "footer": "",
+      "note": "This is Detelgy's business ambition, not evidence of measured market expansion. The smaller and larger segmented circles are conceptual and do not represent market size, share, growth rates or forecasts. We intend to build a profitable business and may compete for existing customers, while seeking to increase trust, visibility, cooperation and new demand so professionals and Detelgy can create value together. Market growth and higher earnings are not automatic or guaranteed; the proposed mechanism requires validation.",
+      "sources": [
+        "Mission and Grow the Pie briefs; Product brief §§3, 8, 13–14; Investor story S13–S14."
       ]
     },
     {

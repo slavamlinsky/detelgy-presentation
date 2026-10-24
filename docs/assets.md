@@ -9,6 +9,7 @@ All local copies are presentation assets. No main application files were changed
 | `public/assets/GeistVF.woff` | https://detelgy.com/_next/static/media/GeistVF-s.p.4c3c0b96.woff | Website font self-hosted for deterministic rendering; SIL OFL license included |
 | `public/assets/Geist-LICENSE.txt` | https://raw.githubusercontent.com/vercel/geist-font/main/LICENSE.txt | Official license |
 | `public/assets/professional-portrait.png` | Built-in imagegen, 15 Oct 2026 | Fictional professional illustration, disclosed on S01/S04; no member identity or testimonial |
+| `public/assets/mission-elevator.png` | Built-in imagegen, 24 Oct 2026; edited from the earlier Mission illustration with the user's slide reference as style guidance | Transparent fictional editorial scene: individual arrivals and a group together inside the lift, with a subtle upward cue; no exit scene or literal outcome claim |
 | `components/diagrams.tsx` | Authored editable SVG | Conceptual diagrams, no claimed geographic/user data |
 | Lucide icons | `lucide-react` package | ISC licensed line icons; bundled package license applies |
 

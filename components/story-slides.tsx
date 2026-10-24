@@ -2,6 +2,8 @@ import { WorkloadScene } from "./workload-scene";
 import { AudiencePersonas } from "./audience-personas";
 import { AmbitionScene } from "./ambition-scene";
 import { TransformationScene } from "./transformation-scene";
+import { MissionContent, CoopetitionContent } from "./mission-coopetition";
+import { GrowPieContent } from "./grow-pie";
 import {
   ArrowUpRight,
   BookOpen,
@@ -49,21 +51,6 @@ function SceneLines({ kind }: { kind: string }) {
             />
             <path d="m1218 293 27 4-12 26" strokeWidth="4" />
           </>
-        ) : kind === "ecosystem" ? (
-          <>
-            {[
-              [1060, 350],
-              [1570, 350],
-              [1060, 720],
-              [1570, 720],
-            ].map(([x, y], i) => (
-              <path
-                key={i}
-                data-connection={i}
-                d={`M1320 550 Q${x} 550 ${x} ${y}`}
-              />
-            ))}
-          </>
         ) : (
           <>
             {[
@@ -93,14 +80,16 @@ export function StorySlide({
   index,
   ui,
   brand,
+  total,
 }: {
   slide: SlideContent;
   index: number;
   ui: Deck["ui"];
   brand: React.ReactNode;
+  total: number;
 }) {
   const dark = slideMetadata[index].theme === "dark";
-  const icons = [Users, BookOpen, BadgeCheck, BriefcaseBusiness];
+  const icons = [Users, BookOpen, BriefcaseBusiness, BadgeCheck];
   const accentParts = s.accent ? s.title.split(s.accent) : null;
   return (
     <article
@@ -113,9 +102,14 @@ export function StorySlide({
         <span>{ui.visionLabel}</span>
       </header>
       <main className="story-content">
-        <div className="story-title">
+        {s.id !== "mission" && s.id !== "coopetition" && s.id !== "grow-pie" && <div className="story-title" key={s.id === "s09" ? "s09-title" : "story-title"}>
           <h2>
-            {s.id === "s07" && accentParts?.length === 2 ? (
+            {s.id === "s09" ? (
+              <>
+                {s.title.split("\n").slice(0, -1).map((line) => <span className="ecosystem-headline-line" key={line}>{line}</span>)}
+                <em>{s.accent}</em>
+              </>
+            ) : s.id === "s07" && accentParts?.length === 2 ? (
               <>{accentParts[0]}<em>{s.accent}</em>{accentParts[1]}</>
             ) : ["s03", "s04", "s05", "s06", "s08"].includes(s.id) ? (
               <>
@@ -127,7 +121,10 @@ export function StorySlide({
             )}
           </h2>
           <p>{s.lead}</p>
-        </div>
+        </div>}
+        {s.id === "mission" && <MissionContent slide={s} />}
+        {s.id === "coopetition" && <CoopetitionContent slide={s} />}
+        {s.id === "grow-pie" && <GrowPieContent slide={s} />}
         {s.id === "s03" && <AudiencePersonas slide={s} />}
         {s.id === "s04" && (
           <>
@@ -175,33 +172,41 @@ export function StorySlide({
         {s.id === "s08" && <TransformationScene slide={s} />}
         {s.id === "s09" && (
           <>
-            <SceneLines kind="ecosystem" />
-            <div className="ecosystem-center">
-              <UserRound size={55} strokeWidth={1.2} />
-            </div>
-            <div className="ecosystem-pillars">
-              {s.items.map((a, i) => {
-                const Icon = icons[i];
-                return (
-                  <section key={a.title} data-pillar={i}>
-                    <Icon size={36} strokeWidth={1.3} />
-                    <h3>{a.title}</h3>
-                    <p>
-                      <span>{ui.status.built}</span>
-                      {a.body}
-                    </p>
-                    <p>
-                      <span>{ui.status.planned}</span>
-                      {a.detail}
-                    </p>
-                  </section>
-                );
-              })}
-            </div>
             <p className="ecosystem-foundation">
-              <Globe2 size={28} />
+              <Globe2 size={23} strokeWidth={1.6} aria-hidden="true" />
               {s.foundation}
             </p>
+            <div className="ecosystem-system">
+              <svg className="ecosystem-connections" viewBox="0 0 1030 780" preserveAspectRatio="none" aria-hidden="true">
+                <path pathLength="1" d="M390 238 C414 261 442 303 467 336" />
+                <path pathLength="1" d="M670 285 C640 289 612 310 587 336" />
+                <path pathLength="1" d="M700 520 C657 508 614 477 587 444" />
+                <path pathLength="1" d="M416 520 C433 507 451 470 467 444" />
+              </svg>
+              <div className="ecosystem-center" tabIndex={0} aria-label="Professional growth connects all four areas">
+                <UserRound size={34} strokeWidth={1.4} aria-hidden="true" />
+                <strong>Professional<br />growth</strong>
+              </div>
+              <div className="ecosystem-pillars">
+                {s.items.map((a, i) => {
+                  const Icon = icons[i];
+                  return (
+                    <section className="ecosystem-card" key={a.title} data-pillar={i} tabIndex={0}>
+                      <div className="ecosystem-card-heading">
+                        <Icon size={32} strokeWidth={1.5} aria-hidden="true" />
+                        <h3>{a.title}</h3>
+                      </div>
+                      <p className="ecosystem-card-built">
+                        <span>{ui.status.built}</span><span>{a.body}</span>
+                      </p>
+                      <p className="ecosystem-card-planned">
+                        <span>{ui.status.planned}</span><span>{a.detail}</span>
+                      </p>
+                    </section>
+                  );
+                })}
+              </div>
+            </div>
           </>
         )}
         {s.id === "s11" && (
@@ -273,7 +278,7 @@ export function StorySlide({
       <footer className="slide-footer">
         <span className="slide-folio">
           {String(index + 1).padStart(2, "0")}
-          <i>/</i>14
+          <i>/</i>{total}
         </span>
       </footer>
     </article>

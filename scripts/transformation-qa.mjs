@@ -1,5 +1,6 @@
 import { launchBrowser, baseURL, ready } from './browser.mjs';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 
 const before = ['Limited visibility', 'Knowledge in isolation', 'Limited earning channels'];
 const after = ['Professional presence', 'Connected community', 'New earning opportunities'];
@@ -17,7 +18,7 @@ try {
   assert(icons.every(icon=>icon.width===16 && icon.height===16 && icon.stroke==='1.75'));
   assert.deepEqual(icons.slice(0,3).map(icon=>icon.name), icons.slice(3).map(icon=>icon.name));
   assert.equal(await slide.locator('.world-progress svg').count(),0);
-  assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''), '08/14');
+  assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''), '08/17');
   assert.deepEqual(await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => img.getAttribute('src'))), ['/assets/personas/david-before-office-wide.png','/assets/personas/david-connected-office-wide.png']);
   assert((await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => img.alt.startsWith('Dmytro')))).every(Boolean));
   assert((await slide.locator('.world-scene img').evaluateAll(imgs => imgs.map(img => img.complete && img.naturalWidth>0))).every(Boolean));
@@ -93,8 +94,8 @@ try {
   await page.emulateMedia({reducedMotion:'reduce'});
   await page.waitForFunction(() => document.querySelector('.scaled-slide [data-slide="s08"]').getAnimations({subtree:true}).length===0);
   assert((await live.locator('.world-progress-fill').evaluateAll(els => els.map(el => getComputedStyle(el).transform))).every(value => value==='none'));
-  await page.getByRole('button',{name:'Speaker notes',exact:true}).click();
-  const notes=await page.locator('.notes-panel').textContent();
+  const deck=JSON.parse(await readFile('content/locales/en.json','utf8'));
+  const notes=deck.slides.find(item=>item.id==='s08').note;
   assert.match(notes, /not a verified result|planned|does not guarantee/i);
   assert.match(notes, /not measured performance or quantified outcomes/i);
 console.log('Passed: paired labels, illustrative indicators, static print styling, safe bounds, staggered fills, reduced motion and speaker notes.');

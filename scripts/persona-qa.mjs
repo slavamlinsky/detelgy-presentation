@@ -28,7 +28,7 @@ try {
  assert.deepEqual(timings.map(t=>t.delay).sort((a,b)=>a-b),[0,450,800,1150,1330,1510]);assert(timings.every(t=>t.iterations===1));
  await slide.evaluate(el=>Promise.all(el.getAnimations({subtree:true}).map(a=>a.finished)));
  await page.screenshot({path:'qa/v2/s04-laptop.png'});
- assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''),'04/14');
+ assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''),'04/17');
  await page.emulateMedia({reducedMotion:'reduce'});
  await page.waitForFunction(()=>document.querySelector('.scaled-slide .story-s04').getAnimations({subtree:true}).length===0);
  console.log('Passed: persona copy, composition bounds, entrance sequence, reduced motion, folio, static print styling.');

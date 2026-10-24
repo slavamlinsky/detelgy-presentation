@@ -25,6 +25,6 @@ try {
  assert.equal(await cards.nth(1).locator('.audience-jtbd').evaluate(e=>getComputedStyle(e).opacity),'1');
  await page.emulateMedia({reducedMotion:'reduce'});
  await page.waitForFunction(()=>document.querySelector('.scaled-slide .story-s03').getAnimations({subtree:true}).length===0);
- assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''),'03/14');
+ assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''),'03/17');
  console.log('Passed: 3 personas, hover/focus details, reduced motion, print content and slide number.');
 }finally{await browser.close()}

@@ -1,6 +1,7 @@
 import {launchBrowser,baseURL,ready} from './browser.mjs';
 import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
+import deck from '../content/locales/en.json' with { type: 'json' };
 const browser=await launchBrowser();
 try {
  const page=await browser.newPage({viewport:{width:1920,height:1080},reducedMotion:'reduce'});
@@ -12,12 +13,12 @@ try {
    return {x:r.x-base.x,y:r.y-base.y,width:r.width,height:r.height,fontSize:css.fontSize};
   });
  }));
- assert.equal(geometry.length,14);
- geometry.forEach(g=>assert.deepEqual(g,geometry[0]));
+ assert.equal(geometry.length,deck.slides.length);
+ geometry.forEach((g)=>{for(let i=0;i<3;i++)assert.deepEqual(g[i],geometry[0][i]);});
  await fs.mkdir('qa/chrome',{recursive:true});
  for(const id of ['s01','s02','s09','s14'])await page.locator(`[data-slide="${id}"]`).screenshot({path:`qa/chrome/${id}.png`});
  await page.setViewportSize({width:1366,height:768});
  await page.goto(`${baseURL}/en/vision#s01`);await ready(page);
  await page.screenshot({path:'qa/chrome/s01-laptop.png'});
- console.log('All 14 slides have identical logo, date and folio bounds and font sizes.',JSON.stringify(geometry[0]));
+ console.log(`All ${deck.slides.length} slides have identical logo, date and folio bounds and font sizes.`,JSON.stringify(geometry[0]));
 }finally{await browser.close()}

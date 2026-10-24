@@ -1,5 +1,7 @@
 # V2 — complete deck
 
+**Current extension (23 October 2026):** Two new slides follow the original S09: display Slide 10, Our Mission, uses a warm off-white human-centered composition to show one professional connecting with a wider community; display Slide 11, Coopetition, uses two complementary editorial fields for Competition and Cooperation. Grow the Pie precedes the final invitation as display Slide 16 and uses two abstract market circles to show an ambition to expand overall value. The original slides retain their URL IDs; the invitation now displays as Slide 17. See the [current slide index](current-slide-index.md). The original 14-slide design decisions below remain historical documentation.
+
 The founder approved the three-slide direction and authorized the remaining slides on 16 October 2026. All fourteen slides now use V2. The original prototype decisions below remain a historical record.
 
 ## Full-deck extension
