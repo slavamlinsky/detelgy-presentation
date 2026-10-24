@@ -4,12 +4,12 @@ import { AmbitionScene } from "./ambition-scene";
 import { TransformationScene } from "./transformation-scene";
 import { MissionContent, CoopetitionContent } from "./mission-coopetition";
 import { GrowPieContent } from "./grow-pie";
+import { GrowthFlywheel } from "./growth-flywheel";
 import {
   ArrowUpRight,
   BookOpen,
   BadgeCheck,
   Users,
-  Sprout,
   UserRound,
   Globe2,
   MessageCircle,
@@ -211,18 +211,8 @@ export function StorySlide({
         )}
         {s.id === "s11" && (
           <>
-            <SceneLines kind="loop" />
-            <div className="loop-center">
-              <Sprout size={56} strokeWidth={1.3} />
-              <h3>{s.center}</h3>
-            </div>
-            <div className="loop-labels">
-              {s.items.map((a, i) => (
-                <h3 key={i} data-phase={i}>
-                  {a.title}
-                </h3>
-              ))}
-            </div>
+            <GrowthFlywheel slide={s} />
+            <p className="flywheel-microcopy">{s.microcopy}</p>
           </>
         )}
         {s.id === "s12" && (

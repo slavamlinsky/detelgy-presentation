@@ -501,16 +501,17 @@
     {
       "id": "s11",
       "chapter": "The value loop",
-      "title": "Every meaningful contribution\ncan create more value",
+      "title": "Every contribution creates momentum.",
       "accent": "",
-      "lead": "Useful knowledge can build visibility and trust. Relevant opportunities can give people a reason to return.",
+      "lead": "Sharing expertise builds visibility and trust. New opportunities encourage professionals to stay engaged.",
+      "microcopy": "Even small actions create value.",
       "eyebrow": "The proposed flywheel",
       "items": [
         {
           "title": "Contribute"
         },
         {
-          "title": "Become discoverable"
+          "title": "Gain visibility"
         },
         {
           "title": "Build trust"
@@ -519,13 +520,10 @@
           "title": "Find opportunities"
         },
         {
-          "title": "Earn / learn"
-        },
-        {
-          "title": "Contribute again"
+          "title": "Return & share"
         }
       ],
-      "center": "Professional\nprogress",
+      "center": "Professional Growth",
       "footer": "Proposed mechanism · not a demonstrated network effect",
       "note": "Every arrow is a hypothesis to measure. There is no guarantee that contributing increases orders. Test contribution-to-profile discovery, relevant relationships, attributed inquiries and repeat meaningful participation. Proposed mechanism · not a demonstrated network effect.",
       "sources": [
