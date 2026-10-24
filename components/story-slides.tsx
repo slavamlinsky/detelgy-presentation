@@ -5,6 +5,7 @@ import { TransformationScene } from "./transformation-scene";
 import { MissionContent, CoopetitionContent } from "./mission-coopetition";
 import { GrowPieContent } from "./grow-pie";
 import { GrowthFlywheel } from "./growth-flywheel";
+import { SuccessPaths } from "./success-paths";
 import {
   ArrowUpRight,
   BookOpen,
@@ -111,9 +112,9 @@ export function StorySlide({
               </>
             ) : s.id === "s07" && accentParts?.length === 2 ? (
               <>{accentParts[0]}<em>{s.accent}</em>{accentParts[1]}</>
-            ) : ["s03", "s04", "s05", "s06", "s08"].includes(s.id) ? (
+            ) : ["s03", "s04", "s05", "s06", "s08", "s12"].includes(s.id) ? (
               <>
-                {s.id === "s06" ? <span className="barrier-headline-first">{s.title.split("\n")[0]}</span> : s.id === "s08" ? <span className="transformation-headline-first">{s.title.split("\n")[0]}</span> : s.title.split("\n")[0]}
+                {s.id === "s06" ? <span className="barrier-headline-first">{s.title.split("\n")[0]}</span> : s.id === "s08" ? <span className="transformation-headline-first">{s.title.split("\n")[0]}</span> : s.id === "s12" ? <span className="success-headline-first">{s.title.split("\n")[0]}</span> : s.title.split("\n")[0]}
                 <em>{s.title.split("\n")[1]}</em>
               </>
             ) : (
@@ -216,18 +217,7 @@ export function StorySlide({
           </>
         )}
         {s.id === "s12" && (
-          <>
-            <SceneLines kind="branches" />
-            <div className="branch-paths">
-              {s.items.map((a, i) => (
-                <section key={i} data-path={i}>
-                  <h3>{a.title}</h3>
-                  <p>{a.body}</p>
-                  <span>{a.steps?.join(" → ")}</span>
-                </section>
-              ))}
-            </div>
-          </>
+          <SuccessPaths slide={s} />
         )}
         {s.id === "s13" && (
           <div className="value-landscape">

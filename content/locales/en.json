@@ -533,40 +533,25 @@
     {
       "id": "s12",
       "chapter": "Paths to success",
-      "title": "Professional success\nhas more than one path",
-      "accent": "",
-      "lead": "A stronger practice. A wider impact. A lasting contribution.",
+      "title": "Success takes\ndifferent paths.",
+      "accent": "different paths.",
+      "lead": "Build your practice. Share your expertise. Shape the profession.",
       "eyebrow": "Different ambitions, shared progress",
       "items": [
         {
           "title": "Practitioner",
           "body": "Build a stronger practice",
-          "steps": [
-            "Discoverability",
-            "Qualified inquiries",
-            "Completed work",
-            "Reviews & reputation"
-          ]
+          "steps": ["Visibility", "Clients", "Reputation"]
         },
         {
           "title": "Expert",
-          "body": "Make knowledge more useful",
-          "steps": [
-            "Participate",
-            "Publish",
-            "Consult",
-            "Recognition"
-          ]
+          "body": "Turn expertise into impact",
+          "steps": ["Share", "Consult", "Recognition"]
         },
         {
           "title": "Leader",
-          "body": "Help the profession progress",
-          "steps": [
-            "Mentor",
-            "Teach",
-            "Contribute",
-            "Professional influence"
-          ]
+          "body": "Help the profession advance",
+          "steps": ["Mentor", "Teach", "Influence"]
         }
       ],
       "footer": "Complementary paths, not ranks · some mechanisms are planned",

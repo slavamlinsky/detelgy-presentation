@@ -24,7 +24,7 @@ export const slideMetadata = [
   { id: 'coopetition', layout: 'coopetition', theme: 'dark' },
   { id: 's10', layout: 'journey', theme: 'light' },
   { id: 's11', layout: 'flywheel', theme: 'light' },
-  { id: 's12', layout: 'paths', theme: 'light' },
+  { id: 's12', layout: 'paths', theme: 'dark' },
   { id: 's13', layout: 'business', theme: 'light' },
   { id: 'grow-pie', layout: 'market-growth', theme: 'light' },
   { id: 's14', layout: 'closing', theme: 'dark' },

@@ -2526,16 +2526,11 @@ svg {
 .persona-tensions span {
   padding-top: 6px;
 }
-.story-s05 .story-title,
-.story-s12 .story-title {
+.story-s05 .story-title {
   width: 740px;
   top: 280px;
 }
-.story-s12 .story-title h2 {
-  font-size: 88px;
-}
-.story-s05 .story-title > p,
-.story-s12 .story-title > p {
+.story-s05 .story-title > p {
   max-width: 620px;
   margin-top: 40px;
 }
@@ -3237,34 +3232,242 @@ svg {
     }
   }
 }
-.branch-paths section {
+.story-s12 .story-title {
+  left: 112px;
+  top: 294px;
+  width: 760px;
+  z-index: 1;
+}
+.story-s12 .story-title h2 {
+  max-width: 760px;
+  font-size: 91px;
+  line-height: 1.04;
+  letter-spacing: -0.052em;
+}
+.story-s12 .success-headline-first {
+  display: block;
+}
+.story-s12 .story-title h2 em {
+  color: #a9d8f4;
+}
+.story-s12 .story-title > p {
+  max-width: 650px;
+  margin-top: 43px;
+  color: #b9cfe0;
+  font-size: 30px;
+  line-height: 1.4;
+}
+.success-branch-scene {
   position: absolute;
-  left: 1280px;
-  width: 510px;
-  background: #f8fafc;
-  padding-left: 25px;
+  inset: 0;
 }
-.branch-paths section:nth-child(1) {
-  top: 290px;
+.success-path-lines {
+  position: absolute;
+  inset: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: visible;
+  pointer-events: none;
 }
-.branch-paths section:nth-child(2) {
-  top: 530px;
+.success-path-lines path {
+  fill: none;
+  stroke: #639bc2;
+  stroke-width: 3.6;
+  stroke-linecap: round;
 }
-.branch-paths section:nth-child(3) {
-  top: 770px;
+.success-path-origin {
+  position: absolute;
+  left: 790px;
+  top: 600px;
+  width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  color: #dceefa;
+  text-align: center;
+  outline: none;
 }
-.branch-paths h3 {
-  font-size: 51px;
-  color: #235784;
+.success-path-origin::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(50% - 38px);
+  width: 76px;
+  height: 76px;
+  border: 2px solid #a9d8f4;
+  border-radius: 50%;
+  opacity: 0;
+  pointer-events: none;
 }
-.branch-paths section > p {
-  font-size: 27px;
-  margin: 12px 0;
+.success-path-origin:is(:hover, :focus-visible)::before {
+  animation: ambition-halo-pulse 820ms ease-out 1 both;
 }
-.branch-paths section > span {
-  font-size: 22px;
-  line-height: 1.5;
-  color: #63738a;
+.success-path-origin-mark {
+  position: relative;
+  width: 76px;
+  height: 76px;
+  display: grid;
+  place-items: center;
+  border: 2px solid #88bfe2;
+  border-radius: 50%;
+  background: #153653;
+  box-shadow: 0 0 0 9px #79b8df17;
+  color: #a9d8f4;
+  transform-origin: center;
+  transition: transform 240ms ease-out, border-color 240ms ease-out, box-shadow 240ms ease-out;
+}
+.success-path-origin:is(:hover, :focus-visible) .success-path-origin-mark {
+  transform: scale(1.09);
+  border-color: #b6e0f7;
+  box-shadow: 0 0 0 9px #79b8df24;
+}
+.success-path-origin strong {
+  font-size: 29px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.success-path-destinations {
+  position: absolute;
+  left: 1190px;
+  top: 210px;
+  width: 550px;
+  display: grid;
+  gap: 50px;
+}
+.success-path-card {
+  width: 100%;
+  height: 190px;
+  display: flex;
+  align-items: flex-start;
+  gap: 26px;
+  padding: 27px 30px;
+  border: 1px solid #78a9cd5e;
+  border-radius: 16px;
+  background: #18334dd9;
+  box-shadow: 0 16px 40px #0411232b;
+  outline: none;
+  transform-origin: center left;
+  transition:
+    transform 220ms ease-out,
+    border-color 220ms ease-out,
+    background-color 220ms ease-out;
+}
+.success-path-card:is(:hover, :focus-visible) {
+  transform: scale(1.02);
+  border-color: #9fd3f5;
+  background: #1b3b5b;
+}
+.story-s12 .success-path-card > .success-path-icon {
+  width: 68px;
+  height: 68px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border: 1px solid #8dc6e881;
+  border-radius: 13px;
+  color: #a9d8f4;
+  background: #1d4b6e8c;
+}
+.success-path-copy {
+  min-width: 0;
+}
+.success-path-card h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 41px;
+  line-height: 1.05;
+  font-weight: 600;
+}
+.success-path-card p {
+  margin-top: 10px;
+  color: #dfebf5;
+  font-size: 26px;
+  line-height: 1.25;
+}
+.success-path-card .success-path-copy > span {
+  display: block;
+  margin-top: 14px;
+  color: #9fc9e5;
+  font-size: 21px;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+@media (prefers-reduced-motion: reduce) {
+  .success-path-card,
+  .success-path-origin-mark {
+    transition: none;
+  }
+  .success-path-origin:is(:hover, :focus-visible)::before {
+    animation: none;
+  }
+  .success-path-origin:is(:hover, :focus-visible) .success-path-origin-mark {
+    transform: none;
+    border-color: #b6e0f7;
+    box-shadow: 0 0 0 5px #79b8df2e;
+  }
+}
+@keyframes ambition-halo-pulse {
+  from { opacity: 0.45; transform: scale(1); }
+  to { opacity: 0; transform: scale(1.23); }
+}
+@media screen and (prefers-reduced-motion: no-preference) {
+  .scaled-slide .story-s12 .success-headline-first {
+    animation: success-reveal 350ms 80ms ease-out both;
+  }
+  .scaled-slide .story-s12 .story-title h2 em {
+    animation: success-reveal 350ms 300ms ease-out both;
+  }
+  .scaled-slide .story-s12 .story-title > p {
+    animation: success-reveal 380ms 540ms ease-out both;
+  }
+  .scaled-slide .story-s12 .success-path-origin {
+    animation: success-reveal 380ms 800ms ease-out both;
+  }
+  .scaled-slide .story-s12 .success-path-lines path {
+    stroke-dasharray: 1;
+    stroke-dashoffset: 1;
+    animation: success-draw 480ms ease-out both;
+  }
+  .scaled-slide .story-s12 .success-path-lines path[data-success-line="0"] {
+    animation-delay: 1080ms;
+  }
+  .scaled-slide .story-s12 .success-path-lines path[data-success-line="1"] {
+    animation-delay: 1660ms;
+  }
+  .scaled-slide .story-s12 .success-path-lines path[data-success-line="2"] {
+    animation-delay: 2240ms;
+  }
+  .scaled-slide .story-s12 .success-path-card {
+    animation: success-reveal 390ms ease-out both;
+  }
+  .scaled-slide .story-s12 [data-success-path="0"] {
+    animation-delay: 1450ms;
+  }
+  .scaled-slide .story-s12 [data-success-path="1"] {
+    animation-delay: 2030ms;
+  }
+  .scaled-slide .story-s12 [data-success-path="2"] {
+    animation-delay: 2610ms;
+  }
+  @keyframes success-reveal {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  @keyframes success-draw {
+    from {
+      opacity: 0;
+      stroke-dashoffset: 1;
+    }
+    to {
+      opacity: 1;
+      stroke-dashoffset: 0;
+    }
+  }
 }
 .story-s13 .story-title {
   top: 200px;
