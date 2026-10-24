@@ -29,6 +29,8 @@ This is a proposed mechanism, not a proven conversion or causal model. Do not im
 
 These are working options, not approved final legal or brand copy.
 
+**Current presentation note (23 October 2026):** The live deck now contains 17 slides. Two slides were inserted after original S09: Our Mission (individual professional success first, collective progress as an ambition) and Coopetition (practical reasons competitors can also cooperate). Grow the Pie now precedes the final invitation, framing the founders' commercial ambition as aligned with professional success and potential market expansion. Original S10–S14 IDs and links remain stable; S10–S13 display as slides 12–15 and S14 closes at 17. See [current slide index](../docs/current-slide-index.md). The original 14-slide specification below is retained as a historical brief.
+
 ## 2. Narrative principles
 
 1. Lead with **the professional's lived experience**, never a feature inventory.

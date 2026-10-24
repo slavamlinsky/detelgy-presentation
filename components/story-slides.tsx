@@ -2,6 +2,8 @@ import { WorkloadScene } from "./workload-scene";
 import { AudiencePersonas } from "./audience-personas";
 import { AmbitionScene } from "./ambition-scene";
 import { TransformationScene } from "./transformation-scene";
+import { MissionContent, CoopetitionContent } from "./mission-coopetition";
+import { GrowPieContent } from "./grow-pie";
 import {
   ArrowUpRight,
   BookOpen,
@@ -78,11 +80,13 @@ export function StorySlide({
   index,
   ui,
   brand,
+  total,
 }: {
   slide: SlideContent;
   index: number;
   ui: Deck["ui"];
   brand: React.ReactNode;
+  total: number;
 }) {
   const dark = slideMetadata[index].theme === "dark";
   const icons = [Users, BookOpen, BriefcaseBusiness, BadgeCheck];
@@ -98,7 +102,7 @@ export function StorySlide({
         <span>{ui.visionLabel}</span>
       </header>
       <main className="story-content">
-        <div className="story-title" key={s.id === "s09" ? "s09-title" : "story-title"}>
+        {s.id !== "mission" && s.id !== "coopetition" && s.id !== "grow-pie" && <div className="story-title" key={s.id === "s09" ? "s09-title" : "story-title"}>
           <h2>
             {s.id === "s09" ? (
               <>
@@ -117,7 +121,10 @@ export function StorySlide({
             )}
           </h2>
           <p>{s.lead}</p>
-        </div>
+        </div>}
+        {s.id === "mission" && <MissionContent slide={s} />}
+        {s.id === "coopetition" && <CoopetitionContent slide={s} />}
+        {s.id === "grow-pie" && <GrowPieContent slide={s} />}
         {s.id === "s03" && <AudiencePersonas slide={s} />}
         {s.id === "s04" && (
           <>
@@ -271,7 +278,7 @@ export function StorySlide({
       <footer className="slide-footer">
         <span className="slide-folio">
           {String(index + 1).padStart(2, "0")}
-          <i>/</i>14
+          <i>/</i>{total}
         </span>
       </footer>
     </article>

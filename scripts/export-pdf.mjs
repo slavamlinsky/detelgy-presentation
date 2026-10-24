@@ -15,12 +15,12 @@ try {
  if(broken.length)throw new Error(`Broken assets: ${broken.join(', ')}`);
  await mkdir('public/downloads',{recursive:true});
  const bytes=await page.pdf({printBackground:true,preferCSSPageSize:true,tagged:true,outline:true});
- const pdf=await PDFDocument.load(bytes);if(pdf.getPageCount()!==14)throw new Error(`Expected 14 pages, got ${pdf.getPageCount()}`);
+ const pdf=await PDFDocument.load(bytes);if(pdf.getPageCount()!==deck.slides.length)throw new Error(`Expected ${deck.slides.length} pages, got ${pdf.getPageCount()}`);
  pdf.setTitle(`${deck.title} — ${locale.toUpperCase()}`);pdf.setAuthor('Detelgy');pdf.setSubject(deck.description);pdf.setLanguage(locale);
  for(const p of pdf.getPages()){const {width,height}=p.getSize();if(Math.abs(width/height-16/9)>.001)throw new Error('Incorrect page ratio');}
  const path=`public/downloads/detelgy-vision-${locale}.pdf`;await writeFile(path,await pdf.save());
- const inputs=['content/locales/en.json','components/slide.tsx','components/diagrams.tsx','components/prototype-slides.tsx','components/story-slides.tsx','app/globals.css','styles/tokens.css'];
+ const inputs=['content/locales/en.json','components/slide.tsx','components/diagrams.tsx','components/prototype-slides.tsx','components/story-slides.tsx','components/mission-coopetition.tsx','components/grow-pie.tsx','app/globals.css','styles/tokens.css'];
  const hash=createHash('sha256');for(const p of inputs)hash.update(await readFile(p));
- await writeFile('qa/pdf-manifest.json',JSON.stringify({locale,pages:14,path,createdAt:new Date().toISOString(),sourceHash:hash.digest('hex'),inputs},null,2));
- console.log(`Exported ${path}: 14 pages, 16:9, text and SVG preserved.`);
+ await writeFile('qa/pdf-manifest.json',JSON.stringify({locale,pages:deck.slides.length,path,createdAt:new Date().toISOString(),sourceHash:hash.digest('hex'),inputs},null,2));
+ console.log(`Exported ${path}: ${deck.slides.length} pages, 16:9, text and SVG preserved.`);
 } finally {await browser.close()}

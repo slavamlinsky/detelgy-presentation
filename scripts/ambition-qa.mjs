@@ -1,5 +1,6 @@
 import { launchBrowser, baseURL, ready } from './browser.mjs';
 import assert from 'node:assert/strict';
+import { readFile } from 'node:fs/promises';
 
 const titles = ['Become Better', 'Build Reputation', 'Find Opportunities', 'Monetize Expertise'];
 const descriptions = [
@@ -24,7 +25,7 @@ try {
   assert.equal(await slide.locator('.story-title > p').textContent(), 'Every professional defines success differently.');
   assert.equal(await slide.locator('.ambition-index').count(), 0);
   assert.equal(await slide.locator('.ambition-art svg').first().evaluate(el => Math.round(el.getBoundingClientRect().width)), 202);
-  assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g, ''), '07/14');
+  assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g, ''), '07/17');
   assert.equal(await slide.evaluate(el => getComputedStyle(el).backgroundColor), 'rgb(250, 249, 246)');
   assert((await slide.locator('.ambition-art,.ambition-copy').evaluateAll(els => els.map(el => getComputedStyle(el).opacity))).every(v => v === '1'));
   const bounds = await slide.locator('.story-title,.ambition').evaluateAll(els => els.map(el => {
@@ -61,8 +62,8 @@ try {
   await page.screenshot({ path: 'qa/v2/s07-focus.png' });
   await page.emulateMedia({ reducedMotion: 'reduce' });
   await page.waitForFunction(() => document.querySelector('.scaled-slide [data-slide="s07"]').getAnimations({ subtree: true }).length === 0);
-  await page.getByRole('button', { name: 'Speaker notes', exact: true }).click();
-  assert.match(await page.locator('.notes-panel').textContent(), /not a mandatory sequence|does not guarantee income growth/i);
+  const deck = JSON.parse(await readFile('content/locales/en.json', 'utf8'));
+  assert.match(deck.slides.find(item => item.id === 's07').note, /not a mandatory sequence|does not guarantee income growth/i);
   console.log('Passed: static layout, PDF export, four ambitions, timed reveals, hover/focus, reduced motion and notes.');
 } finally {
   await browser.close();

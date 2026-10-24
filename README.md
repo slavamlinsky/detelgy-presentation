@@ -1,6 +1,6 @@
 # Detelgy Presentation Studio — Release 1
 
-A standalone Next.js presentation app with 14 English vision slides. The story follows the professional from fragmented effort toward connected growth. This is a hypothesis-led stakeholder vision, not a validated fundraising deck.
+A standalone Next.js presentation app with 17 English vision slides. The story follows the professional from fragmented effort toward connected growth. This is a hypothesis-led stakeholder vision, not a validated fundraising deck.
 
 ## Run locally
 
@@ -17,12 +17,14 @@ Open [http://127.0.0.1:3000/en/vision](http://127.0.0.1:3000/en/vision). `/` red
 - Home/End: first/last slide.
 - All slides: keyboard-accessible overview.
 - Present: native fullscreen. Escape exits.
-- Speaker notes: context, limitations and sources.
-- Reading view: readable content on small screens; enabled by default on an initial phone visit.
+- The public viewer header shows `DETELGY | Vision`; the information row shows only the active slide's viewer name and the deck count/duration. Most viewer names reuse the existing chapter label; Mission and Grow the Pie have concise viewer-only names without changing their slide content.
+- The viewer footer keeps All slides, centered previous/next navigation, Copy slide link and Fullscreen. The progress segments remain clickable. Speaker Notes and Reading Mode are no longer footer controls.
+- Speaker notes and sources remain in the structured deck data for a future private Presenter View; the public viewer receives a copy without them.
+- Reading view remains available from the mobile slide-information row and is enabled by default on an initial phone visit. It has no desktop footer entry.
 - Link icon: copy the current slide URL.
 - Download PDF: prebuilt English PDF.
 
-If a browser or embedded preview blocks fullscreen, the app shows a fallback message. Browser print renders all 14 slides in order.
+If a browser or embedded preview blocks fullscreen, the app shows a fallback message. Browser print renders all 17 slides in order.
 
 ## Content and source of truth
 
@@ -30,14 +32,14 @@ The four original Markdown briefs remain unchanged under `content/`. Edit the st
 
 Stable slide IDs and locale helpers reserve `en`, `es`, `uk` and `ru`. Only English is released. Unreleased locale routes return 404; there is no misleading English fallback or premature language switcher. See [Release 2 plan](docs/release-2-plan.md).
 
-`npm run validate:content` validates 14 IDs, basic content requirements and dictionary shape against English. Future translations must match the English structure and pass editorial review.
+`npm run validate:content` validates the 17-slide order, the 14 original stable IDs, the three inserted IDs, basic content requirements and dictionary shape against English. The added slides use `#mission`, `#coopetition`, and `#grow-pie`; original links such as `#s10` and `#s14` remain stable. The invitation at `#s14` now displays as slide 17. See the [current slide index](docs/current-slide-index.md). Future translations must match the English structure and pass editorial review.
 
 ## Project structure
 
 | Path | Purpose |
 | --- | --- |
 | `app/[locale]/vision/` | Locale-aware presentation and print routes |
-| `components/studio.tsx` | Navigation, overview, notes, reading view and fullscreen |
+| `components/studio.tsx` | Navigation, overview, mobile reading view and fullscreen |
 | `components/slide.tsx` | Shared editable slide rendering |
 | `components/diagrams.tsx` | Native SVG networks and flywheel |
 | `styles/tokens.css` | Central color, type, spacing, radius, shadow, motion and canvas tokens |
@@ -45,7 +47,7 @@ Stable slide IDs and locale helpers reserve `en`, `es`, `uk` and `ru`. Only Engl
 | `public/assets/` | Original brand assets, licensed web font, disclosed illustrative portrait |
 | `public/downloads/detelgy-vision-en.pdf` | Prebuilt presentation PDF |
 | `scripts/` | Export, content validation and browser QA |
-| `qa/slides/` | All 14 screenshots at 1920×1080 |
+| `qa/slides/` | Historical screenshots at 1920×1080; current QA captures are generated as needed |
 | `qa/viewports/` | Desktop, laptop, tablet, mobile and fullscreen captures |
 | `qa/pdf/` | Rasterized exported pages for visual QA |
 | `docs/` | Design decisions, evidence and release plans |
@@ -63,7 +65,7 @@ npm run export:pdf -- en
 
 For another local port, set `BASE_URL`. To use a specific Chromium binary, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`.
 
-The export route is `/en/vision/print`. Playwright waits for fonts/images, uses print CSS, preserves selectable text and SVG, then verifies 14 pages in 16:9. The output is cached as a static file, so downloads need no backend or runtime browser. `qa/pdf-manifest.json` records the source hash and export date.
+The export route is `/en/vision/print`. Playwright waits for fonts/images, uses print CSS, preserves selectable text and SVG, then verifies the page count against the presentation data in 16:9. The output is cached as a static file, so downloads need no backend or runtime browser. `qa/pdf-manifest.json` records the source hash and export date.
 
 **During the current slide-by-slide review, PDF regeneration is deferred until all slide updates are finished.** The checked-in PDF is an earlier snapshot and does not yet include the latest refinements. Continue screenshot QA during iteration, then regenerate and verify the PDF before publishing. Build after the final export so deployment includes the current file. Browser print is a convenient alternative; disable browser headers/footers, choose no margins and enable background graphics. The prebuilt Playwright file is the reference export. Notes and navigation controls are excluded from PDF. PPTX is not implemented.
 
@@ -75,11 +77,12 @@ With the local app running:
 npm run validate:content
 npm run typecheck
 npm run qa
+node scripts/viewer-qa.mjs
 npm run export:pdf -- en
 npm run build
 ```
 
-`npm run qa` captures all 14 slides and checks content against footer/safe-area bounds, direct links, browser history, keyboard navigation, overview, notes, fullscreen, clipboard, root redirect, unavailable locales and small viewport width. Screenshots still require human visual inspection. The delivered inspection record is [docs/qa-report.md](docs/qa-report.md).
+`npm run qa` captures the full deck and checks content against footer/safe-area bounds, direct links, browser history, keyboard navigation, overview, fullscreen, clipboard, root redirect, unavailable locales and small viewport width. `node scripts/viewer-qa.mjs` checks the public header, title and footer at desktop and mobile sizes, including notes exclusion. `node scripts/mission-coopetition-qa.mjs` checks Slides 10–11; `node scripts/grow-pie-qa.mjs` checks the penultimate slide, final-slide order, animation, mobile reading and browser print. The focused checks save screenshots outside Git. Screenshots still require human visual inspection. The delivered inspection record for the original release is [docs/qa-report.md](docs/qa-report.md).
 
 PDF verification uses Poppler to rasterize the output and inspect every page. Tools are not required to run the app. If installed locally:
 
@@ -108,4 +111,4 @@ Product features labeled built are reported implemented by the internal brief an
 
 ## V2 visual review
 
-The approved spatial direction now covers all 14 slides. S01, S02 and S10 retain their approved prototype compositions. See [visual decisions](docs/visual-redesign-v2.md), [presentation tokens](docs/design-system-v2-proposal.md), and [QA report](docs/qa-report.md). Full-resolution screenshots are in `qa/slides/`; the complete PDF is in `public/downloads/`. `npm run qa` recaptures the full deck and verifies controls and text boundaries.
+The approved spatial direction now covers the original 14 slides; Mission, Coopetition, and Grow the Pie extend the sequence to 17. The original S01, S02 and S10 retain their approved prototype compositions and stable IDs. See [visual decisions](docs/visual-redesign-v2.md), [presentation tokens](docs/design-system-v2-proposal.md), and [QA report](docs/qa-report.md). `npm run qa` recaptures the full deck and verifies controls and text boundaries. The cached PDF in `public/downloads/` is intentionally pending final regeneration.

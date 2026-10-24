@@ -10,7 +10,7 @@ try {
  if(process.env.REVIEW_PDF==='1') await page.pdf({path:'qa/v2/s06-review.pdf',pageRanges:'6',printBackground:true,preferCSSPageSize:true});
  assert.equal(await slide.locator('.barrier-panel').count(),3);
  assert((await slide.locator('.barrier-panel-content').evaluateAll(es=>es.map(e=>getComputedStyle(e).opacity))).every(v=>v==='1'));
- assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''),'06/14');
+ assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''),'06/17');
  const bounds=await slide.locator('.story-title,.barrier-panel').evaluateAll(es=>es.map(el=>{const r=el.getBoundingClientRect(),s=el.closest('article').getBoundingClientRect();return [r.left-s.left,r.right-s.left,r.bottom-s.top]}));
  bounds.forEach(([l,r,b])=>assert(l>=100&&r<=1815&&b<995));
  await page.emulateMedia({media:'screen'});await page.setViewportSize({width:1366,height:768});
@@ -41,7 +41,7 @@ try {
  assert.notEqual(await live.locator('.barrier-panel').nth(1).evaluate(e=>getComputedStyle(e,'::before').borderTopColor),base);
  await page.emulateMedia({reducedMotion:'reduce'});
  await page.waitForFunction(()=>document.querySelector('.scaled-slide .story-s06').getAnimations({subtree:true}).length===0);
- await page.getByRole('button',{name:'Speaker notes',exact:true}).click();
- assert.match(await page.locator('.notes-panel').textContent(),/illustrative hypotheses|illustrative barriers/i);
+ const deck=JSON.parse(await readFile('content/locales/en.json','utf8'));
+ assert.match(deck.slides.find(item=>item.id==='s06').note,/illustrative hypotheses|illustrative barriers/i);
  console.log('Passed: three barriers, safe bounds, static print visibility, sequential reveal, hover/focus, reduced motion, notes and folio.');
 }finally{await browser.close()}

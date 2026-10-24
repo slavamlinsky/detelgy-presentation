@@ -28,7 +28,7 @@ try {
  await page.mouse.move(0,0);await page.keyboard.press('Tab');await cards.nth(1).focus();await page.waitForTimeout(220);
  assert.notEqual(await cards.nth(1).evaluate(el=>getComputedStyle(el).borderColor),normal);
  await page.screenshot({path:'qa/v2/s05-focus.png'});
- assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''),'05/14');
+ assert.equal((await slide.locator('.slide-folio').textContent()).replace(/\s/g,''),'05/17');
  await page.emulateMedia({reducedMotion:'reduce'});await page.waitForFunction(()=>document.querySelector('.scaled-slide .story-s05').getAnimations({subtree:true}).length===0);
  console.log('Passed: four demands, safe bounds, stagger, no loops, reduced motion, static print and folio.');
 }finally{await browser.close()}

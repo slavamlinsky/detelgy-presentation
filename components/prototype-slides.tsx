@@ -14,6 +14,7 @@ import {
   Users,
 } from "lucide-react";
 import type { Deck, SlideContent } from "@/lib/presentation";
+import { JourneySpotlight } from "./journey-spotlight";
 
 function GrowthGraphic() {
   // Deliberate size progression remains visible when the slide is scaled to a laptop.
@@ -149,13 +150,13 @@ function FragmentGraphic({ slide }: { slide: SlideContent }) {
   </svg>;
 }
 const stagePositions = [
-  [170, 620],
-  [510, 560],
-  [870, 470],
-  [1270, 390],
-  [1710, 310],
+  [170, 720],
+  [510, 690],
+  [870, 640],
+  [1270, 570],
+  [1710, 490],
 ];
-const stageIcons = [Compass, UserRoundPlus, Users, BadgeCheck, Sprout];
+const stageIcons = [Compass, UserRoundPlus, BadgeCheck, Users, Sprout];
 function JourneyGraphic({ slide }: { slide: SlideContent }) {
   return (
     <svg
@@ -164,15 +165,27 @@ function JourneyGraphic({ slide }: { slide: SlideContent }) {
       role="img"
       aria-label={slide.diagramAlt}
     >
-      <path
-        data-part="journey-path"
-        d="M112 625 C360 625 330 570 510 560 S680 480 870 470 S1080 400 1270 390 S1500 310 1775 310"
+      {[
+        "M112 720 C140 720 150 720 170 720",
+        "M170 720 C350 720 360 690 510 690",
+        "M510 690 C700 690 710 640 870 640",
+        "M870 640 C1075 640 1095 570 1270 570",
+        "M1270 570 C1510 570 1520 490 1710 490",
+      ].map((d, i) => <path
+        key={i}
+        data-segment={i}
+        className="journey-segment"
+        pathLength="1"
+        d={d}
         fill="none"
         stroke="#a3c4dc"
         strokeWidth="3"
-      />
+        strokeLinecap="round"
+      />)}
+      <path className="journey-value-branch" d="M870 705 C870 730 870 746 870 769" fill="none" stroke="#c0d8e9" strokeWidth="2" />
       <path
-        d="m1758 299 18 11-18 11"
+        className="journey-arrow"
+        d="M1710 490 H1775 m-17 -11 18 11-18 11"
         fill="none"
         stroke="#235784"
         strokeWidth="3"
@@ -182,28 +195,30 @@ function JourneyGraphic({ slide }: { slide: SlideContent }) {
         return (
           <g data-stage={i} key={i} transform={`translate(${x} ${y})`}>
             {i === 2 && (
-              <circle r="57" fill="none" stroke="#c2daeb" strokeWidth="2" />
+              <circle className="journey-focus-ring" r="61" fill="#d9ecf765" stroke="#9bc7e4" strokeWidth="2" />
             )}
-            <circle
-              r={i === 2 ? 39 : 27}
-              fill={i === 2 ? "#01255a" : "#f5f8fc"}
-              stroke={i === 2 ? "#01255a" : "#759fbe"}
-              strokeWidth="2"
-            />
-            <Icon
-              x={-15}
-              y={-15}
-              width={30}
-              height={30}
-              color={i === 2 ? "#fff" : "#235784"}
-              strokeWidth={1.5}
-            />
+            <g className="journey-node-interactive" tabIndex={0} role="img" aria-label={slide.stages?.[i]}>
+              <circle
+                r={i === 2 ? 43 : i < 2 ? 30 : 27}
+                fill={i === 2 ? "#01255a" : "#faf9f6"}
+                stroke={i === 2 ? "#01255a" : i < 2 ? "#4d8fbd" : "#759fbe"}
+                strokeWidth="2"
+              />
+              <Icon
+                x={-15}
+                y={-15}
+                width={30}
+                height={30}
+                color={i === 2 ? "#fff" : "#235784"}
+                strokeWidth={1.5}
+              />
+            </g>
             <text
-              y={i === 2 ? -91 : -66}
+              y={i === 2 ? -98 : -66}
               textAnchor="middle"
-              fill={i === 2 ? "#01255a" : "#34546e"}
-              fontSize={i === 2 ? 48 : 38}
-              fontWeight="500"
+              fill={i === 2 ? "#01255a" : i < 2 ? "#244a69" : "#34546e"}
+              fontSize={i === 2 ? 47 : 38}
+              fontWeight={i < 3 ? "560" : "500"}
             >
               {slide.stages?.[i]}
             </text>
@@ -218,11 +233,13 @@ export function PrototypeSlide({
   index,
   ui,
   brand,
+  total,
 }: {
   slide: SlideContent;
   index: number;
   ui: Deck["ui"];
   brand: React.ReactNode;
+  total: number;
 }) {
   const cover = slide.id === "s01";
   return (
@@ -265,34 +282,17 @@ export function PrototypeSlide({
       ) : (
         <>
           <main className="v2-journey-copy">
-            <h2>{slide.title}</h2>
+            <h2><span>{slide.title.split("\n")[0]}</span><em>{slide.accent}</em></h2>
             <p>{slide.lead}</p>
           </main>
           <JourneyGraphic slide={slide} />
-          <div className="v2-first-values" aria-label={slide.momentsLabel}>
-            <section className="v2-value-spotlight" data-moment="2">
-              <span>{slide.momentsLabel}</span>
-              <h3>{slide.moments?.[2].body}</h3>
-              <p>
-                {slide.moments?.[2].title}
-                <ArrowUpRight size={27} />
-              </p>
-            </section>
-            <div className="v2-other-values">
-              {slide.moments?.slice(0, 2).map((item, i) => (
-                <section key={item.title} data-moment={i}>
-                  <span>{item.title}</span>
-                  <p>{item.body}</p>
-                </section>
-              ))}
-            </div>
-          </div>
+          <JourneySpotlight label={slide.momentsLabel ?? "First Value examples"} moments={slide.moments ?? []} />
         </>
       )}
       <footer className="slide-footer">
         <span className="slide-folio">
           {String(index + 1).padStart(2, "0")}
-          <i>/</i>14
+          <i>/</i>{total}
         </span>
       </footer>
     </article>
