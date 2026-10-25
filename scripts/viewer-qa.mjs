@@ -4,6 +4,7 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { launchBrowser, baseURL, ready } from './browser.mjs';
 
+const { presentationMeta } = await import('../lib/presentation-meta.mjs');
 const deck = JSON.parse(await readFile('content/locales/en.json', 'utf8'));
 const browser = await launchBrowser();
 try {
@@ -14,8 +15,8 @@ try {
   await page.goto(`${baseURL}/en/vision#s07`);
   await ready(page);
   assert.equal(await page.title(), deck.title);
-  assert.equal(await page.locator('.studio-identity').innerText(), `Vision`);
-  assert.equal(await page.locator('.deck-heading h1').innerText(), deck.slides.find(s => s.id === 's07').chapter);
+  assert.equal(await page.locator('.studio-identity').innerText(), presentationMeta.title);
+  assert.equal(await page.locator('.deck-heading h1').innerText(), deck.slides.find(s => s.id === 's07').viewerTitle ?? deck.slides.find(s => s.id === 's07').chapter);
   assert.match(await page.locator('.deck-count').innerText(), new RegExp(`^${deck.slides.length} slides`));
   assert.equal(await page.locator('.deck-heading .tiny-label').count(), 0);
   assert.equal(await page.locator('.deck-controls button').count(), 5);

@@ -3,7 +3,6 @@
   "title": "Detelgy Vision",
   "description": "A professional growth ecosystem for polygraph examiners.",
   "ui": {
-    "studio": "Vision",
     "edition": "Vision / Release 1",
     "overview": "All slides",
     "present": "Present",
@@ -28,14 +27,12 @@
     "portraitAlt": "AI-generated illustration of a fictional independent professional in a quiet office",
     "notesHint": "Notes and evidence for this slide",
     "overviewHint": "Choose a chapter in the story",
-    "visionLabel": "October 2026",
     "status": {
       "built": "Live",
       "planned": "Planned",
       "concept": "Concept"
     },
     "slideCountLabel": "slides",
-    "duration": "8–12 min",
     "localeCode": "EN",
     "navigationLabel": "Presentation controls",
     "directorySource": "APA member directory",
@@ -612,14 +609,14 @@
       "id": "grow-pie",
       "chapter": "Our ambition",
       "viewerTitle": "Grow the pie",
-      "title": "We don't just want a bigger slice of the pie.\nWe want to grow the pie.",
-      "accent": "We want to grow the pie.",
+      "title": "We don't just want a bigger slice of the pie.\nWe want to grow the pie for everyone.",
+      "accent": "We want to grow the pie for everyone.",
       "lead": "We see an opportunity to build more trust, unlock new demand, and create greater value across the profession.",
-      "eyebrow": "OUR AMBITION",
+      "eyebrow": "",
       "items": [],
-      "closing": "We want to succeed because you succeed. Not instead of you.",
+      "closing": "Your growth is our purpose.\nShared success is our ambition.",
       "footer": "",
-      "note": "This is Detelgy's business ambition, not evidence of measured market expansion. The smaller and larger segmented circles are conceptual and do not represent market size, share, growth rates or forecasts. We intend to build a profitable business and may compete for existing customers, while seeking to increase trust, visibility, cooperation and new demand so professionals and Detelgy can create value together. Market growth and higher earnings are not automatic or guaranteed; the proposed mechanism requires validation.",
+      "note": "Detelgy aims to expand opportunities for the entire polygraph profession. Our purpose is to help individual professionals grow through visibility, connections, knowledge and new business opportunities. Sustainable platform growth should follow the value created for professionals; shared success is our long-term ambition. This is a strategy, not evidence of measured market expansion. The two segmented circles are conceptual and do not represent market size, share, growth rates or forecasts. Growth and higher earnings are not automatic or guaranteed; the proposed mechanism requires validation.",
       "sources": [
         "Mission and Grow the Pie briefs; Product brief §§3, 8, 13–14; Investor story S13–S14."
       ]
@@ -627,9 +624,9 @@
     {
       "id": "s14",
       "chapter": "The invitation",
-      "title": "The professional home\nfor a global community",
-      "accent": "global community",
-      "lead": "One professional identity. One place to connect, contribute, learn and create opportunities.",
+      "title": "The professional home\nfor a global community.",
+      "accent": "for a global community.",
+      "lead": "One place to connect, contribute, and grow together.",
       "eyebrow": "The Detelgy vision",
       "items": [
         {
@@ -645,8 +642,8 @@
           "title": "Lead"
         }
       ],
-      "closing": "When our professionals succeed, Detelgy succeeds.",
-      "cta": "Join us in building the next chapter",
+      "closing": "The next chapter starts with you.",
+      "cta": "Let's build it together.",
       "footer": "A future vision for the global polygraph community",
       "note": "This is an invitation to partners, Industry Leaders and early supporters to help shape the ecosystem. Global professional home is an ambition, not an established market leadership claim. Next steps are Expert Discovery, validation of professional value and phased service delivery. A future vision for the global polygraph community.",
       "sources": [

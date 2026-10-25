@@ -1,5 +1,6 @@
 import type { SlideContent } from '@/lib/presentation';
 import { Eye, UsersRound, Wallet } from 'lucide-react';
+import { checkpointAttributes } from '@/lib/presentation-playback';
 
 const comparisonIcons = [Eye, UsersRound, Wallet] as const;
 
@@ -16,9 +17,9 @@ const scenes = [
   },
 ] as const;
 
-export function TransformationScene({ slide }: { slide: SlideContent }) {
+export function TransformationScene({ slide, step = 1 }: { slide: SlideContent; step?: number }) {
   return <div className="transformation-world" aria-label="Illustrative before and with Detelgy professional experience">
-    {scenes.map((scene, index) => <figure className={`world-state ${scene.className}`} key={scene.className}>
+    {scenes.map((scene, index) => <figure className={`world-state ${scene.className}`} key={scene.className} {...(index === 1 ? checkpointAttributes(step) : {})} inert={index === 1 && step < 1}>
       <figcaption className="world-state-title">{slide.columns?.[index]}</figcaption>
       <div className="world-scene">
         <img src={scene.image} alt={scene.alt} />
@@ -33,6 +34,6 @@ export function TransformationScene({ slide }: { slide: SlideContent }) {
         })}
       </div>
     </figure>)}
-    <div className="world-seam" aria-hidden="true"><span /></div>
+    <div className="world-seam" {...checkpointAttributes(step)} aria-hidden="true"><span /></div>
   </div>;
 }

@@ -250,7 +250,6 @@ export function PrototypeSlide({
     >
       <header className="slide-header">
         {brand}
-        <span>{ui.visionLabel}</span>
       </header>
       {cover ? (
         <>
