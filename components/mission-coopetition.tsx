@@ -1,5 +1,6 @@
 import type { SlideContent } from "@/lib/presentation";
 import { Handshake, Target } from "lucide-react";
+import { checkpointAttributes } from "@/lib/presentation-playback";
 
 export function MissionContent({ slide }: { slide: SlideContent }) {
   const [opening] = slide.title.split(slide.accent);
@@ -12,7 +13,7 @@ export function MissionContent({ slide }: { slide: SlideContent }) {
   </div>;
 }
 
-export function CoopetitionContent({ slide }: { slide: SlideContent }) {
+export function CoopetitionContent({ slide, step = 1 }: { slide: SlideContent; step?: number }) {
   return <div className="coop-composition">
     <svg className="coop-network" viewBox="0 0 680 300" fill="none" aria-hidden="true">
       <g stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
@@ -30,12 +31,12 @@ export function CoopetitionContent({ slide }: { slide: SlideContent }) {
     <h2><span>{slide.title.split("\n")[0]}</span><em>{slide.accent}</em></h2>
     <p className="coop-explainer">{slide.lead}</p>
     <div className="coop-dimensions">
-      {slide.items.map((item, index) => <section className={`coop-dimension coop-dimension-${index}`} key={item.title} tabIndex={0}>
+      {slide.items.map((item, index) => <section className={`coop-dimension coop-dimension-${index}`} key={item.title} tabIndex={0} {...(index === 1 ? checkpointAttributes(step) : {})} inert={index === 1 && step < 1}>
         <h3>{index === 0 ? <Target aria-hidden="true" /> : <Handshake aria-hidden="true" />}{item.title}</h3>
         <ul>{item.body?.split(" · ").map(term => <li key={term}>{term}</li>)}</ul>
       </section>)}
-      <div className="coop-convergence" aria-hidden="true"><span /><span /></div>
+      <div className="coop-convergence" {...checkpointAttributes(step)} aria-hidden="true"><span /><span /></div>
     </div>
-    <div className="coop-outcome"><span>{slide.formula}</span><p>{slide.closing}</p></div>
+    <div className="coop-outcome" {...checkpointAttributes(step)}><span>{slide.formula}</span><p>{slide.closing}</p></div>
   </div>;
 }

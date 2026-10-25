@@ -4,10 +4,11 @@ import { AmbitionScene } from "./ambition-scene";
 import { TransformationScene } from "./transformation-scene";
 import { MissionContent, CoopetitionContent } from "./mission-coopetition";
 import { GrowPieContent } from "./grow-pie";
+import { ClosingSlideContent } from "./closing-slide";
 import { GrowthFlywheel } from "./growth-flywheel";
 import { SuccessPaths } from "./success-paths";
+import { checkpointAttributes } from "@/lib/presentation-playback";
 import {
-  ArrowUpRight,
   BookOpen,
   BadgeCheck,
   Users,
@@ -82,12 +83,14 @@ export function StorySlide({
   ui,
   brand,
   total,
+  revealStep = Number.MAX_SAFE_INTEGER,
 }: {
   slide: SlideContent;
   index: number;
   ui: Deck["ui"];
   brand: React.ReactNode;
   total: number;
+  revealStep?: number;
 }) {
   const dark = slideMetadata[index].theme === "dark";
   const icons = [Users, BookOpen, BriefcaseBusiness, BadgeCheck];
@@ -96,14 +99,14 @@ export function StorySlide({
     <article
       className={`slide v2-slide story-slide story-${s.id} ${dark ? "dark" : "light"}`}
       data-slide={s.id}
+      data-reveal-step={revealStep}
       aria-label={`${index + 1}. ${s.title}`}
     >
       <header className="slide-header">
         {brand}
-        <span>{ui.visionLabel}</span>
       </header>
       <main className="story-content">
-        {s.id !== "mission" && s.id !== "coopetition" && s.id !== "grow-pie" && <div className="story-title" key={s.id === "s09" ? "s09-title" : "story-title"}>
+        {s.id !== "mission" && s.id !== "coopetition" && s.id !== "grow-pie" && s.id !== "s14" && <div className="story-title" key={s.id === "s09" ? "s09-title" : "story-title"}>
           <h2>
             {s.id === "s09" ? (
               <>
@@ -124,8 +127,9 @@ export function StorySlide({
           <p>{s.lead}</p>
         </div>}
         {s.id === "mission" && <MissionContent slide={s} />}
-        {s.id === "coopetition" && <CoopetitionContent slide={s} />}
-        {s.id === "grow-pie" && <GrowPieContent slide={s} />}
+        {s.id === "coopetition" && <CoopetitionContent slide={s} step={revealStep} />}
+        {s.id === "grow-pie" && <GrowPieContent slide={s} step={revealStep >= 1 ? 1 : 0} />}
+        {s.id === "s14" && <ClosingSlideContent slide={s} step={revealStep >= 1 ? 1 : 0} />}
         {s.id === "s03" && <AudiencePersonas slide={s} />}
         {s.id === "s04" && (
           <>
@@ -170,7 +174,7 @@ export function StorySlide({
           </div>
         )}
         {s.id === "s07" && <AmbitionScene slide={s} />}
-        {s.id === "s08" && <TransformationScene slide={s} />}
+        {s.id === "s08" && <TransformationScene slide={s} step={revealStep} />}
         {s.id === "s09" && (
           <>
             <p className="ecosystem-foundation">
@@ -232,7 +236,7 @@ export function StorySlide({
                 ))}
               </div>
             </section>
-            <section className="business-column business-column-revenue" aria-label={s.columns?.[1]}>
+            <section className="business-column business-column-revenue" aria-label={s.columns?.[1]} {...checkpointAttributes(revealStep)} inert={revealStep < 1}>
               <h3 className="business-column-heading">{s.columns?.[1]}</h3>
               <div className="business-card-list">
                 {s.items.map((item, i) => (
@@ -246,25 +250,6 @@ export function StorySlide({
               </div>
             </section>
           </div>
-        )}
-        {s.id === "s14" && (
-          <>
-            <SceneLines kind="network" />
-            <div className="finale-words">
-              {s.items.map((a, i) => (
-                <span key={i} data-outcome={i}>
-                  {a.title}
-                </span>
-              ))}
-            </div>
-            <div className="finale-invitation">
-              <p>{s.closing}</p>
-              <span>
-                {s.cta}
-                <ArrowUpRight size={34} />
-              </span>
-            </div>
-          </>
         )}
       </main>
       <footer className="slide-footer">

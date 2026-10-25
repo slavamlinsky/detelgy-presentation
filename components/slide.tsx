@@ -8,9 +8,9 @@ export function Brand({ dark = false }: { dark?: boolean }) {
     </span>
   );
 }
-export function Slide({slide,index,ui,total}:{slide:SlideContent;index:number;ui:Deck["ui"];total:number}) {
+export function Slide({slide,index,ui,total,revealStep=Number.MAX_SAFE_INTEGER}:{slide:SlideContent;index:number;ui:Deck["ui"];total:number;revealStep?:number}) {
  const brand=<Brand dark={slideMetadata[index].theme === "dark"}/>;
  return ["s01","s02","s10"].includes(slide.id)
   ? <PrototypeSlide slide={slide} index={index} ui={ui} brand={brand} total={total}/>
-  : <StorySlide slide={slide} index={index} ui={ui} brand={brand} total={total}/>;
+  : <StorySlide slide={slide} index={index} ui={ui} brand={brand} total={total} revealStep={revealStep}/>;
 }

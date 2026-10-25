@@ -49,9 +49,15 @@ try {
   await page.locator('.presentation-stage').click({ position: { x: 8, y: 8 } });
 
   await page.keyboard.press('f');
+  assert.equal(await page.evaluate(() => !!document.fullscreenElement), false, 'Explore entered Present Mode without explicit opt-in');
+  await page.getByRole('button', { name: 'Present', exact: true }).first().click();
   await page.waitForFunction(() => !!document.fullscreenElement);
+  await page.waitForFunction(() => document.querySelector('.studio')?.classList.contains('is-fullscreen'));
   await page.keyboard.press('f');
   await page.waitForFunction(() => !document.fullscreenElement);
+  assert.equal(await page.locator('.studio').getAttribute('data-view-mode'), 'present', 'F should toggle fullscreen independently of presentation mode');
+  await page.keyboard.press('Escape');
+  await page.waitForFunction(() => document.querySelector('.studio')?.dataset.viewMode === 'explore');
 
   const stage = page.locator('.presentation-stage');
   const box = await stage.boundingBox();
