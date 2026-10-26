@@ -143,10 +143,11 @@ try {
   // Unreleased locales are intentionally unavailable; no language switch is offered.
   for (const locale of ['es', 'uk', 'ru']) assert.equal((await page.request.get(`${baseURL}/${locale}/vision?slide=12`)).status(), 404);
   assert.equal(await page.locator('select[aria-label*="language" i]').count(), 0);
-  // No verified joining URL exists in the deck. Do not invent a CTA destination.
+  // Final invitation uses the verified public access route.
   await page.goto(`${baseURL}/en/vision#s14`);
   await waitForSlide(page, 's14');
-  assert.equal(await current(page).locator('.closing-invitation a').count(), 0);
+  assert.equal(await current(page).locator('.closing-primary').getAttribute('href'), 'https://detelgy.com/request-access');
+  assert.equal(await current(page).locator('.closing-secondary').getAttribute('href'), 'https://detelgy.com');
   assert.equal((await page.content()).includes(deck.slides[7].note.slice(0, 60)), false, 'Private notes leaked into the viewer');
 
   // Browser print during a paused presentation uses the complete static deck.

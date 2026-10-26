@@ -36,7 +36,7 @@ Right/Down, Space and Page Down advance a checkpoint or slide. Left/Up, Shift+Sp
 
 In Present Mode, a primary mouse click on ordinary slide content uses that same advance handler. Interactive controls, focusable cards/nodes, custom click handlers and regions marked with `data-interactive` or `data-no-slide-advance` keep their own behavior. Put `data-no-slide-advance` on any custom delegated interactive region to exclude it and its descendants. Text selection, dragging, double-click tails and touch-generated clicks do not advance; touch retains swipe navigation. Clicking a slide in Explore Mode does nothing.
 
-The final CTA remains text because no verified joining/onboarding destination is configured. English is the only released locale, so language switching is not yet available.
+The final slide links to the verified Detelgy request-access page and public website, opening both in a new tab. English is the only released locale, so language switching is not yet available.
 
 ## Content and source of truth
 
