@@ -4,12 +4,13 @@
   "private": true,
   "scripts": {
     "dev": "next dev --hostname 127.0.0.1",
-    "build": "next build --webpack",
+    "build": "npm run check:pdf && next build --webpack",
     "start": "next start --hostname 127.0.0.1",
     "typecheck": "tsc --noEmit",
     "qa": "node scripts/qa.mjs",
     "export:pdf": "node scripts/export-pdf.mjs",
-    "validate:content": "node scripts/validate-content.mjs"
+    "validate:content": "node scripts/validate-content.mjs",
+    "check:pdf": "node scripts/check-pdf.mjs"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

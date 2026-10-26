@@ -1,3 +1,4 @@
+import pdfManifest from '@/qa/pdf-manifest.json';
 import english from '@/content/locales/en.json';
 export const locales = ['en', 'es', 'uk', 'ru'] as const;
 export type Locale = typeof locales[number];
@@ -9,7 +10,7 @@ export interface SlideContent { id: string; chapter: string; viewerTitle?: strin
 export interface Deck { locale: string; title: string; description: string; ui: typeof english.ui; slides: SlideContent[]; }
 export function getDeck(locale: string): Deck | undefined { return locale === 'en' ? english : undefined; }
 export function slideHref(locale: Locale, id: string) { return `/${locale}/vision#${id}`; }
-export function pdfHref(locale: Locale) { return `/downloads/detelgy-vision-${locale}.pdf`; }
+export function pdfHref(locale: Locale) { return `/downloads/detelgy-vision-${locale}.pdf?v=${pdfManifest.sourceHash.slice(0, 12)}`; }
 export const slideMetadata = [
   { id: 's01', layout: 'cover', theme: 'dark' },
   { id: 's02', layout: 'fragmentation', theme: 'light' },

@@ -8,8 +8,8 @@ import { presentationMeta, formatPresentationUpdated, presentationRevisionDate }
 
 const deck = JSON.parse(await readFile('content/locales/en.json', 'utf8'));
 assert.equal(presentationMeta.title, 'Our vision for the profession');
-assert.equal(presentationMeta.lastUpdated, '2026-10-25');
-assert.equal(presentationRevisionDate().toISOString(), '2026-10-25T00:00:00.000Z');
+assert.equal(presentationMeta.lastUpdated, '2026-10-26');
+assert.equal(presentationRevisionDate().toISOString(), '2026-10-26T00:00:00.000Z');
 for (const [locale, expected] of [['en', /^Updated Oct 2026$/], ['es', /^Actualizado oct 2026$/], ['uk', /^Оновлено жовт\. 2026/], ['ua', /^Оновлено жовт\. 2026/], ['ru', /^Обновлено окт\. 2026/]]) {
   assert.match(formatPresentationUpdated(locale), expected);
 }
@@ -83,7 +83,7 @@ try {
   const pdf = await PDFDocument.load(await response.body(), { updateMetadata: false });
   assert.equal(pdf.getPageCount(), deck.slides.length);
   assert.equal(pdf.getTitle(), `Detelgy Vision — ${presentationMeta.title}`);
-  assert.match(pdf.getSubject(), /Presentation revision: 2026-10-25/);
+  assert(pdf.getSubject().includes(`Presentation revision: ${presentationMeta.lastUpdated}`));
   assert.equal(pdf.getModificationDate().toISOString(), presentationRevisionDate().toISOString());
   assert(pdf.getKeywords().includes(presentationMeta.lastUpdated));
   const manifest = JSON.parse(await readFile('qa/pdf-manifest.json', 'utf8'));

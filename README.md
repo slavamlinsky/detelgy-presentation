@@ -83,7 +83,7 @@ For another local port, set `BASE_URL`. To use a specific Chromium binary, set `
 
 The export route is `/en/vision/print`. Playwright waits for fonts/images, uses print CSS, preserves selectable text and SVG, then verifies the page count against the presentation data in 16:9. The output is cached as a static file, so downloads need no backend or runtime browser. `qa/pdf-manifest.json` records the source hash and export date.
 
-The checked-in PDF is a prebuilt snapshot. Regenerate it with `npm run export:pdf -- en` whenever the downloadable deck should reflect slide edits, then build so deployment includes the current file. Browser print is a convenient alternative; disable browser headers/footers, choose no margins and enable background graphics. The prebuilt Playwright file is the reference export. Notes and navigation controls are excluded from PDF. PPTX is not implemented.
+The checked-in PDF is a prebuilt snapshot. `npm run check:pdf` (also run by `npm run build`) rejects outdated exports after source or asset changes. The download URL uses the export hash to avoid serving a previously cached revision. Regenerate it with `npm run export:pdf -- en` whenever the downloadable deck should reflect slide edits, then build so deployment includes the current file. Browser print is a convenient alternative; disable browser headers/footers, choose no margins and enable background graphics. The prebuilt Playwright file is the reference export. Notes and navigation controls are excluded from PDF. PPTX is not implemented.
 
 ## Verification
 
