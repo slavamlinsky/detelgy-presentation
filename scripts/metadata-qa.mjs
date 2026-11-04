@@ -53,7 +53,7 @@ try {
   assert.equal(await current.getAttribute('data-reveal-step'), '0');
   await page.keyboard.press('Space');
   assert.equal(await current.getAttribute('data-reveal-step'), '1');
-  assert.equal(await current.locator('.slide-header > :not(.brand)').count(), 0);
+  assert.equal(await current.locator('.slide-header > :not(.brand):not(.closing-brand-link)').count(), 0);
   await page.keyboard.press('Escape');
   await page.waitForFunction(() => document.querySelector('.studio')?.dataset.viewMode === 'explore');
 
@@ -62,7 +62,7 @@ try {
   await page.emulateMedia({ media: 'print', reducedMotion: 'reduce' });
   const slides = page.locator('.slide');
   assert.equal(await slides.count(), deck.slides.length);
-  assert.equal(await page.locator('.slide-header > :not(.brand)').count(), 0, 'A date container remains');
+  assert.equal(await page.locator('.slide-header > :not(.brand):not(.closing-brand-link)').count(), 0, 'A date container remains');
   assert.equal(await page.locator('.slide-header .brand').count(), deck.slides.length);
   assert.equal(await page.locator('[data-reveal-hidden]').count(), 0);
   assert.equal(await page.locator('.studio-header,.deck-controls,.metadata-updated').count(), 0);

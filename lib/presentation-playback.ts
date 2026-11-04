@@ -44,3 +44,10 @@ export function slideNavigationUrl(current: URL, id: string, index: number) {
   if (url.searchParams.has('slide')) url.searchParams.set('slide', String(index + 1));
   return `${url.pathname}${url.search}${url.hash}`;
 }
+
+export function localeNavigationUrl(current: URL, locale: string, id: string, index: number) {
+  const url = new URL(current);
+  url.pathname = `/${locale}/vision`;
+  url.searchParams.delete('present');
+  return slideNavigationUrl(url, id, index);
+}

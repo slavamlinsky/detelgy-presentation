@@ -1,16 +1,21 @@
 import pdfManifest from '@/qa/pdf-manifest.json';
-import english from '@/content/locales/en.json';
-export const locales = ['en', 'es', 'uk', 'ru'] as const;
-export type Locale = typeof locales[number];
-export const releasedLocales: readonly Locale[] = ['en'];
+import ukrainianPdfManifest from '@/qa/pdf-manifest-uk.json';
+import type english from '@/content/locales/en.json';
+import { localeDefinitions } from './locales.mjs';
+export const locales = localeDefinitions.map(locale => locale.code);
+export type Locale = typeof localeDefinitions[number]['code'];
 export type SlideId = `s${string}` | 'mission' | 'coopetition' | 'grow-pie';
 export type FeatureStatus = 'built' | 'planned' | 'concept';
 export interface SlideItem { title: string; body?: string; label?: string; outcome?: string; detail?: string; status?: string; secondaryStatus?: string; steps?: string[]; }
-export interface SlideContent { id: string; chapter: string; viewerTitle?: string; title: string; accent: string; lead: string; eyebrow: string; items: SlideItem[]; footer: string; note: string; sources: string[]; displayItems?: SlideItem[]; valueItems?: SlideItem[]; persona?: {name:string;detail:string;profession?:string}; stages?: string[]; prompt?: string; microcopy?: string; diagramAlt?: string; momentsLabel?: string; columns?: string[]; center?: string; foundation?: string; moments?: SlideItem[]; closing?: string; formula?: string; cta?: string; }
-export interface Deck { locale: string; title: string; description: string; ui: typeof english.ui; slides: SlideContent[]; }
-export function getDeck(locale: string): Deck | undefined { return locale === 'en' ? english : undefined; }
+export interface SlideContent { id: string; chapter: string; viewerTitle?: string; title: string; accent: string; lead: string; eyebrow: string; items: SlideItem[]; footer: string; note: string; sources: string[]; displayItems?: SlideItem[]; valueItems?: SlideItem[]; persona?: {name:string;detail:string;profession?:string}; stages?: string[]; prompt?: string; microcopy?: string; diagramAlt?: string; imageAlts?: string[]; comparisonLabels?: string[]; momentsLabel?: string; columns?: string[]; center?: string; foundation?: string; moments?: SlideItem[]; closing?: string; formula?: string; cta?: string; ctaLabels?: string[]; }
+export interface Deck { fallbackUi?: typeof english.ui; viewerTitle: string; translationStatus: 'draft' | 'released'; fallbackSlideIds: string[]; translatedSlideCount: number; locale: string; title: string; description: string; ui: typeof english.ui; slides: SlideContent[]; }
 export function slideHref(locale: Locale, id: string) { return `/${locale}/vision#${id}`; }
-export function pdfHref(locale: Locale) { return `/downloads/detelgy-vision-${locale}.pdf?v=${pdfManifest.sourceHash.slice(0, 12)}`; }
+export function pdfHref(locale: Locale) {
+  const manifest = locale === 'en' ? pdfManifest : locale === 'uk' ? ukrainianPdfManifest : undefined;
+  if (!manifest?.sourceHash || !manifest.path) return undefined;
+  return `/downloads/detelgy-vision-${locale}.pdf?v=${manifest.sourceHash.slice(0, 12)}`;
+}
+
 export const slideMetadata = [
   { id: 's01', layout: 'cover', theme: 'dark' },
   { id: 's02', layout: 'fragmentation', theme: 'light' },

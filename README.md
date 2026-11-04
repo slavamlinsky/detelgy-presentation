@@ -36,7 +36,7 @@ Right/Down, Space and Page Down advance a checkpoint or slide. Left/Up, Shift+Sp
 
 In Present Mode, a primary mouse click on ordinary slide content uses that same advance handler. Interactive controls, focusable cards/nodes, custom click handlers and regions marked with `data-interactive` or `data-no-slide-advance` keep their own behavior. Put `data-no-slide-advance` on any custom delegated interactive region to exclude it and its descendants. Text selection, dragging, double-click tails and touch-generated clicks do not advance; touch retains swipe navigation. Clicking a slide in Explore Mode does nothing.
 
-The final slide links to the verified Detelgy request-access page and public website, opening both in a new tab. English is the only released locale, so language switching is not yet available.
+The final slide links to the verified Detelgy request-access page and public website, opening both in a new tab. English and Ukrainian are released, with all 17 slides translated. The custom Radix-based header language selector preserves the current slide and query parameters and opens the chosen language in Explore Mode.
 
 ## Content and source of truth
 
@@ -44,22 +44,25 @@ The four original Markdown briefs remain unchanged under `content/`. Edit the st
 
 Presentation-level metadata lives in `lib/presentation-meta.mjs`: the viewer title, release, estimated duration and manually maintained `lastUpdated` revision date. Update that date only after meaningful content changes. Slide count comes from the actual deck collection. The viewer formats the revision month in English, Spanish, Ukrainian (`uk`, with `ua` accepted as an alias) or Russian and simplifies the row on narrow screens. Individual slides carry no date. The PDF title, subject, keywords and modification date use the same editorial metadata; the export manifest records its generation time separately. The approved cover remains unchanged apart from removing its old date.
 
-Stable slide IDs and locale helpers reserve `en`, `es`, `uk` and `ru`. Only English is released. Unreleased locale routes return 404; there is no misleading English fallback or premature language switcher. See [Release 2 plan](docs/release-2-plan.md).
+Stable slide IDs and locale helpers reserve `en`, `es`, `uk` and `ru`. English and Ukrainian are released. `/uk/vision` has a fully localized viewer and all 17 translated slides, with its own PDF download and print route. Spanish and Russian remain reserved and return 404. See [Release 2 plan](docs/release-2-plan.md).
 
-`npm run validate:content` validates the 17-slide order, the 14 original stable IDs, the three inserted IDs, basic content requirements and dictionary shape against English. The added slides use `#mission`, `#coopetition`, and `#grow-pie`; original links such as `#s10` and `#s14` remain stable. The invitation at `#s14` now displays as slide 17. See the [current slide index](docs/current-slide-index.md). Future translations must match the English structure and pass editorial review.
+`npm run validate:content` validates the 17-slide order, the 14 original stable IDs, the three inserted IDs, basic content requirements and dictionary shape against English. The added slides use `#mission`, `#coopetition`, and `#grow-pie`; original links such as `#s10` and `#s14` remain stable. The invitation at `#s14` now displays as slide 17. See the [current slide index](docs/current-slide-index.md). Translations replace complete slides by stable ID, retain canonical ordering and must match the corresponding English structure. A draft may contain any subset of slides; a released translation must contain all 17. See [the translation workflow](docs/localization.md).
 
 ## Project structure
 
 | Path | Purpose |
 | --- | --- |
 | `app/[locale]/vision/` | Locale-aware presentation and print routes |
-| `components/studio.tsx` | Navigation, overview, mobile reading view and fullscreen |
+| `components/studio.tsx` | Navigation, overview, responsive slide viewer and fullscreen |
 | `lib/presentation-playback.ts` | Declarative checkpoints and shared-link resolution |
 | `lib/presentation-meta.mjs` | Shared editorial metadata and localized revision formatting |
 | `components/slide.tsx` | Shared editable slide rendering |
 | `components/diagrams.tsx` | Native SVG networks and flywheel |
 | `styles/tokens.css` | Central color, type, spacing, radius, shadow, motion and canvas tokens |
 | `content/locales/en.json` | Canonical copy and notes |
+| `content/locales/uk.json` | Ukrainian viewer dictionary and reviewed whole-slide translations |
+| `lib/locales.mjs` | Locale registry and availability |
+| `lib/decks.ts` | Server-only localized content loader |
 | `public/assets/` | Original brand assets, licensed web font, disclosed illustrative portrait |
 | `public/downloads/detelgy-vision-en.pdf` | Prebuilt presentation PDF |
 | `scripts/` | Export, content validation and browser QA |
@@ -81,7 +84,7 @@ npm run export:pdf -- en
 
 For another local port, set `BASE_URL`. To use a specific Chromium binary, set `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH`.
 
-The export route is `/en/vision/print`. Playwright waits for fonts/images, uses print CSS, preserves selectable text and SVG, then verifies the page count against the presentation data in 16:9. The output is cached as a static file, so downloads need no backend or runtime browser. `qa/pdf-manifest.json` records the source hash and export date.
+The export route is `/en/vision/print`. Playwright waits for fonts/images, uses print CSS, preserves selectable text and SVG, then verifies the page count against the presentation data in 16:9. The output is cached as a static file, so downloads need no backend or runtime browser. `qa/pdf-manifest.json` records the English source hash and export date; other locales use `qa/pdf-manifest-<locale>.json`. Draft translations cannot be exported. Each locale has a separate download and manifest.
 
 The checked-in PDF is a prebuilt snapshot. `npm run check:pdf` (also run by `npm run build`) rejects outdated exports after source or asset changes. The download URL uses the export hash to avoid serving a previously cached revision. Regenerate it with `npm run export:pdf -- en` whenever the downloadable deck should reflect slide edits, then build so deployment includes the current file. Browser print is a convenient alternative; disable browser headers/footers, choose no margins and enable background graphics. The prebuilt Playwright file is the reference export. Notes and navigation controls are excluded from PDF. PPTX is not implemented.
 

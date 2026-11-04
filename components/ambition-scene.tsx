@@ -36,7 +36,7 @@ function AmbitionIllustration({ kind }: { kind: number }) {
 }
 
 export function AmbitionScene({ slide }: { slide: SlideContent }) {
-  return <div className="ambition-field" aria-label="Four independent dimensions of professional success">
+  return <div className="ambition-field" aria-label={slide.diagramAlt}>
     {slide.items.map((item, index) => <section
       className="ambition"
       key={item.title}

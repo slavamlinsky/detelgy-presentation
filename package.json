@@ -10,9 +10,11 @@
     "qa": "node scripts/qa.mjs",
     "export:pdf": "node scripts/export-pdf.mjs",
     "validate:content": "node scripts/validate-content.mjs",
-    "check:pdf": "node scripts/check-pdf.mjs"
+    "check:pdf": "node scripts/check-pdf.mjs",
+    "translation:status": "node scripts/translation-status.mjs"
   },
   "dependencies": {
+    "@radix-ui/react-select": "^2.4.1",
     "lucide-react": "^0.468.0",
     "next": "^16.0.0",
     "react": "^19.0.0",

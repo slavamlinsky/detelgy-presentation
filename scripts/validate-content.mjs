@@ -1,14 +1,22 @@
-import {readFile,readdir} from 'node:fs/promises';
+import { readFile, readdir } from 'node:fs/promises';
 import assert from 'node:assert/strict';
-const canonical=JSON.parse(await readFile('content/locales/en.json','utf8'));
-function keys(value,prefix='') {return Object.entries(value).flatMap(([key,v])=>{const path=`${prefix}.${key}`;return v && typeof v==='object' ? keys(v,path) : [path]}).sort()}
-for(const name of await readdir('content/locales')){
- if(!name.endsWith('.json'))continue;
- const deck=JSON.parse(await readFile(`content/locales/${name}`,'utf8'));
- assert.equal(deck.locale,name.slice(0,-5));assert.equal(deck.slides.length,canonical.slides.length);
- const originalIds=Array.from({length:14},(_,i)=>`s${String(i+1).padStart(2,'0')}`);
- assert.deepEqual(deck.slides.map(s=>s.id),[...originalIds.slice(0,9),'mission','coopetition',...originalIds.slice(9,13),'grow-pie',originalIds[13]]);
- assert.deepEqual(keys(deck),keys(canonical),`${name}: translation shape differs from English`);
- for(const s of deck.slides){for(const field of ['title','chapter','lead','eyebrow','note','footer'])assert.equal(typeof s[field],'string');assert(s.sources.length>0);assert(s.title.length>0);}
- console.log(`${name}: ${deck.slides.length} slides, original deep-link IDs preserved, complete schema and evidence notes.`);
+import { validateTranslation } from '../lib/translation-schema.mjs';
+import { localeDefinitions } from '../lib/locales.mjs';
+const canonical = JSON.parse(await readFile('content/locales/en.json', 'utf8'));
+const originalIds = Array.from({length:14},(_,i)=>`s${String(i+1).padStart(2,'0')}`);
+assert.deepEqual(canonical.slides.map(s=>s.id),[...originalIds.slice(0,9),'mission','coopetition',...originalIds.slice(9,13),'grow-pie',originalIds[13]]);
+for (const slide of canonical.slides) {
+  for (const field of ['title','chapter','lead','eyebrow','note','footer']) assert.equal(typeof slide[field], 'string');
+  assert(slide.sources.length > 0); assert(slide.title.length > 0);
+}
+for (const name of await readdir('content/locales')) {
+  if (!name.endsWith('.json')) continue;
+  const deck = JSON.parse(await readFile(`content/locales/${name}`, 'utf8'));
+  assert.equal(deck.locale, name.slice(0,-5));
+  assert(localeDefinitions.some(locale=>locale.code===deck.locale), `${name}: unregistered locale`);
+  if (deck.locale === 'en') console.log('en: 17 canonical slides, stable IDs and evidence notes preserved.');
+  else {
+    validateTranslation(canonical, deck);
+    console.log(`${deck.locale}: ${deck.status}, ${deck.slides.length}/${canonical.slides.length} translated slides, complete viewer dictionary.`);
+  }
 }

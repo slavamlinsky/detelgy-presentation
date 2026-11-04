@@ -131,7 +131,7 @@ try {
   await phone.goto(`${baseURL}/en/vision?slide=15`);
   await waitForSlide(phone, 's13');
   await complete(phone);
-  await phone.locator('.reading-content').waitFor();
+  assert.equal(await phone.locator('.reading-content').count(),0);
   assert.equal(await phone.evaluate(() => document.documentElement.scrollWidth <= innerWidth + 1), true);
   await phone.screenshot({ path: join(tmpdir(), 'detelgy-playback-mobile.png'), fullPage: true });
   await phone.getByRole('button', { name: 'Present', exact: true }).first().click();
@@ -140,9 +140,9 @@ try {
   assert.equal(await current(phone).getAttribute('data-reveal-step'), '0');
   await phone.keyboard.press('Escape');
 
-  // Unreleased locales are intentionally unavailable; no language switch is offered.
-  for (const locale of ['es', 'uk', 'ru']) assert.equal((await page.request.get(`${baseURL}/${locale}/vision?slide=12`)).status(), 404);
-  assert.equal(await page.locator('select[aria-label*="language" i]').count(), 0);
+  // Other planned locales remain unavailable after the Ukrainian release.
+  for (const locale of ['es', 'ru']) assert.equal((await page.request.get(`${baseURL}/${locale}/vision?slide=12`)).status(), 404);
+  assert.equal(await page.locator('[role="combobox"][aria-label*="language" i]').count(), 1);
   // Final invitation uses the verified public access route.
   await page.goto(`${baseURL}/en/vision#s14`);
   await waitForSlide(page, 's14');

@@ -25,9 +25,9 @@ export function GrowPieContent({ slide, step = 1 }: { slide: SlideContent; step?
   return <div className="pie-composition" data-pie-step={step}>
     <h2><span className="pie-headline-first">{firstLine}</span><em className="pie-headline-second" {...checkpointAttributes(step)}>{secondLine}</em></h2>
     <p className="pie-support" {...checkpointAttributes(step)}>{slide.lead}</p>
-    <figure className="pie-visual" role="img" aria-label={step === 0 ? "Illustrative existing market pie; a second market view will appear on the next advance." : "Illustrative comparison: a smaller existing market and a larger possible market with the same highlighted share proportion. No measured values are shown."}>
-      <figcaption className="pie-state-label pie-state-existing">Existing market</figcaption>
-      <figcaption className="pie-state-label pie-state-growing" {...checkpointAttributes(step)}>Growing market</figcaption>
+    <figure className="pie-visual" role="img" aria-label={step === 0 ? slide.comparisonLabels?.[0] : slide.diagramAlt}>
+      <figcaption className="pie-state-label pie-state-existing">{slide.columns?.[0]}</figcaption>
+      <figcaption className="pie-state-label pie-state-growing" {...checkpointAttributes(step)}>{slide.columns?.[1]}</figcaption>
       <svg viewBox="0 0 1920 1080" aria-hidden="true">
         <MarketDisc x={610} y={710} radius={112} className="pie-disc-left" />
         <path className="pie-expansion-link" pathLength={1} d="M768 710 H1152" {...checkpointAttributes(step)} />

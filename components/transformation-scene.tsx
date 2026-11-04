@@ -8,23 +8,21 @@ const scenes = [
   {
     className: 'world-before',
     image: '/assets/personas/david-before-office-wide.png',
-    alt: 'Dmytro working at a modest desk with handwritten notes, printed pages and folders',
   },
   {
     className: 'world-connected',
     image: '/assets/personas/david-connected-office-wide.png',
-    alt: 'Dmytro at an organized desk with a laptop in a bright modern workspace',
   },
 ] as const;
 
 export function TransformationScene({ slide, step = 1 }: { slide: SlideContent; step?: number }) {
-  return <div className="transformation-world" aria-label="Illustrative before and with Detelgy professional experience">
+  return <div className="transformation-world" aria-label={slide.diagramAlt}>
     {scenes.map((scene, index) => <figure className={`world-state ${scene.className}`} key={scene.className} {...(index === 1 ? checkpointAttributes(step) : {})} inert={index === 1 && step < 1}>
       <figcaption className="world-state-title">{slide.columns?.[index]}</figcaption>
       <div className="world-scene">
-        <img src={scene.image} alt={scene.alt} />
+        <img src={scene.image} alt={slide.imageAlts?.[index]} />
       </div>
-      <div className="world-overlay" aria-label={index === 0 ? 'Before conditions' : 'With Detelgy possibilities'}>
+      <div className="world-overlay" aria-label={slide.comparisonLabels?.[index]}>
         {slide.items.map((item, pair) => {
           const Icon = comparisonIcons[pair];
           return <div className="world-comparison" key={item.title} data-pair={pair} tabIndex={0}>
