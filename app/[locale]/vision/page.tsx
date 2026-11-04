@@ -1,5 +1,5 @@
 import { notFound } from 'next/navigation';
-import { getDeck } from '@/lib/presentation';
+import { getDeck } from '@/lib/decks';
 import { Studio } from '@/components/studio';
 export default async function Vision({params}:{params:Promise<{locale:string}>}) {
  const {locale}=await params;

@@ -8,7 +8,7 @@ export function MissionContent({ slide }: { slide: SlideContent }) {
     <span className="mission-eyebrow">{slide.eyebrow}</span>
     <h2><span>{opening}</span><em>{slide.accent}</em></h2>
     <p className="mission-promise">{slide.lead}</p>
-    <img className="mission-illustration" src="/assets/mission-elevator.png" alt="Professionals arrive individually at an elevator, enter one by one, and rise together inside the lift." />
+    <img className="mission-illustration" src="/assets/mission-elevator.png" alt={slide.diagramAlt} />
     <p className="mission-statement">{slide.closing}</p>
   </div>;
 }

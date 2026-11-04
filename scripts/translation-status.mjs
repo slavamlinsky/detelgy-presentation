@@ -1,0 +1,11 @@
+import { readFile } from 'node:fs/promises';
+import { localeDefinition } from '../lib/locales.mjs';
+import { validateTranslation } from '../lib/translation-schema.mjs';
+const locale=process.argv[2] ?? 'uk';
+if (!localeDefinition(locale) || locale==='en') throw new Error('Choose an enabled translation locale, e.g. uk.');
+const english=JSON.parse(await readFile('content/locales/en.json','utf8'));
+const translation=JSON.parse(await readFile(`content/locales/${locale}.json`,'utf8'));
+validateTranslation(english,translation);
+const translated=new Set(translation.slides.map(slide=>slide.id));
+console.log(`${locale}: ${translation.status} · ${translated.size}/${english.slides.length} slides translated`);
+english.slides.forEach((slide,index)=>console.log(`${String(index+1).padStart(2,'0')} ${slide.id.padEnd(11)} ${translated.has(slide.id)?'translated':'pending'}`));

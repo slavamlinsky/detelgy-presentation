@@ -1,0 +1,41 @@
+import assert from 'node:assert/strict';
+import { join } from 'node:path';
+import { tmpdir } from 'node:os';
+import { launchBrowser, baseURL, ready } from './browser.mjs';
+const browser=await launchBrowser();
+try {
+ const page=await browser.newPage({viewport:{width:1440,height:1000},reducedMotion:'reduce'}),errors=[];
+ page.on('pageerror',e=>errors.push(e.message));
+ await page.goto(`${baseURL}/uk/vision?slide=17#s14`);await ready(page);
+ const trigger=page.locator('.language-selector [role=combobox]');
+ const slide=()=>page.locator('.scaled-slide .presentation-slide-layer:last-child .slide');
+ await trigger.focus();await page.keyboard.press('Enter');
+ await page.getByRole('listbox').waitFor();
+ assert.equal(await page.getByRole('option').count(),2);
+ assert.equal(await page.getByRole('option',{selected:true}).innerText(),'Українська');
+ await page.keyboard.press('Home');
+ await page.waitForFunction(()=>document.activeElement?.textContent==='English');
+ assert.equal(await slide().getAttribute('data-slide'),'s14','Dropdown keyboard input advanced the deck');
+ await page.keyboard.press('End');
+ await page.waitForFunction(()=>document.activeElement?.textContent==='Українська');
+ await page.keyboard.press('Escape');
+ await page.getByRole('listbox').waitFor({state:'detached'});await page.waitForFunction(()=>document.activeElement?.matches('.language-selector [role=combobox]'));
+ await trigger.click();await page.getByRole('listbox').waitFor();await page.mouse.click(400,100);await page.getByRole('listbox').waitFor({state:'detached'});
+ await trigger.click();await page.getByRole('listbox').waitFor();
+ await page.screenshot({path:join(tmpdir(),'detelgy-language-selector-desktop.png'),fullPage:true});
+ await page.getByRole('option',{name:'Українська',exact:true}).click();
+ await page.getByRole('listbox').waitFor({state:'detached'});assert.equal(new URL(page.url()).pathname,'/uk/vision');
+ await trigger.focus();await page.keyboard.press('Space');await page.getByRole('listbox').waitFor();await page.keyboard.press('e');await page.waitForFunction(()=>document.activeElement?.textContent==='English');await page.keyboard.press('Enter');
+ await page.waitForURL('**/en/vision?slide=17#s14');await ready(page);
+ assert.equal(await slide().getAttribute('data-slide'),'s14');
+ await page.goBack();await page.waitForURL('**/uk/vision?slide=17#s14');
+ const phone=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'});
+ await phone.goto(`${baseURL}/uk/vision#s14`);await ready(phone);
+ await phone.locator('.language-selector [role=combobox]').tap();await phone.getByRole('listbox').waitFor();
+ const box=await phone.getByRole('listbox').boundingBox();assert(box.x>=0&&box.x+box.width<=390);
+ await phone.screenshot({path:join(tmpdir(),'detelgy-language-selector-mobile.png'),fullPage:true});
+ await phone.getByRole('option',{name:'English',exact:true}).tap();await phone.waitForURL('**/en/vision#s14');
+ for(const width of [320,390,768]){await phone.setViewportSize({width,height:844});assert(await phone.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),`Overflow at ${width}px`);}
+ assert.deepEqual(errors,[]);
+ console.log('Custom language selector passed: selected state, Home/End/typeahead, Enter/Space, Escape/focus return, outside dismissal, slide-safe keyboard input, unchanged selection, EN/UK deep links/history, touch and mobile bounds.');
+} finally {await browser.close();}

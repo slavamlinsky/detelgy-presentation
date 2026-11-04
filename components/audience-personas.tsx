@@ -18,7 +18,7 @@ export function AudiencePersonas({slide}:{slide:SlideContent}) {
     <div className="audience-scene">
     <svg className="audience-connections" viewBox="0 0 1696 460" aria-hidden="true"><g fill="none" stroke="#86AEC9" strokeWidth="2"><path pathLength="1" d="M380 260Q570 180 715 260"/><path pathLength="1" d="M981 260Q1140 180 1316 260"/></g></svg>
     {slide.items.map((item,i)=><section key={item.title} className={`audience-person audience-person-${i}`} tabIndex={0} aria-label={`${item.title}. ${item.label}. ${item.body}`}>
-      <div className="audience-portrait"><span className="audience-backdrop"/>{i===1&&<span className="audience-primary">Primary focus</span>}<Professional variant={i}/></div>
+      <div className="audience-portrait"><span className="audience-backdrop"/>{i===1&&<span className="audience-primary">{slide.microcopy}</span>}<Professional variant={i}/></div>
       <h3>{item.title}</h3><span className="audience-purpose">{item.label}</span>
       <p className="audience-jtbd">{item.body}</p>
     </section>)}

@@ -71,9 +71,6 @@ try {
     assert.equal(await page.getByRole('button', { name: 'Present', exact: true }).first().isVisible(), true);
     if (width === 390) await page.screenshot({ path: join(tmpdir(), 'detelgy-viewer-mobile.png') });
   }
-  await page.getByRole('button', { name: 'Reading view' }).click();
-  assert.equal(await page.locator('.reading-content').isVisible(), true);
-  await page.getByRole('button', { name: 'Slide view' }).click();
   assert.equal(await page.locator('.reading-content').count(), 0);
   assert.deepEqual(errors, []);
   console.log('Viewer header, chapter name, centered footer, overview, navigation, link, fullscreen, and responsive layouts passed.');

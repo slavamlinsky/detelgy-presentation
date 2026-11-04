@@ -13,10 +13,10 @@ try{
  const file=await page.request.get(origin+'/downloads/detelgy-vision-en.pdf');assert.equal(file.status(),200);const pdf=await PDFDocument.load(await file.body());
  const printed=await PDFDocument.load(await page.pdf({preferCSSPageSize:true,printBackground:true}));assert.equal(printed.getPageCount(),deck.slides.length);
  if(process.env.REQUIRE_CURRENT_PDF==='1')assert.equal(pdf.getPageCount(),deck.slides.length);
- for(const locale of ['es','uk','ru','fr'])assert.equal((await page.request.get(`${origin}/${locale}/vision`)).status(),404);
+ for(const locale of ['es','ru','fr'])assert.equal((await page.request.get(`${origin}/${locale}/vision`)).status(),404);
  await page.screenshot({path:'qa/viewports/production-1366.png'});
- const phone=await b.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await phone.goto(origin+'/en/vision');await ready(phone);await phone.waitForSelector('.reading-content');await phone.screenshot({path:'qa/viewports/mobile-default.png',fullPage:true});
- assert.equal(await phone.locator('.reading-content').isVisible(),true);
- const manifest={productionRoute:200,pdfDownload:pdf.getPageCount()===deck.slides.length?'current':'stale',pdfPages:pdf.getPageCount(),browserPrintPages:deck.slides.length,unreleasedLocales:404,mobileDefaultReading:true,reducedMotion:true};
+ const phone=await b.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await phone.goto(origin+'/en/vision');await ready(phone);await phone.waitForSelector('.slide-viewport');await phone.screenshot({path:'qa/viewports/mobile-default.png',fullPage:true});
+ assert.equal(await phone.locator('.reading-content,.mobile-reading-toggle').count(),0);
+ const manifest={productionRoute:200,pdfDownload:pdf.getPageCount()===deck.slides.length?'current':'stale',pdfPages:pdf.getPageCount(),browserPrintPages:deck.slides.length,unreleasedLocales:404,mobileDefaultSlides:true,reducedMotion:true};
  await writeFile('qa/production-smoke.json',JSON.stringify(manifest,null,2));console.log(manifest);
 }finally{await b.close()}

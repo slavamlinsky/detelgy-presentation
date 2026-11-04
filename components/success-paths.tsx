@@ -10,17 +10,17 @@ const icons = [BriefcaseBusiness, BookOpen, UsersRound];
 
 export function SuccessPaths({ slide }: { slide: SlideContent }) {
   return (
-    <div className="success-branch-scene" aria-label="Three equally valid professional ambitions branch from your ambition">
+    <div className="success-branch-scene" aria-label={slide.diagramAlt}>
       <svg className="success-path-lines" viewBox="0 0 1920 1080" aria-hidden="true">
         {paths.map((path, index) => (
           <path key={index} data-success-line={index} d={path} pathLength="1" />
         ))}
       </svg>
-      <div className="success-path-origin" tabIndex={0} role="img" aria-label="Your ambition">
+      <div className="success-path-origin" tabIndex={0} role="img" aria-label={slide.center}>
         <span className="success-path-origin-mark">
           <Compass size={33} strokeWidth={1.5} aria-hidden="true" />
         </span>
-        <strong>Your ambition</strong>
+        <strong>{slide.center}</strong>
       </div>
       <div className="success-path-destinations">
         {slide.items.map((item, index) => {

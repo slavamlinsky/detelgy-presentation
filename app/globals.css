@@ -131,6 +131,7 @@ svg {
 .control.primary:hover {
   background: #123f70;
 }
+.download-label-short { display: none; }
 .download-control {
   border: 1px solid #dce3eb;
   color: #33485f;
@@ -389,29 +390,7 @@ svg {
   font-size: 14px;
   font-weight: 500;
 }
-.reading-content {
-  max-width: 740px;
-  margin: 28px auto;
-  padding: 28px;
-  background: #fff;
-  line-height: 1.6;
-}
-.reading-content h2 {
-  font-size: 28px;
-  line-height: 1.2;
-  margin: 10px 0 18px;
-}
-.reading-content h3 {
-  font-size: 18px;
-  margin-top: 23px;
-}
-.reading-content small {
-  color: #63738a;
-}
 
-.reading-mode .presentation-stage {
-  height: 250px;
-}
 .print-only {
   display: none;
 }
@@ -539,8 +518,8 @@ svg {
   }
   .deck-heading {
     display: grid;
-    grid-template-columns: minmax(0, 1fr) auto;
-    grid-template-areas: "title reading" "count reading";
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title" "count";
     column-gap: 12px;
     row-gap: 3px;
   }
@@ -579,15 +558,7 @@ svg {
   .overview-dialog {
     padding: 22px;
   }
-  .reading-content {
-    padding: 22px;
   }
-  .reading-mode .presentation-stage {
-    height: auto;
-    aspect-ratio: 16/9;
-    min-height: 0;
-  }
-}
 @media (prefers-reduced-motion: no-preference) {
   .scaled-slide .slide {
     animation: enter var(--motion-duration) var(--motion-ease);
@@ -650,20 +621,11 @@ svg {
   color: #a2bace;
 }
 
-.mobile-reading-toggle {
-  display: none;
-}
 @media (max-width: 800px) {
   .presentation-stage {
     height: auto;
     aspect-ratio: 16/9;
     min-height: 0;
-  }
-  .mobile-reading-toggle {
-    display: inline-flex;
-    grid-area: reading;
-    font-size: 11px;
-    padding: 8px;
   }
   .deck-heading {
     gap: 8px;
@@ -677,9 +639,6 @@ svg {
   .is-presenting .presentation-stage {
     height: calc(100dvh - 90px);
     aspect-ratio: auto;
-  }
-  .reading-mode .presentation-stage {
-    height: auto;
   }
 }
 @media (max-width: 520px) {
@@ -1401,6 +1360,9 @@ svg {
   font-size: 72px;
   font-style: normal;
   font-weight: 630;
+}
+.story-grow-pie:lang(uk) .pie-headline-second {
+  font-size: 64px;
 }
 .pie-support {
   position: absolute;
@@ -2147,6 +2109,12 @@ svg {
   font-size: 30px;
   line-height: 1.38;
   color: #526d86;
+}
+.story-s11:lang(uk) .story-title h2 {
+  max-width: 680px;
+}
+.story-s11:lang(uk) .story-title > p {
+  white-space: pre-line;
 }
 .story-s11 .flywheel-microcopy {
   position: absolute;
@@ -4238,4 +4206,131 @@ svg {
   .deck-count .metadata-updated {
     display: none;
   }
+}
+
+/* Viewer locale controls; slide compositions remain unchanged. */
+.language-selector {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: #58687a;
+  flex-shrink: 0;
+}
+.ui-select-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  width: 150px;
+  height: 40px;
+  padding: 0 12px;
+  border: 1px solid #dce5ee;
+  border-radius: 9px;
+  background: #fff;
+  color: #526d86;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: border-color 180ms ease, background-color 180ms ease, box-shadow 180ms ease;
+}
+.ui-select-trigger > [data-placeholder],
+.ui-select-trigger > span { flex: 1; text-align: left; }
+.ui-select-trigger:hover { background: #f6faff; border-color: #acc9df; }
+.ui-select-trigger[data-state="open"] { background: #eef6fc; border-color: #81b1d2; }
+.ui-select-trigger:focus-visible { outline: 2px solid #24699e; outline-offset: 3px; }
+.ui-select-chevron { margin-left: auto; color: #718aa0; transition: transform 180ms ease; }
+.ui-select-trigger[data-state="open"] .ui-select-chevron { transform: rotate(180deg); }
+.ui-select-content {
+  z-index: 100;
+  min-width: max(174px, var(--radix-select-trigger-width));
+  max-height: var(--radix-select-content-available-height);
+  overflow: hidden;
+  padding: 5px;
+  border: 1px solid #dce6ef;
+  border-radius: 11px;
+  background: #fff;
+  color: #102541;
+  box-shadow: 0 10px 32px #10254114, 0 2px 6px #10254108;
+  transform-origin: var(--radix-select-content-transform-origin);
+}
+.ui-select-viewport { padding: 0; }
+.ui-select-item {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 40px;
+  padding: 9px 38px 9px 12px;
+  border-radius: 6px;
+  outline: none;
+  font-size: 13px;
+  line-height: 1.4;
+  cursor: pointer;
+  user-select: none;
+}
+.ui-select-item[data-state="checked"] { color: #24699e; font-weight: 600; background: #f1f7fc; }
+.ui-select-item[data-highlighted] { background: #e7f2fa; color: #164f79; }
+.ui-select-indicator { position: absolute; right: 12px; display: grid; place-items: center; color: #24699e; }
+.ui-select-scroll { display: flex; align-items: center; justify-content: center; height: 24px; color: #526d86; }
+@media (prefers-reduced-motion: no-preference) {
+  .ui-select-content[data-state="open"] { animation: language-select-in 140ms ease-out; }
+  @keyframes language-select-in { from { opacity: 0; transform: scale(.98); } to { opacity: 1; transform: scale(1); } }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ui-select-trigger, .ui-select-chevron { transition: none; }
+}
+.download-control:disabled { opacity: .5; cursor: not-allowed; }
+.translation-notice {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+  margin: 0 0 14px;
+  padding: 10px 14px;
+  border-radius: var(--radius-sm);
+  background: #e6f0f9;
+  color: #526d86;
+  font-size: 12px;
+  line-height: 1.5;
+}
+.translation-notice strong { font-weight: 550; color: #24699e; }
+.is-presenting .translation-notice { display: none; }
+@media print { .translation-notice { display: none; } }
+@media (max-width: 640px) {
+  .studio-header {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    grid-template-areas: "identity language" "pdf present";
+    height: auto;
+    min-height: 76px;
+    gap: 12px;
+    padding: 12px 16px;
+  }
+  .studio-identity { grid-area: identity; min-width: 0; }
+  .studio-identity > span:not(.brand) { display: none; }
+  .studio-header .brand { width: 105px; height: 36px; flex: 0 0 105px; }
+  .studio-actions { display: contents; }
+  .language-selector { grid-area: language; justify-self: end; margin: 0; }
+  .language-selector .ui-select-trigger { width: 144px; }
+  .studio-actions > .download-control {
+    grid-area: pdf;
+    height: 40px;
+    border: 1px solid #dce3eb;
+    padding: 10px 12px;
+    background: #fff;
+  }
+  .studio-actions .download-label { display: none; }
+  .studio-actions .download-label-short { display: inline; }
+  .studio-actions > .control.primary {
+    grid-area: present;
+    height: 40px;
+    padding: 10px 12px;
+  }
+}
+/* Ukrainian wording needs a modest optical fit to preserve Slide 02's two lines. */
+.v2-s02:lang(uk) .v2-fragment-copy h2 {
+  font-size: 90px;
+}
+/* Give Ukrainian roadmap labels their natural width without changing the orbit. */
+.story-s09:lang(uk) .ecosystem-pillars section > p {
+  grid-template-columns: 122px 1fr;
+  margin-top: 13px;
 }

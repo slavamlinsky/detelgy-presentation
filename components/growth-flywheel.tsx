@@ -37,7 +37,7 @@ export function GrowthFlywheel({ slide }: { slide: SlideContent }) {
       className="growth-flywheel"
       viewBox="0 0 1920 1080"
       role="group"
-      aria-label="Illustrative clockwise professional growth loop: Contribute, Gain visibility, Build trust, Find opportunities, Return and share."
+      aria-label={slide.diagramAlt}
     >
       <defs>
         <marker

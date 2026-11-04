@@ -159,7 +159,7 @@ export function StorySlide({
         )}
         {s.id === "s05" && <WorkloadScene slide={s}/>}
         {s.id === "s06" && (
-          <div className="barrier-system" aria-label="Three illustrative barriers to professional growth">
+          <div className="barrier-system" aria-label={s.diagramAlt}>
             {s.displayItems?.map((a, i) => {
               const Icon = [ScanSearch, UsersRound, BriefcaseBusiness][i];
               return <section className="barrier-panel" key={a.title} data-barrier={i} tabIndex={0} aria-label={`${a.title}: ${a.body} ${a.detail}`}>
@@ -188,9 +188,9 @@ export function StorySlide({
                 <path pathLength="1" d="M700 520 C657 508 614 477 587 444" />
                 <path pathLength="1" d="M416 520 C433 507 451 470 467 444" />
               </svg>
-              <div className="ecosystem-center" tabIndex={0} aria-label="Professional growth connects all four areas">
+              <div className="ecosystem-center" tabIndex={0} aria-label={s.diagramAlt}>
                 <UserRound size={34} strokeWidth={1.4} aria-hidden="true" />
-                <strong>Professional<br />growth</strong>
+                <strong>{s.center?.split("\n")[0]}<br />{s.center?.split("\n")[1]}</strong>
               </div>
               <div className="ecosystem-pillars">
                 {s.items.map((a, i) => {

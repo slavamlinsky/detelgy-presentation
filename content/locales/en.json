@@ -37,7 +37,14 @@
     "navigationLabel": "Presentation controls",
     "directorySource": "APA member directory",
     "seminarSource": "APA educational resources",
-    "sourceAccessed": "Existing channels · accessed 15 Oct 2026"
+    "sourceAccessed": "Existing channels · accessed 15 Oct 2026",
+    "language": "Presentation language",
+    "draftLabel": "Draft",
+    "exitPresentation": "Exit presentation",
+    "translationProgress": "{translated} of {total} slides translated",
+    "slideFallback": "This slide is shown in English until its translation is ready.",
+    "translatedSlide": "This slide is translated.",
+    "pdfUnavailable": "PDF will be available when this translation is complete."
   },
   "slides": [
     {
@@ -52,7 +59,15 @@
       "note": "We succeed when our professionals get tangible value. This is a stakeholder vision, not a validated fundraising pitch. Detelgy enables opportunities; it does not guarantee clients, income, professional standing or improved examination accuracy. Original promise: Helping polygraph professionals grow their expertise, reputation, connections and income opportunities.",
       "sources": [
         "Product brief §§1–3; Investor story S01."
-      ]
+      ],
+      "stages": [
+        "Start",
+        "Profile",
+        "Connections",
+        "Opportunities",
+        "Growth"
+      ],
+      "diagramAlt": "An ascending professional journey from identity through connections and opportunities to growth."
     },
     {
       "id": "s02",
@@ -127,6 +142,7 @@
       "accent": "One ambition to grow.",
       "lead": "We start with independent polygraph examiners and connect them with experienced leaders and emerging professionals.",
       "eyebrow": "Our initial focus",
+      "microcopy": "Primary focus",
       "items": [
         {
           "title": "Emerging Professional",
@@ -203,6 +219,7 @@
       "accent": "He's running his own business.",
       "lead": "From examinations and clients to administration and continuous learning, Dmytro has to manage it all.",
       "eyebrow": "The cost of fragmentation",
+      "diagramAlt": "Illustrated Dmytro, composed at his desk with a notebook",
       "items": [
         {
           "title": "Professional Practice",
@@ -235,6 +252,7 @@
       "accent": "But growth is not automatic.",
       "lead": "Three barriers can stand between your expertise and your next opportunity.",
       "eyebrow": "What gets in the way",
+      "diagramAlt": "Three illustrative barriers to professional growth",
       "items": [
         {
           "title": "Visibility",
@@ -282,6 +300,7 @@
       "accent": "professional success",
       "lead": "Every professional defines success differently.",
       "eyebrow": "The progress professionals seek",
+      "diagramAlt": "Four independent dimensions of professional success",
       "items": [
         {
           "title": "Become Better",
@@ -313,6 +332,15 @@
       "accent": "",
       "lead": "Detelgy connects the people, tools and opportunities that support professional growth.",
       "eyebrow": "Before / With Detelgy",
+      "diagramAlt": "Illustrative before and with Detelgy professional experience",
+      "imageAlts": [
+        "Dmytro working at a modest desk with handwritten notes, printed pages and folders",
+        "Dmytro at an organized desk with a laptop in a bright modern workspace"
+      ],
+      "comparisonLabels": [
+        "Before conditions",
+        "With Detelgy possibilities"
+      ],
       "columns": [
         "Before",
         "With Detelgy"
@@ -344,6 +372,8 @@
       "accent": "Professional success.",
       "lead": "Everything works together to support your professional growth.",
       "eyebrow": "The platform as a growth system",
+      "center": "Professional\ngrowth",
+      "diagramAlt": "Professional growth connects all four areas",
       "items": [
         {
           "title": "Connect",
@@ -395,7 +425,8 @@
       "note": "We build Detelgy around your professional success, because individual growth makes collective progress possible. Our mission starts with practical value for individual professionals, including established independent examiners. More clients, reputation and earning opportunities describe goals, not guaranteed results. Detelgy's built foundation supports profiles, peer connection and service discovery; paid transactions, consultations, mentorship and education remain planned. Individual progress can contribute to a stronger profession, but the collective outcome is an ambition to validate, not a measured effect.",
       "sources": [
         "Product brief §§3, 5–7; Investor story S09 and S14; Mission and Coopetition brief."
-      ]
+      ],
+      "diagramAlt": "Professionals arrive individually at an elevator, enter one by one, and rise together inside the lift."
     },
     {
       "id": "coopetition",
@@ -525,7 +556,8 @@
       "note": "Every arrow is a hypothesis to measure. There is no guarantee that contributing increases orders. Test contribution-to-profile discovery, relevant relationships, attributed inquiries and repeat meaningful participation. Proposed mechanism · not a demonstrated network effect.",
       "sources": [
         "Product brief §12; Investor story S11."
-      ]
+      ],
+      "diagramAlt": "Illustrative clockwise professional growth loop: Contribute, Gain visibility, Build trust, Find opportunities, Return and share."
     },
     {
       "id": "s12",
@@ -538,24 +570,38 @@
         {
           "title": "Practitioner",
           "body": "Build a stronger practice",
-          "steps": ["Visibility", "Clients", "Reputation"]
+          "steps": [
+            "Visibility",
+            "Clients",
+            "Reputation"
+          ]
         },
         {
           "title": "Expert",
           "body": "Turn expertise into impact",
-          "steps": ["Share", "Consult", "Recognition"]
+          "steps": [
+            "Share",
+            "Consult",
+            "Recognition"
+          ]
         },
         {
           "title": "Leader",
           "body": "Help the profession advance",
-          "steps": ["Mentor", "Teach", "Influence"]
+          "steps": [
+            "Mentor",
+            "Teach",
+            "Influence"
+          ]
         }
       ],
       "footer": "Complementary paths, not ranks · some mechanisms are planned",
       "note": "Industry Leader recognition is distinct from transaction-based levels and does not automatically confer Master status. Professionals can follow more than one path. Teaching and paid peer consulting belong to phased expansion. Complementary paths, not ranks · some mechanisms are planned.",
       "sources": [
         "Product brief §§7, 11; ICP / Personas §12; Investor story S12."
-      ]
+      ],
+      "center": "Your ambition",
+      "diagramAlt": "Three equally valid professional ambitions branch from your ambition"
     },
     {
       "id": "s13",
@@ -619,7 +665,15 @@
       "note": "Detelgy aims to expand opportunities for the entire polygraph profession. Our purpose is to help individual professionals grow through visibility, connections, knowledge and new business opportunities. Sustainable platform growth should follow the value created for professionals; shared success is our long-term ambition. This is a strategy, not evidence of measured market expansion. The two segmented circles are conceptual and do not represent market size, share, growth rates or forecasts. Growth and higher earnings are not automatic or guaranteed; the proposed mechanism requires validation.",
       "sources": [
         "Mission and Grow the Pie briefs; Product brief §§3, 8, 13–14; Investor story S13–S14."
-      ]
+      ],
+      "columns": [
+        "Existing market",
+        "Growing market"
+      ],
+      "comparisonLabels": [
+        "Illustrative existing market pie; a second market view will appear on the next advance."
+      ],
+      "diagramAlt": "Illustrative comparison: a smaller existing market and a larger possible market with the same highlighted share proportion. No measured values are shown."
     },
     {
       "id": "s14",
@@ -648,7 +702,12 @@
       "note": "This is an invitation to partners, Industry Leaders and early supporters to help shape the ecosystem. Global professional home is an ambition, not an established market leadership claim. Next steps are Expert Discovery, validation of professional value and phased service delivery. A future vision for the global polygraph community.",
       "sources": [
         "Product brief §3; Investor story S14."
-      ]
+      ],
+      "ctaLabels": [
+        "Apply to Join",
+        "Explore Detelgy"
+      ],
+      "diagramAlt": "Connect, Grow, Earn and Lead surround the Detelgy symbol over a stylized globe, bringing four dimensions of professional growth into one global community."
     }
   ]
 }

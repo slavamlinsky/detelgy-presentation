@@ -161,7 +161,7 @@ export function ClosingSlideContent({
       <figure
         className="closing-ecosystem"
         role="img"
-        aria-label="Connect, Grow, Earn and Lead surround the Detelgy symbol over a stylized globe, bringing four dimensions of professional growth into one global community."
+        aria-label={slide.diagramAlt}
       >
         <svg viewBox="0 0 1920 1080" aria-hidden="true">
           <defs>
@@ -332,7 +332,7 @@ export function ClosingSlideContent({
               target="_blank"
               rel="noopener noreferrer"
             >
-              Apply to Join
+              {slide.ctaLabels?.[0]}
               <ArrowUpRight size={24} strokeWidth={1.7} aria-hidden="true" />
             </a>
             <a
@@ -341,7 +341,7 @@ export function ClosingSlideContent({
               target="_blank"
               rel="noopener noreferrer"
             >
-              Explore Detelgy
+              {slide.ctaLabels?.[1]}
               <ArrowUpRight size={22} strokeWidth={1.7} aria-hidden="true" />
             </a>
           </div>

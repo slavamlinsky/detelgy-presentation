@@ -16,21 +16,21 @@ import {
 import type { Deck, SlideContent } from "@/lib/presentation";
 import { JourneySpotlight } from "./journey-spotlight";
 
-function GrowthGraphic() {
+function GrowthGraphic({ slide }: { slide: SlideContent }) {
   // Deliberate size progression remains visible when the slide is scaled to a laptop.
   const nodes = [
-    { t: 0, radius: 18, label: "Start", Icon: null },
-    { t: 0.32, radius: 25, label: "Profile", Icon: UserRound },
-    { t: 0.62, radius: 32, label: "Connections", Icon: Users },
-    { t: 0.83, radius: 39, label: "Opportunities", Icon: BriefcaseBusiness },
-    { t: 1, radius: 48, label: "Growth", Icon: ArrowUpRight },
+    { t: 0, radius: 18, label: slide.stages?.[0] ?? "Start", Icon: null },
+    { t: 0.32, radius: 25, label: slide.stages?.[1] ?? "Profile", Icon: UserRound },
+    { t: 0.62, radius: 32, label: slide.stages?.[2] ?? "Connections", Icon: Users },
+    { t: 0.83, radius: 39, label: slide.stages?.[3] ?? "Opportunities", Icon: BriefcaseBusiness },
+    { t: 1, radius: 48, label: slide.stages?.[4] ?? "Growth", Icon: ArrowUpRight },
   ];
   return (
     <svg
       className="v2-growth"
       viewBox="0 0 1920 1080"
       role="group"
-      aria-label="An ascending professional journey from identity through connections and opportunities to growth."
+      aria-label={slide.diagramAlt}
     >
       <path
         className="growth-trajectory"
@@ -253,7 +253,7 @@ export function PrototypeSlide({
       </header>
       {cover ? (
         <>
-          <GrowthGraphic />
+          <GrowthGraphic slide={slide} />
           <main className="v2-cover-copy">
             <h2>
               {slide.title.slice(0, slide.title.indexOf(slide.accent))}

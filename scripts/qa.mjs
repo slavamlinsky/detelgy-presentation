@@ -44,12 +44,7 @@ try {
   assert(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Viewport horizontal overflow');
  }
  await page.setViewportSize({width:390,height:844});
- await page.getByRole('button',{name:'Reading view',exact:true}).click();
- assert.equal(await page.locator('.reading-content').isVisible(),true);
- await page.getByRole('button',{name:'Slide view',exact:true}).click();
  assert.equal(await page.locator('.reading-content').count(),0);
- await page.getByRole('button',{name:'Reading view',exact:true}).click();
- await page.screenshot({path:'qa/viewports/mobile-reading.png',fullPage:true});
  await page.getByRole('button',{name:'Next slide',exact:true}).click();await page.waitForURL('**#s02');
  await page.getByRole('button',{name:'All slides',exact:true}).click();await page.keyboard.press('Escape');assert.equal(await page.locator('dialog').evaluate(d=>d.open),false);
  const unknown=await page.goto(`${baseURL}/es/vision`);assert.equal(unknown.status(),404);
