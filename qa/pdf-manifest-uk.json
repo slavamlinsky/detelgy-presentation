@@ -4,9 +4,9 @@
   "path": "public/downloads/detelgy-vision-uk.pdf",
   "lastUpdated": "2026-10-26",
   "release": 1,
-  "createdAt": "2026-11-04T22:30:58.836Z",
-  "sourceHash": "9201507477fc9193cf580a521c9b31c80e0f76bfa4df7ab869c6ed48678da9dc",
-  "pdfHash": "ed1ae2126115fbf56a1c0e989a3e2898363d16242b4822a2527988c0bcea9f5f",
+  "createdAt": "2026-11-17T15:29:46.676Z",
+  "sourceHash": "be367ff0ab00f9dad3056439b3bb6092d2d5957d4c74da59c9807dd4c43fc8a7",
+  "pdfHash": "464b583aa0a035f9864444b4bf9b7e331b31b92223b55568652a139a22c84c68",
   "inputs": [
     "app/(entry)/layout.tsx",
     "app/(entry)/page.tsx",

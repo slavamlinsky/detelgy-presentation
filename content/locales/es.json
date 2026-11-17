@@ -1,0 +1,715 @@
+{
+  "locale": "es",
+  "status": "released",
+  "title": "Visión de Detelgy",
+  "description": "Un ecosistema de crecimiento para profesionales de la poligrafía.",
+  "viewerTitle": "Nuestra visión para la profesión",
+  "ui": {
+    "edition": "Visión / Versión 1",
+    "overview": "Todas las diapositivas",
+    "present": "Presentar",
+    "exitFullscreen": "Salir de pantalla completa",
+    "download": "Descargar PDF",
+    "notes": "Notas del presentador",
+    "read": "Vista de lectura",
+    "slides": "Vista de diapositivas",
+    "previous": "Diapositiva anterior",
+    "next": "Diapositiva siguiente",
+    "close": "Cerrar",
+    "copy": "Copiar enlace a la diapositiva",
+    "copied": "Enlace copiado",
+    "copyFailed": "Copia la URL de la barra de direcciones",
+    "fullscreenFailed": "Usa la opción de pantalla completa de tu navegador.",
+    "keyboard": "Usa ← → para navegar",
+    "of": "de",
+    "source": "Fuentes y evidencias",
+    "english": "Inglés",
+    "back": "Volver a la presentación",
+    "logoAlt": "Detelgy",
+    "portraitAlt": "Ilustración generada por IA de un profesional independiente ficticio en una oficina tranquila",
+    "notesHint": "Notas y evidencias de esta diapositiva",
+    "overviewHint": "Elige un capítulo",
+    "status": {
+      "built": "Activo",
+      "planned": "Previsto",
+      "concept": "Concepto"
+    },
+    "slideCountLabel": "diapositivas",
+    "localeCode": "ES",
+    "navigationLabel": "Controles de la presentación",
+    "directorySource": "Directorio de miembros de la APA",
+    "seminarSource": "Recursos formativos de la APA",
+    "sourceAccessed": "Canales existentes · consultados el 15 de octubre de 2026",
+    "language": "Idioma de la presentación",
+    "draftLabel": "Borrador",
+    "exitPresentation": "Salir de la presentación",
+    "translationProgress": "{translated} de {total} diapositivas traducidas",
+    "slideFallback": "Esta diapositiva se muestra en inglés mientras se prepara su traducción.",
+    "translatedSlide": "Esta diapositiva ya está traducida.",
+    "pdfUnavailable": "El PDF estará disponible cuando se complete la traducción al español."
+  },
+  "slides": [
+    {
+      "id": "s01",
+      "chapter": "La promesa",
+      "title": "La experiencia abre\nnuevas oportunidades",
+      "accent": "nuevas oportunidades",
+      "lead": "Ayudamos a los profesionales de la poligrafía a crecer, consolidar su reputación, ampliar su red de contactos y acceder a nuevas oportunidades.",
+      "eyebrow": "Un futuro profesional conectado",
+      "items": [],
+      "footer": "Un ecosistema global para profesionales de la poligrafía",
+      "note": "Nuestro éxito depende del valor tangible que obtengan nuestros profesionales. Esta visión se dirige a las partes interesadas y aún no se ha validado como propuesta de inversión. Detelgy facilita el acceso a oportunidades, pero no garantiza clientes, ingresos, reconocimiento profesional ni una mayor precisión en los exámenes. Promesa original: ayudar a los profesionales de la poligrafía a desarrollar su experiencia, consolidar su reputación, ampliar su red y acceder a oportunidades de generar ingresos.",
+      "sources": [
+        "Documento de producto, §§1–3; relato para inversores, S01."
+      ],
+      "stages": [
+        "Inicio",
+        "Perfil",
+        "Contactos",
+        "Oportunidades",
+        "Crecimiento"
+      ],
+      "diagramAlt": "Una trayectoria ascendente que va del perfil profesional al crecimiento, pasando por los contactos y las oportunidades."
+    },
+    {
+      "id": "s02",
+      "chapter": "El panorama",
+      "title": "Profesión global.\nAún desconectada.",
+      "accent": "",
+      "lead": "Los perfiles profesionales, los clientes, los colegas y la formación siguen en espacios separados.",
+      "eyebrow": "El panorama actual",
+      "items": [
+        {
+          "title": "Sitios web propios",
+          "body": "Identidad profesional"
+        },
+        {
+          "title": "Recomendaciones",
+          "body": "Contacto con potenciales clientes"
+        },
+        {
+          "title": "Grupos de mensajería",
+          "body": "Consejos entre colegas"
+        },
+        {
+          "title": "Asociaciones",
+          "body": "Pertenencia a la comunidad profesional"
+        },
+        {
+          "title": "Seminarios",
+          "body": "Formación continua"
+        },
+        {
+          "title": "Redes sociales",
+          "body": "Visibilidad y alcance"
+        },
+        {
+          "title": "Directorios locales",
+          "body": "Búsqueda de servicios"
+        }
+      ],
+      "footer": "Hipótesis de trabajo · fuentes en las notas del presentador",
+      "note": "La APA ofrece un directorio profesional y seminarios formativos, dos ejemplos de los canales que ya existen. La fragmentación del sector se plantea como hipótesis de trabajo a partir de los documentos de referencia y aún no se ha medido a escala sectorial. La diapositiva no estima el tamaño del mercado. El gráfico reúne los canales existentes en cuatro ámbitos: visibilidad (sitios web, directorios y redes sociales), clientes (recomendaciones), colegas (grupos de mensajería y asociaciones) y formación (seminarios). Las redes actuales ya aportan valor. La hipótesis debe contrastarse con entrevistas a profesionales y estudios de mercado.",
+      "sources": [
+        "Documento de producto, §2; relato para inversores, S02.",
+        "American Polygraph Association: recursos y seminarios para futuros miembros. Consultado el 15 de octubre de 2026. https://www.polygraph.org/for_prospective_members.php",
+        "Directorio de miembros de la APA. Consultado el 15 de octubre de 2026. https://members.polygraph.org/members/directory/search_bootstrap.php"
+      ],
+      "prompt": "¿Y si la experiencia pudiera circular entre estos espacios?",
+      "diagramAlt": "Un profesional de la poligrafía ocupa el centro de cuatro ámbitos separados: visibilidad, clientes, colegas y formación. Las conexiones interrumpidas ilustran la fragmentación.",
+      "displayItems": [
+        {
+          "title": "Visibilidad",
+          "body": "webs, directorios, redes sociales"
+        },
+        {
+          "title": "Clientes",
+          "body": "recomendaciones, servicios, reseñas"
+        },
+        {
+          "title": "Colegas",
+          "body": "grupos, conversaciones"
+        },
+        {
+          "title": "Formación",
+          "body": "seminarios, asociaciones"
+        }
+      ],
+      "center": "Poligrafista"
+    },
+    {
+      "id": "s03",
+      "chapter": "A quién nos dirigimos",
+      "title": "Distintas etapas.\nUn objetivo: crecer.",
+      "accent": "Un objetivo: crecer.",
+      "lead": "Empezamos con los poligrafistas independientes y los conectamos con expertos consolidados y profesionales que inician su carrera.",
+      "eyebrow": "Nuestro enfoque inicial",
+      "microcopy": "Público principal",
+      "items": [
+        {
+          "title": "Profesional que empieza",
+          "label": "Aprender y conectar",
+          "body": "Recibir orientación y entablar relaciones de confianza con colegas."
+        },
+        {
+          "title": "Poligrafista independiente",
+          "label": "Impulsar su práctica",
+          "body": "Consolidar su reputación y hacer crecer su práctica independiente."
+        },
+        {
+          "title": "Experto consolidado",
+          "label": "Compartir y liderar",
+          "body": "Compartir su experiencia y ampliar su impacto en la profesión."
+        }
+      ],
+      "footer": "Hipótesis sobre el público objetivo · foco inicial: Ucrania y España",
+      "note": "Los tres perfiles describen motivaciones y comportamientos. La hipótesis inicial sobre el público principal se centra en poligrafistas independientes que ofrecen servicios comerciales. Quienes trabajan en instituciones pueden tener restricciones para ejercer por cuenta propia. Conviene priorizar una red local con suficientes contactos y oportunidades para ser útil antes de afirmar que el mercado cuenta con suficiente oferta y demanda a escala mundial. El foco geográfico inicial es Ucrania y España. Los tres perfiles se complementan y pueden aportar valor al mismo tiempo. Los retratos son ilustraciones generadas con IA de personajes ficticios y no representan a miembros reales ni definen grupos demográficos.",
+      "sources": [
+        "Perfiles de público y personas, §§2–7; documento de producto, §§4 y 9; relato para inversores, S03."
+      ]
+    },
+    {
+      "id": "s04",
+      "chapter": "El profesional",
+      "title": "Experiencia y prestigio.\nListo para una nueva etapa.",
+      "accent": "Listo para una nueva etapa.",
+      "lead": "Poligrafista independiente",
+      "eyebrow": "Conoce al protagonista",
+      "items": [
+        {
+          "title": "EXPERIENCIA",
+          "body": "12 años de práctica"
+        },
+        {
+          "title": "OBJETIVO",
+          "body": "Afianzar su reputación y abrir nuevas puertas"
+        },
+        {
+          "title": "ASPIRACIÓN",
+          "body": "Que se reconozca su aporte a la profesión"
+        }
+      ],
+      "footer": "Perfil ficticio compuesto · las motivaciones son hipótesis pendientes de validar en entrevistas",
+      "note": "El retrato se generó con IA y representa a un personaje ficticio. Dmytro es un perfil compuesto a partir de los documentos de referencia. Su nombre, edad, lugar de residencia y experiencia se añadieron con fines narrativos a petición del fundador. Las motivaciones son hipótesis pendientes de validar en entrevistas. Dmytro tiene 41 años y ejerce por cuenta propia en Kyiv, Ucrania. Tiene 12 años de experiencia y una práctica local consolidada. Su primer beneficio podría ser un contacto profesional útil o una consulta de un cliente potencial con una necesidad concreta. El relato no atribuye resultados de ingresos o rendimiento a Detelgy. Esta diapositiva presenta su perfil y sus aspiraciones. La diapositiva 5 muestra los obstáculos que afronta.",
+      "sources": [
+        "Perfiles de público y personas, §5; relato para inversores, S04."
+      ],
+      "persona": {
+        "name": "Dmytro · 41",
+        "detail": "Kyiv, Ucrania",
+        "profession": "Poligrafista independiente"
+      },
+      "displayItems": [
+        {
+          "title": "EXPERIENCIA",
+          "body": "12 años de práctica"
+        },
+        {
+          "title": "OBJETIVO",
+          "body": "Afianzar su reputación y abrir nuevas puertas"
+        },
+        {
+          "title": "ASPIRACIÓN",
+          "body": "Que se reconozca su aporte a la profesión"
+        }
+      ]
+    },
+    {
+      "id": "s05",
+      "chapter": "El día a día",
+      "title": "Además de poligrafista,\ndirige su propio negocio.",
+      "accent": "dirige su propio negocio.",
+      "lead": "Dmytro se encarga de los exámenes, los clientes, la gestión y su propia formación.",
+      "eyebrow": "El coste de la fragmentación",
+      "diagramAlt": "Ilustración de Dmytro sentado a su escritorio con un cuaderno.",
+      "items": [
+        {
+          "title": "Práctica profesional",
+          "body": "Realizar exámenes, gestionar casos y ofrecer un servicio de calidad."
+        },
+        {
+          "title": "Marketing y clientes",
+          "body": "Ganar visibilidad, atraer clientes y afianzar su reputación."
+        },
+        {
+          "title": "Gestión del negocio",
+          "body": "Organizar citas, pagos, procesos y tareas administrativas."
+        },
+        {
+          "title": "Desarrollo profesional",
+          "body": "Aprender de colegas, compartir saberes y adquirir nuevas habilidades."
+        }
+      ],
+      "center": "Dmytro",
+      "footer": "Hipótesis de trabajo · la experiencia varía según el profesional y el mercado",
+      "note": "Las cuatro áreas ilustran las responsabilidades de un profesional independiente que compiten por su tiempo. Las asociaciones y comunidades consolidadas ya ofrecen apoyo. Las entrevistas con profesionales deben identificar qué conexiones faltan o resultan costosas para cada perfil. Dmytro es un personaje ficticio. La ilustración generada con IA adapta su retrato de la diapositiva 4. La escena describe la carga de trabajo del examinador independiente. Al presentar las soluciones de Detelgy, conviene distinguir las funciones verificadas de los planes futuros, especialmente la gestión de clientes, los pagos internos, la automatización, la mentoría y la formación.",
+      "sources": [
+        "Documento de producto, §§2 y 10; relato para inversores, S05."
+      ]
+    },
+    {
+      "id": "s06",
+      "chapter": "Las barreras al crecimiento",
+      "title": "Ya tienes la experiencia.\nCrecer exige algo más.",
+      "accent": "Crecer exige algo más.",
+      "lead": "Tres barreras pueden interponerse entre tu experiencia y tu próxima oportunidad.",
+      "eyebrow": "Qué frena el crecimiento",
+      "diagramAlt": "Tres barreras que pueden frenar el crecimiento profesional.",
+      "items": [
+        {
+          "title": "Visibilidad",
+          "body": "Cuesta darse a conocer",
+          "detail": "fuera de tu red de contactos."
+        },
+        {
+          "title": "Apoyo",
+          "body": "Cuesta encontrar apoyo",
+          "detail": "y orientación de colegas de confianza."
+        },
+        {
+          "title": "Oportunidades",
+          "body": "Cuesta captar clientes",
+          "detail": "y encontrar mejores vías de ingresos."
+        }
+      ],
+      "footer": "Hipótesis de investigación pendientes de validar con profesionales",
+      "note": "Las tres barreras son hipótesis basadas en el análisis de públicos. Las entrevistas con profesionales de cada perfil deben evaluar su urgencia, frecuencia, alternativas actuales y disposición a pagar. Las redes consolidadas ya pueden aportar visibilidad, contactos de confianza y oportunidades. Las seis dificultades exploradas inicialmente fueron el aislamiento profesional, la escasa visibilidad, las señales de confianza dispersas, las barreras para aprender, la incertidumbre al captar clientes y las opciones limitadas de ingresos. Las preguntas en primera persona son ilustrativas. Las hipótesis se refieren a las condiciones en las que trabajan los profesionales.",
+      "sources": [
+        "Perfiles de público y personas, §§5–9 y 16–17; relato para inversores, S06."
+      ],
+      "displayItems": [
+        {
+          "title": "Visibilidad",
+          "body": "Cuesta darse a conocer",
+          "detail": "fuera de tu red de contactos."
+        },
+        {
+          "title": "Apoyo",
+          "body": "Cuesta encontrar apoyo",
+          "detail": "y orientación de colegas de confianza."
+        },
+        {
+          "title": "Oportunidades",
+          "body": "Cuesta captar clientes",
+          "detail": "y encontrar mejores vías de ingresos."
+        }
+      ]
+    },
+    {
+      "id": "s07",
+      "chapter": "Aspiraciones profesionales",
+      "title": "¿Qué significa el éxito profesional?",
+      "accent": "éxito profesional",
+      "lead": "Cada profesional define el éxito a su manera.",
+      "eyebrow": "A qué aspiran los profesionales",
+      "diagramAlt": "Cuatro dimensiones independientes del éxito profesional.",
+      "items": [
+        {
+          "title": "Seguir mejorando",
+          "body": "Aprender de colegas con experiencia."
+        },
+        {
+          "title": "Afianzar la reputación",
+          "body": "Ganarse la confianza y el reconocimiento profesional."
+        },
+        {
+          "title": "Abrir oportunidades",
+          "body": "Conectar con clientes y colaboradores."
+        },
+        {
+          "title": "Rentabilizar la experiencia",
+          "body": "Crear nuevas fuentes de ingresos."
+        }
+      ],
+      "footer": "Hipótesis sobre las aspiraciones profesionales · los servicios de pago entre colegas y la formación están previstos",
+      "note": "Estas cuatro aspiraciones profesionales son hipótesis de trabajo. Una misma persona puede tener varias aspiraciones a la vez y sus prioridades pueden cambiar con el tiempo. Detelgy puede facilitar el acceso a oportunidades, pero no garantiza mayores ingresos, demanda de clientes ni reconocimiento profesional. Las consultas de pago, la mentoría y la formación están previstas y su demanda aún debe validarse.",
+      "sources": [
+        "Perfiles de público y personas, §8; relato para inversores, S07."
+      ]
+    },
+    {
+      "id": "s08",
+      "chapter": "La transformación",
+      "title": "La misma experiencia.\nUn mundo de posibilidades.",
+      "accent": "",
+      "lead": "Detelgy reúne a las personas, las herramientas y las oportunidades que impulsan tu crecimiento profesional.",
+      "eyebrow": "Antes / Con Detelgy",
+      "diagramAlt": "Comparación ilustrativa de la experiencia profesional antes y con Detelgy.",
+      "imageAlts": [
+        "Dmytro trabaja en un escritorio sencillo con notas manuscritas, hojas impresas y carpetas.",
+        "Dmytro trabaja con un portátil en un escritorio ordenado, en un espacio moderno y luminoso."
+      ],
+      "comparisonLabels": [
+        "Situación de partida",
+        "Posibilidades con Detelgy"
+      ],
+      "columns": [
+        "Antes",
+        "Con Detelgy"
+      ],
+      "items": [
+        {
+          "title": "Visibilidad limitada",
+          "body": "Presencia profesional"
+        },
+        {
+          "title": "Conocimiento aislado",
+          "body": "Comunidad conectada"
+        },
+        {
+          "title": "Pocas vías de ingresos",
+          "body": "Nuevas vías de ingresos"
+        }
+      ],
+      "footer": "Transformación que buscamos · el acceso a oportunidades no garantiza resultados",
+      "note": "La transformación es ilustrativa y representa el objetivo de Detelgy. Dmytro es el mismo personaje ficticio en ambas escenas y parte de la misma experiencia profesional. La longitud de las líneas solo aporta énfasis visual. Según el documento interno, la base ya desarrollada abarca perfiles, conversaciones, contactos entre colegas, búsqueda de servicios y envío de solicitudes. Su preparación para producción y los resultados profesionales aún requieren validación. Las publicaciones, transacciones de pago, consultas, mentoría y formación están previstas. El acceso a oportunidades no garantiza clientes, mayores ingresos ni reconocimiento. Las cinco comparaciones iniciales eran pasar del círculo local a una mayor visibilidad, del conocimiento aislado al aprendizaje entre colegas, de las credenciales dispersas a un perfil único, del reconocimiento dentro de la red cercana a las contribuciones visibles, y de cobrar solo por servicios propios a poder ofrecer asesoría, mentoría o formación.",
+      "sources": [
+        "Documento de producto, §§5–6 y 10; relato para inversores, S08."
+      ]
+    },
+    {
+      "id": "s09",
+      "chapter": "El ecosistema de crecimiento",
+      "title": "Varias herramientas.\nUn ecosistema.\nÉxito profesional.",
+      "accent": "Éxito profesional.",
+      "lead": "Todo funciona en conjunto para impulsar tu desarrollo profesional.",
+      "eyebrow": "La plataforma como sistema de crecimiento",
+      "center": "Desarrollo\nprofesional",
+      "diagramAlt": "El desarrollo profesional conecta las cuatro áreas del ecosistema.",
+      "items": [
+        {
+          "title": "Conectar",
+          "body": "Conversaciones y contactos entre colegas",
+          "detail": "Mesas redondas y contactos afines",
+          "status": "built",
+          "secondaryStatus": "planned"
+        },
+        {
+          "title": "Aprender",
+          "body": "Aprendizaje e intercambio entre colegas",
+          "detail": "Consultas, mentoría y Academia",
+          "status": "built",
+          "secondaryStatus": "planned"
+        },
+        {
+          "title": "Generar ingresos",
+          "body": "Búsqueda de servicios y solicitudes",
+          "detail": "Pagos y servicios entre colegas",
+          "status": "built",
+          "secondaryStatus": "planned"
+        },
+        {
+          "title": "Ganar reputación",
+          "body": "Perfiles, credenciales y reseñas",
+          "detail": "Artículos, casos y publicaciones",
+          "status": "built",
+          "secondaryStatus": "planned"
+        }
+      ],
+      "foundation": "Global y multilingüe desde el diseño",
+      "footer": "¹ Desarrollado según el documento interno. Puesta en producción pendiente de validar. Las operaciones de pago están previstas.",
+      "note": "El documento de producto indica que la aplicación principal admite inglés, español, ucraniano y ruso. Una interfaz de reservas implementada no demuestra el cobro, la prestación del servicio ni la demanda del mercado. La verificación, las reseñas y el reconocimiento son señales de confianza distintas. La disponibilidad que se indica procede del documento interno y su preparación para producción aún requiere validación. Las operaciones de pago están previstas.",
+      "sources": [
+        "Documento de producto, §§5–7; relato para inversores, S09."
+      ]
+    },
+    {
+      "id": "mission",
+      "chapter": "Nuestra misión",
+      "viewerTitle": "Tu éxito es lo primero",
+      "title": "Tu éxito es lo primero.",
+      "accent": "es lo primero.",
+      "lead": "Más clientes. Una reputación más sólida. Más oportunidades de generar ingresos.",
+      "eyebrow": "NUESTRA MISIÓN",
+      "items": [],
+      "closing": "Cuando los profesionales prosperan, toda la profesión avanza.",
+      "footer": "",
+      "note": "Creamos Detelgy en torno a tu éxito profesional porque el crecimiento individual puede contribuir al progreso colectivo. Nuestra misión parte del valor práctico para cada profesional, incluidos los poligrafistas independientes con una trayectoria consolidada. Conseguir más clientes, afianzar la reputación y ampliar las oportunidades de ingresos son objetivos sin garantía de resultados. La base ya desarrollada incluye perfiles, contactos entre colegas y búsqueda de servicios. Las transacciones de pago, las consultas, la mentoría y la formación están previstas. El progreso colectivo es una aspiración pendiente de validar.",
+      "sources": [
+        "Documento de producto, §§3 y 5–7; relato para inversores, S09 y S14; documento sobre misión y coopetición."
+      ],
+      "diagramAlt": "Varios profesionales llegan a un ascensor, entran uno a uno y suben juntos."
+    },
+    {
+      "id": "coopetition",
+      "chapter": "Coopetición",
+      "title": "Compite por los clientes.\nColabora para crecer.",
+      "accent": "Colabora para crecer.",
+      "lead": "La competencia sana mejora los servicios. La cooperación entre colegas fortalece la profesión.",
+      "formula": "Coopetición = Cooperación + Competencia",
+      "eyebrow": "OTRA FORMA DE CRECER",
+      "items": [
+        {
+          "title": "Competencia",
+          "body": "Clientes · Reputación · Calidad del servicio · Experiencia"
+        },
+        {
+          "title": "Cooperación",
+          "body": "Compartir conocimientos · Normas profesionales · Recomendaciones · Mentoría"
+        }
+      ],
+      "closing": "Una profesión más fuerte abre más oportunidades para todos.",
+      "footer": "",
+      "note": "La coopetición propone una forma de relacionarse entre profesionales. Cada poligrafista puede mantener su propia práctica y elegir cuándo compartir conocimientos, recomendar a colegas, contribuir a las normas de la profesión u ofrecer mentoría. La participación debe aportar valor práctico y recíproco. La disposición a compartir clientes y los beneficios pueden variar. Las recomendaciones, la mentoría y las vías de ingresos se encuentran en distintas etapas de desarrollo. La colaboración por sí sola no garantiza más demanda ni mayores ingresos.",
+      "sources": [
+        "Documento de producto, §§5–7 y 11–12; perfiles de público y personas, §§10–12; documento sobre misión y coopetición."
+      ]
+    },
+    {
+      "id": "s10",
+      "chapter": "El recorrido",
+      "title": "Unirte es solo el comienzo.\nEl valor llega después.",
+      "accent": "El valor llega después.",
+      "lead": "El primer beneficio concreto es distinto para cada profesional.",
+      "eyebrow": "Un posible camino para avanzar",
+      "items": [
+        {
+          "title": "Descubrir",
+          "body": "¿Es para mí?"
+        },
+        {
+          "title": "Unirte",
+          "body": "Crear un perfil"
+        },
+        {
+          "title": "Participar",
+          "body": "Iniciar un intercambio"
+        },
+        {
+          "title": "Conectar y aprender",
+          "body": "Encontrar colegas que puedan ayudarte"
+        },
+        {
+          "title": "Afianzar la reputación",
+          "body": "Dar visibilidad a tu experiencia"
+        },
+        {
+          "title": "Encontrar oportunidades",
+          "body": "Recibir consultas relevantes"
+        },
+        {
+          "title": "Generar ingresos o liderar",
+          "body": "Aportar valor concreto"
+        },
+        {
+          "title": "Recomendar y contribuir",
+          "body": "Ayudar a otros a avanzar"
+        }
+      ],
+      "moments": [
+        {
+          "title": "Profesional que empieza",
+          "body": "Primer intercambio útil",
+          "detail": "Recibir un consejo útil de un colega."
+        },
+        {
+          "title": "Poligrafista independiente",
+          "body": "Primera consulta relevante",
+          "detail": "Recibir una consulta sobre tus servicios."
+        },
+        {
+          "title": "Experto consolidado",
+          "body": "Primera consulta de un colega",
+          "detail": "Compartir tu experiencia con otro profesional."
+        }
+      ],
+      "footer": "Recorrido ilustrativo · los primeros beneficios son hipótesis",
+      "note": "Participar puede aportar valor profesional incluso sin una transacción de pago. Cada recorrido puede comenzar en un punto distinto, volver atrás o tomar otro rumbo. Los cinco hitos agrupan ocho pasos en un modelo conceptual de participación. Los tres ejemplos de primer beneficio son hipótesis pendientes de validar. Los retratos se reutilizan de la diapositiva sobre el público y representan personajes ficticios. Una visita al perfil no equivale a una consulta relevante y la actividad por sí sola no demuestra progreso profesional. Recorrido completo: descubrir → unirte → participar → conectar y aprender → afianzar la reputación → encontrar oportunidades → generar ingresos o liderar → recomendar y contribuir.",
+      "sources": [
+        "Perfiles de público y personas, §§10–11; relato para inversores, S10."
+      ],
+      "stages": [
+        "Descubrir",
+        "Unirte",
+        "Primer beneficio",
+        "Participar",
+        "Crecer"
+      ],
+      "momentsLabel": "Ejemplos del primer beneficio",
+      "diagramAlt": "Una trayectoria ascendente enlaza descubrir, unirte, obtener un primer beneficio, participar y crecer. El primer beneficio ocupa el centro del recorrido ilustrativo."
+    },
+    {
+      "id": "s11",
+      "chapter": "El ciclo de valor",
+      "title": "Cada aporte\nimpulsa el ciclo.",
+      "accent": "",
+      "lead": "Compartir experiencia aumenta tu visibilidad y genera confianza. Las nuevas oportunidades animan a seguir participando.",
+      "microcopy": "Incluso las pequeñas aportaciones generan valor.",
+      "eyebrow": "El ciclo propuesto",
+      "items": [
+        {
+          "title": "Contribuir"
+        },
+        {
+          "title": "Ganar visibilidad"
+        },
+        {
+          "title": "Generar confianza"
+        },
+        {
+          "title": "Hallar oportunidades"
+        },
+        {
+          "title": "Volver y compartir"
+        }
+      ],
+      "center": "Desarrollo profesional",
+      "footer": "Ciclo propuesto · efecto de red pendiente de demostrar",
+      "note": "Cada flecha representa una relación que debe comprobarse. Contribuir no garantiza más encargos. Conviene medir si las contribuciones facilitan que otros descubran los perfiles, generen relaciones relevantes, den lugar a consultas atribuibles y animen a volver a participar de forma útil. El efecto de red es una hipótesis pendiente de validar.",
+      "sources": [
+        "Documento de producto, §12; relato para inversores, S11."
+      ],
+      "diagramAlt": "Ciclo ilustrativo de desarrollo profesional en sentido horario: contribuir, ganar visibilidad, generar confianza, hallar oportunidades, volver y compartir."
+    },
+    {
+      "id": "s12",
+      "chapter": "Caminos hacia el éxito",
+      "title": "El éxito tiene\ndistintos caminos.",
+      "accent": "distintos caminos.",
+      "lead": "Impulsa tu práctica. Comparte tu experiencia. Ayuda a transformar la profesión.",
+      "eyebrow": "Distintas aspiraciones, un progreso compartido",
+      "items": [
+        {
+          "title": "Profesional en ejercicio",
+          "body": "Consolida tu práctica",
+          "steps": [
+            "Visibilidad",
+            "Clientes",
+            "Reputación"
+          ]
+        },
+        {
+          "title": "Experto",
+          "body": "Amplía el alcance de tu experiencia",
+          "steps": [
+            "Compartir",
+            "Asesorar",
+            "Ganar reconocimiento"
+          ]
+        },
+        {
+          "title": "Líder",
+          "body": "Ayuda a avanzar a la profesión",
+          "steps": [
+            "Guiar",
+            "Enseñar",
+            "Influir"
+          ]
+        }
+      ],
+      "footer": "Caminos complementarios · algunas funciones están previstas",
+      "note": "El reconocimiento como líder de la profesión es independiente de los niveles basados en transacciones. El nivel Master tiene sus propios requisitos. Cada profesional puede seguir varios caminos. La enseñanza y las consultas de pago entre colegas se prevén para fases posteriores.",
+      "sources": [
+        "Documento de producto, §§7 y 11; perfiles de público y personas, §12; relato para inversores, S12."
+      ],
+      "center": "Tu aspiración",
+      "diagramAlt": "Tres caminos profesionales igualmente válidos parten de tu aspiración."
+    },
+    {
+      "id": "s13",
+      "chapter": "El modelo de negocio",
+      "title": "Primero, crear valor.\nDespués, generar ingresos.",
+      "accent": "Después, generar ingresos.",
+      "lead": "Aportar valor a los profesionales es la base de un negocio sostenible.",
+      "eyebrow": "El modelo de negocio propuesto",
+      "columns": [
+        "Valor para los profesionales",
+        "Ingresos para la plataforma"
+      ],
+      "valueItems": [
+        {
+          "title": "Visibilidad profesional",
+          "body": "Ganar presencia y afianzar la reputación"
+        },
+        {
+          "title": "Oportunidades con clientes",
+          "body": "Recibir consultas y conseguir encargos"
+        },
+        {
+          "title": "Conocimientos y contactos",
+          "body": "Aprender, compartir y colaborar"
+        }
+      ],
+      "items": [
+        {
+          "title": "Membresías Plus y Pro",
+          "body": "Ingresos recurrentes por suscripción",
+          "status": "planned"
+        },
+        {
+          "title": "Comisiones por servicios",
+          "body": "Ingresos por pedidos completados en la plataforma",
+          "status": "planned"
+        },
+        {
+          "title": "Servicios entre colegas y formación",
+          "body": "Futuras consultas, mentoría y formación",
+          "status": "planned"
+        }
+      ],
+      "footer": "Modelo comercial propuesto · precios, operaciones de pago y demanda pendientes de validar",
+      "note": "Las membresías Plus y Pro forman parte del modelo previsto de ingresos recurrentes. La modalidad gratuita facilita la participación. Las comisiones dependen de que se completen las transacciones en la plataforma. Los servicios entre colegas y la formación, incluidas las consultas y la mentoría, son posibles fuentes futuras de ingresos. El documento de producto recoge precios provisionales sujetos a validación. Aún no hay cifras de ingresos, conversión, volumen bruto de transacciones, ingresos medios por usuario ni ganancias de los profesionales. Conviene medir tanto el valor neto para los profesionales como los ingresos de la plataforma.",
+      "sources": [
+        "Documento de producto, §§6, 8 y 13–14; relato para inversores, S13."
+      ]
+    },
+    {
+      "id": "grow-pie",
+      "chapter": "Nuestra ambición",
+      "viewerTitle": "Ampliar el mercado",
+      "title": "Queremos algo más que una porción mayor.\nQueremos ampliar el mercado para todos.",
+      "accent": "Queremos ampliar el mercado para todos.",
+      "lead": "Vemos una oportunidad para generar confianza, atraer nueva demanda y aportar más valor a toda la profesión.",
+      "eyebrow": "",
+      "items": [],
+      "closing": "Tu crecimiento es nuestro propósito.\nEl éxito compartido es nuestra ambición.",
+      "footer": "",
+      "note": "Detelgy aspira a ampliar las oportunidades para toda la profesión de la poligrafía. Queremos ayudar a cada profesional a crecer mediante la visibilidad, los contactos, el intercambio de conocimientos y nuevas oportunidades de negocio. El crecimiento sostenible de la plataforma debe partir del valor que aporta a los profesionales. El éxito compartido es una ambición a largo plazo. Los círculos segmentados son conceptuales y no representan el tamaño del mercado, cuotas, tasas de crecimiento ni previsiones. La estrategia todavía requiere validación y no garantiza crecimiento ni mayores ingresos.",
+      "sources": [
+        "Documentos sobre misión y ampliación del mercado. Documento de producto, §§3, 8 y 13–14. Relato para inversores, S13–S14."
+      ],
+      "columns": [
+        "Mercado actual",
+        "Mercado ampliado"
+      ],
+      "comparisonLabels": [
+        "Representación ilustrativa del mercado actual. Avanza para ver cómo podría ampliarse."
+      ],
+      "diagramAlt": "Comparación ilustrativa de un mercado actual y un mercado posible más amplio. La porción destacada ocupa la misma proporción en ambos círculos. El gráfico es conceptual."
+    },
+    {
+      "id": "s14",
+      "chapter": "La invitación",
+      "title": "Tu espacio profesional\nen una red global.",
+      "accent": "en una red global.",
+      "lead": "Un lugar para conectar, contribuir y crecer juntos.",
+      "eyebrow": "La visión de Detelgy",
+      "items": [
+        {
+          "title": "Conectar"
+        },
+        {
+          "title": "Crecer"
+        },
+        {
+          "title": "Ganar"
+        },
+        {
+          "title": "Liderar"
+        }
+      ],
+      "closing": "La próxima etapa empieza contigo.",
+      "cta": "Construyámosla juntos.",
+      "footer": "Una visión de futuro para la comunidad global de la poligrafía",
+      "note": "Invitamos a socios, líderes del sector y primeros colaboradores a dar forma al ecosistema. Convertirnos en un espacio profesional de alcance global es nuestra aspiración. Los siguientes pasos son entrevistar a especialistas, validar el valor que reciben los profesionales e incorporar los servicios por fases.",
+      "sources": [
+        "Documento de producto, §3. Relato para inversores, S14."
+      ],
+      "ctaLabels": [
+        "Solicitar acceso",
+        "Explorar Detelgy"
+      ],
+      "diagramAlt": "Sobre un globo estilizado, conectar, crecer, ganar y liderar rodean el símbolo de Detelgy y reúnen cuatro dimensiones del desarrollo profesional en una red global."
+    }
+  ]
+}

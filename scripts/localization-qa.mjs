@@ -7,6 +7,7 @@ import { validateTranslation } from '../lib/translation-schema.mjs';
 import { resolveTranslation } from '../lib/resolve-translation.mjs';
 
 const en=JSON.parse(await readFile('content/locales/en.json','utf8'));
+const es=JSON.parse(await readFile('content/locales/es.json','utf8'));
 const uk=JSON.parse(await readFile('content/locales/uk.json','utf8'));
 validateTranslation(en,uk);
 assert.equal(resolveTranslation(en,uk).fallbackSlideIds.length,en.slides.length-uk.slides.length);
@@ -26,7 +27,7 @@ assert.throws(()=>validateTranslation(en,{...uk,slides:[{...en.slides[0],items:{
 const browser=await launchBrowser();
 const current=page=>page.locator('.scaled-slide .presentation-slide-layer:last-child .slide');
 const waitSlide=(page,id)=>page.waitForFunction(id=>document.querySelector('.scaled-slide .presentation-slide-layer:last-child .slide')?.dataset.slide===id,id);
-const selectLocale=async(page,code)=>{await page.locator('.language-selector [role=combobox]').click();await page.getByRole('option',{name:code==='uk'?'Українська':'English',exact:true}).click();};
+const selectLocale=async(page,code)=>{await page.locator('.language-selector [role=combobox]').click();await page.getByRole('option',{name:{en:'English',uk:'Українська',es:'Español'}[code],exact:true}).click();};
 const idle=page=>page.waitForFunction(()=>document.querySelector('.studio')?.dataset.playbackBusy==='false' && !document.querySelector('.presentation-slide-in'));
 try {
  const page=await browser.newPage({viewport:{width:1920,height:1080},reducedMotion:'reduce'});
@@ -65,7 +66,28 @@ try {
  await page.keyboard.press('Escape');
  assert.equal(await page.locator('.studio').getAttribute('data-view-mode'),'explore');
  assert.equal((await page.request.get(`${baseURL}/en/vision/print`)).status(),200);
- for (const locale of ['es','ru','fr','ua']) assert.equal((await page.request.get(`${baseURL}/${locale}/vision`)).status(),404);
+ await page.goto(`${baseURL}/uk/vision?slide=16#grow-pie`);await ready(page);await waitSlide(page,'grow-pie');
+ await selectLocale(page,'es');
+ await page.waitForURL('**/es/vision?slide=16#grow-pie');await waitSlide(page,'grow-pie');
+ assert.equal(await page.locator('html').getAttribute('lang'),'es');
+ assert.equal(await page.locator('.presentation-slide-layer:last-child').getAttribute('lang'),'es');
+ assert.equal(await page.locator('.translation-notice').count(),0);
+ const spanishPdf=await page.locator('a.download-control').getAttribute('href');
+ assert.match(spanishPdf,/^\/downloads\/detelgy-vision-es\.pdf\?v=/);
+ assert.equal((await page.request.get(baseURL+spanishPdf)).status(),200);
+ assert.equal((await page.request.get(`${baseURL}/es/vision/print`)).status(),200);
+ await page.goto(`${baseURL}/es/vision#s04`);await ready(page);await waitSlide(page,'s04');
+ assert.equal(await current(page).locator('.story-portrait span').first().textContent(),'Kyiv, Ucrania');
+ await page.goto(`${baseURL}/es/vision#s02`);await ready(page);await waitSlide(page,'s02');
+ assert.equal(await page.locator('.presentation-slide-layer:last-child').getAttribute('lang'),'es');
+ const fragment=es.slides.find(slide=>slide.id==='s02');
+ assert.equal(await current(page).locator('h2').innerText(),fragment.title);
+ assert.deepEqual(await current(page).locator('.fragment-node-reveal > text:first-of-type').allTextContents(),fragment.displayItems.map(item=>item.title));
+ await page.getByRole('button',{name:es.ui.previous,exact:true}).click();await waitSlide(page,'s01');await idle(page);
+ assert.match(await current(page).locator('h2').innerText(),/La experiencia abre\s+nuevas oportunidades/);
+ assert.equal(await current(page).locator('[data-milestone="2"]').getAttribute('aria-label'),'Contactos');
+ await page.screenshot({path:join(tmpdir(),'detelgy-es-viewer-1920.png'),fullPage:true});
+ for (const locale of ['ru','fr','ua']) assert.equal((await page.request.get(`${baseURL}/${locale}/vision`)).status(),404);
  assert(!(await page.content()).includes(en.slides[0].note.slice(0,80)), 'Private notes leaked into viewer');
  const phone=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'});
  await phone.goto(`${baseURL}/uk/vision#s01`);await ready(phone);await waitSlide(phone,'s01');

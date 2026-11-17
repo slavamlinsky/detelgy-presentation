@@ -141,7 +141,7 @@ try {
   await phone.keyboard.press('Escape');
 
   // Other planned locales remain unavailable after the Ukrainian release.
-  for (const locale of ['es', 'ru']) assert.equal((await page.request.get(`${baseURL}/${locale}/vision?slide=12`)).status(), 404);
+  for (const locale of ['ru']) assert.equal((await page.request.get(`${baseURL}/${locale}/vision?slide=12`)).status(), 404);
   assert.equal(await page.locator('[role="combobox"][aria-label*="language" i]').count(), 1);
   // Final invitation uses the verified public access route.
   await page.goto(`${baseURL}/en/vision#s14`);

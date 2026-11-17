@@ -17,6 +17,19 @@ export function checkpointsFor(id: string) {
   return presentationPlayback[id]?.checkpoints ?? [];
 }
 
+const spanishCheckpointLabels: Readonly<Partial<Record<string, string>>> = {
+  transformation: 'Mostrar Con Detelgy',
+  cooperation: 'Mostrar la cooperación',
+  revenue: 'Mostrar los ingresos de la plataforma',
+  expansion: 'Mostrar el mercado ampliado',
+  invitation: 'Mostrar la invitación final',
+};
+
+export function checkpointLabel(checkpoint: PresentationCheckpoint | undefined, locale: string) {
+  if (!checkpoint) return undefined;
+  return locale === 'es' ? spanishCheckpointLabels[checkpoint.id] ?? checkpoint.label : checkpoint.label;
+}
+
 export function checkpointAttributes(step: number, checkpoint = 1) {
   const hidden = step < checkpoint;
   return {

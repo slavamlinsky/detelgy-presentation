@@ -28,7 +28,7 @@ try {
  await mkdir('public/downloads',{recursive:true});
  const bytes=await page.pdf({printBackground:true,preferCSSPageSize:true,tagged:true,outline:true});
  const pdf=await PDFDocument.load(bytes);if(pdf.getPageCount()!==deck.slides.length)throw new Error(`Expected ${deck.slides.length} pages, got ${pdf.getPageCount()}`);
- pdf.setTitle(`${deck.title} — ${presentationMeta.title}`);pdf.setAuthor('Detelgy');pdf.setLanguage(locale);
+ pdf.setTitle(`${deck.title} — ${deck.viewerTitle ?? presentationMeta.title}`);pdf.setAuthor('Detelgy');pdf.setLanguage(locale);
  pdf.setSubject(`${deck.description} Presentation revision: ${presentationMeta.lastUpdated}. Release ${presentationMeta.release}.`);
  pdf.setKeywords([`Revision ${presentationMeta.lastUpdated}`,`Release ${presentationMeta.release}`]);
  pdf.setModificationDate(presentationRevisionDate());

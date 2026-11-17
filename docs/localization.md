@@ -1,6 +1,6 @@
 # Presentation localization
 
-English (`en`) is canonical and released. Ukrainian uses the ISO language code `uk` and is fully translated and released at `/uk/vision`, including its downloadable PDF. `ua` is not a language route. Spanish and Russian are reserved in `lib/locales.mjs` and stay unavailable until their content is registered.
+English (`en`) is canonical and released. Ukrainian uses the ISO language code `uk` and is fully translated and released at `/uk/vision`, including its downloadable PDF. `ua` is not a language route. Spanish (`es`) is fully translated and released at `/es/vision`, including its downloadable PDF. Russian is reserved in `lib/locales.mjs`.
 
 ## Slide-by-slide workflow
 
