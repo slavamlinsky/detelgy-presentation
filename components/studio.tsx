@@ -4,7 +4,7 @@ import { ArrowLeft, ArrowRight, Download, Maximize, Minimize, Grid2X2, Link2, X,
 import { LanguageSelector } from './language-selector';
 import { Brand, Slide } from './slide';
 import { pdfHref, type Deck, type Locale } from '@/lib/presentation';
-import { checkpointsFor, slideIndexFromUrl, slideNavigationUrl } from '@/lib/presentation-playback';
+import { checkpointLabel, checkpointsFor, slideIndexFromUrl, slideNavigationUrl } from '@/lib/presentation-playback';
 import { presentationMeta, formatPresentationUpdated, formatPresentationDuration } from '@/lib/presentation-meta.mjs';
 
 const TRANSITION_MS = 400;
@@ -60,6 +60,7 @@ export function Studio({deck}:{deck:Deck}) {
  const slideUi=fallback?(deck.fallbackUi??ui):ui;
  const downloadHref=deck.translationStatus==='released' && !deck.fallbackSlideIds.length ? pdfHref(deck.locale as Locale) : undefined;
  const checkpoints=checkpointsFor(slide.id);
+ const nextCheckpointLabel=checkpointLabel(checkpoints[revealStep],slideLanguage);
  const setStep=useCallback((step:number)=>{revealStepRef.current=step;setRevealStep(step)},[]);
  const exitPresentation=useCallback(()=>{
   presentingRef.current=false;
@@ -248,7 +249,7 @@ export function Studio({deck}:{deck:Deck}) {
     {transition&&<div className="presentation-slide-layer presentation-slide-out" aria-hidden="true" inert lang={deck.fallbackSlideIds.includes(deck.slides[transition.from].id)?'en':deck.locale}><Slide slide={deck.slides[transition.from]} index={transition.from} ui={deck.fallbackSlideIds.includes(deck.slides[transition.from].id)?(deck.fallbackUi??ui):ui} total={deck.slides.length}/></div>}
     <div key={`${slide.id}-${replay}`} className={`presentation-slide-layer${transition?' presentation-slide-in':''}`} aria-hidden={transition?true:undefined} inert={!!transition} lang={slideLanguage}><Slide slide={slide} index={active} ui={slideUi} total={deck.slides.length} revealStep={presenting&&checkpoints.length?revealStep:Number.MAX_SAFE_INTEGER}/></div>
    </div></div></div></div>
-   <nav className="deck-controls" aria-label={ui.navigationLabel}><div className="control-group"><button className="control overview-control" aria-label={ui.overview} ref={overviewButton} onClick={()=>setOverview(true)}><Grid2X2 size={17}/><span>{ui.overview}</span></button></div><div className="navigation"><button className="icon-control" aria-label={ui.previous} title={ui.previous} onClick={()=>go(active-1)} disabled={active===0&&(!presenting||revealStep===0)}><ArrowLeft size={19}/></button><span aria-live="polite" className="counter">{String(active+1).padStart(2,'0')} <span>/ {deck.slides.length}</span></span><button className="icon-control" aria-label={ui.next} aria-description={presenting?checkpoints[revealStep]?.label:undefined} title={presenting?checkpoints[revealStep]?.label??ui.next:ui.next} onClick={()=>go(active+1)} disabled={active===deck.slides.length-1&&(!presenting||revealStep>=checkpoints.length)}><ArrowRight size={19}/></button></div><div className="control-group end-controls"><button className="icon-control" aria-label={ui.copy} title={ui.copy} onClick={copy}><Link2 size={17}/></button><button className="icon-control" aria-label={presenting?ui.exitPresentation:ui.present} title={presenting?ui.exitPresentation:ui.present} onClick={presenting?leavePresentation:enterPresentation}>{presenting?<Minimize size={18}/>:<Maximize size={18}/>}</button></div></nav>
+   <nav className="deck-controls" aria-label={ui.navigationLabel}><div className="control-group"><button className="control overview-control" aria-label={ui.overview} ref={overviewButton} onClick={()=>setOverview(true)}><Grid2X2 size={17}/><span>{ui.overview}</span></button></div><div className="navigation"><button className="icon-control" aria-label={ui.previous} title={ui.previous} onClick={()=>go(active-1)} disabled={active===0&&(!presenting||revealStep===0)}><ArrowLeft size={19}/></button><span aria-live="polite" className="counter">{String(active+1).padStart(2,'0')} <span>/ {deck.slides.length}</span></span><button className="icon-control" aria-label={ui.next} aria-description={presenting?nextCheckpointLabel:undefined} title={presenting?nextCheckpointLabel??ui.next:ui.next} onClick={()=>go(active+1)} disabled={active===deck.slides.length-1&&(!presenting||revealStep>=checkpoints.length)}><ArrowRight size={19}/></button></div><div className="control-group end-controls"><button className="icon-control" aria-label={ui.copy} title={ui.copy} onClick={copy}><Link2 size={17}/></button><button className="icon-control" aria-label={presenting?ui.exitPresentation:ui.present} title={presenting?ui.exitPresentation:ui.present} onClick={presenting?leavePresentation:enterPresentation}>{presenting?<Minimize size={18}/>:<Maximize size={18}/>}</button></div></nav>
    <div className="progress-track">{deck.slides.map((s,i)=><button key={s.id} aria-label={`${i+1}. ${s.chapter}`} aria-current={i===active?'step':undefined} onClick={()=>go(i,false)} className={i===active?'active':''}><span/></button>)}</div>
    <footer className="workspace-footer"><span>{ui.keyboard}</span></footer>
   </div>

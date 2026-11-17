@@ -4,9 +4,9 @@
   "path": "public/downloads/detelgy-vision-en.pdf",
   "lastUpdated": "2026-10-26",
   "release": 1,
-  "createdAt": "2026-11-04T22:31:00.657Z",
-  "sourceHash": "7fe84f2e9cecd8762a23998022e802ec366f7ced4db62eb1a326db87e73886fb",
-  "pdfHash": "78da906cf961890c877643ebd3988bcd96f6876d2dcb514b9a5496c6f38faedb",
+  "createdAt": "2026-11-17T15:29:43.414Z",
+  "sourceHash": "c6f87cd105a052a29164463017d4fc90ed1855fe164fc97f46653eb5eb1543bf",
+  "pdfHash": "22f7b8762f57d2d02da23f2785ddf984d156b633bd51c7f81a5201d3c4d38b24",
   "inputs": [
     "app/(entry)/layout.tsx",
     "app/(entry)/page.tsx",

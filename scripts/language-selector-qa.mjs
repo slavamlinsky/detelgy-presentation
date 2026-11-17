@@ -11,13 +11,13 @@ try {
  const slide=()=>page.locator('.scaled-slide .presentation-slide-layer:last-child .slide');
  await trigger.focus();await page.keyboard.press('Enter');
  await page.getByRole('listbox').waitFor();
- assert.equal(await page.getByRole('option').count(),2);
+ assert.deepEqual(await page.getByRole('option').allTextContents(),['English','Українська','Español']);
  assert.equal(await page.getByRole('option',{selected:true}).innerText(),'Українська');
  await page.keyboard.press('Home');
  await page.waitForFunction(()=>document.activeElement?.textContent==='English');
  assert.equal(await slide().getAttribute('data-slide'),'s14','Dropdown keyboard input advanced the deck');
  await page.keyboard.press('End');
- await page.waitForFunction(()=>document.activeElement?.textContent==='Українська');
+ await page.waitForFunction(()=>document.activeElement?.textContent==='Español');
  await page.keyboard.press('Escape');
  await page.getByRole('listbox').waitFor({state:'detached'});await page.waitForFunction(()=>document.activeElement?.matches('.language-selector [role=combobox]'));
  await trigger.click();await page.getByRole('listbox').waitFor();await page.mouse.click(400,100);await page.getByRole('listbox').waitFor({state:'detached'});
@@ -25,7 +25,7 @@ try {
  await page.screenshot({path:join(tmpdir(),'detelgy-language-selector-desktop.png'),fullPage:true});
  await page.getByRole('option',{name:'Українська',exact:true}).click();
  await page.getByRole('listbox').waitFor({state:'detached'});assert.equal(new URL(page.url()).pathname,'/uk/vision');
- await trigger.focus();await page.keyboard.press('Space');await page.getByRole('listbox').waitFor();await page.keyboard.press('e');await page.waitForFunction(()=>document.activeElement?.textContent==='English');await page.keyboard.press('Enter');
+ await trigger.focus();await page.keyboard.press('Space');await page.getByRole('listbox').waitFor();await page.keyboard.type('eng');await page.waitForFunction(()=>document.activeElement?.textContent==='English');await page.keyboard.press('Enter');
  await page.waitForURL('**/en/vision?slide=17#s14');await ready(page);
  assert.equal(await slide().getAttribute('data-slide'),'s14');
  await page.goBack();await page.waitForURL('**/uk/vision?slide=17#s14');
