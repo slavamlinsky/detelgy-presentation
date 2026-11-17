@@ -25,9 +25,19 @@ const spanishCheckpointLabels: Readonly<Partial<Record<string, string>>> = {
   invitation: 'Mostrar la invitación final',
 };
 
+const russianCheckpointLabels: Readonly<Partial<Record<string, string>>> = {
+  transformation: 'Показать «С Detelgy»',
+  cooperation: 'Показать сотрудничество',
+  revenue: 'Показать доход платформы',
+  expansion: 'Показать расширенный рынок',
+  invitation: 'Показать приглашение',
+};
+
 export function checkpointLabel(checkpoint: PresentationCheckpoint | undefined, locale: string) {
   if (!checkpoint) return undefined;
-  return locale === 'es' ? spanishCheckpointLabels[checkpoint.id] ?? checkpoint.label : checkpoint.label;
+  if (locale === 'es') return spanishCheckpointLabels[checkpoint.id] ?? checkpoint.label;
+  if (locale === 'ru') return russianCheckpointLabels[checkpoint.id] ?? checkpoint.label;
+  return checkpoint.label;
 }
 
 export function checkpointAttributes(step: number, checkpoint = 1) {

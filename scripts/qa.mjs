@@ -47,7 +47,7 @@ try {
  assert.equal(await page.locator('.reading-content').count(),0);
  await page.getByRole('button',{name:'Next slide',exact:true}).click();await page.waitForURL('**#s02');
  await page.getByRole('button',{name:'All slides',exact:true}).click();await page.keyboard.press('Escape');assert.equal(await page.locator('dialog').evaluate(d=>d.open),false);
- const unknown=await page.goto(`${baseURL}/ru/vision`);assert.equal(unknown.status(),404);
+ const unknown=await page.goto(`${baseURL}/fr/vision`);assert.equal(unknown.status(),404);
  await page.goto(baseURL);await page.waitForURL('**/en/vision');
  assert.deepEqual(errors,[]);
  await writeFile('qa/report.json',JSON.stringify({date:new Date().toISOString(),results,consoleErrors:errors,interactionChecks:'passed',viewports:[1920,1366,768,390]},null,2));

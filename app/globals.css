@@ -4329,6 +4329,19 @@ svg {
 .v2-s02:lang(uk) .v2-fragment-copy h2 {
   font-size: 90px;
 }
+.v2-s02:lang(ru) .v2-fragment-copy {
+  top: 304px;
+}
+.v2-s02:lang(ru) .v2-fragment-copy h2 {
+  font-size: 78px;
+}
+.story-s14:lang(ru) .closing-intro h2 {
+  font-size: 72px;
+}
+.story-s09:lang(ru) .story-title h2,
+.story-s09:lang(ru) .story-title h2 em {
+  font-size: 56px;
+}
 /* Give Ukrainian roadmap labels their natural width without changing the orbit. */
 .story-s09:lang(uk) .ecosystem-pillars section > p {
   grid-template-columns: 122px 1fr;

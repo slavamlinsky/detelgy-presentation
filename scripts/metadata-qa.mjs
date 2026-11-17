@@ -8,13 +8,13 @@ import { presentationMeta, formatPresentationUpdated, presentationRevisionDate }
 
 const deck = JSON.parse(await readFile('content/locales/en.json', 'utf8'));
 assert.equal(presentationMeta.title, 'Our vision for the profession');
-assert.equal(presentationMeta.lastUpdated, '2026-10-26');
-assert.equal(presentationRevisionDate().toISOString(), '2026-10-26T00:00:00.000Z');
-for (const [locale, expected] of [['en', /^Updated Oct 2026$/], ['es', /^Actualizado oct 2026$/], ['uk', /^Оновлено жовт\. 2026/], ['ua', /^Оновлено жовт\. 2026/], ['ru', /^Обновлено окт\. 2026/]]) {
+assert.equal(presentationMeta.lastUpdated, '2026-11-17');
+assert.equal(presentationRevisionDate().toISOString(), '2026-11-17T00:00:00.000Z');
+for (const [locale, expected] of [['en', /^Updated Nov 2026$/], ['es', /^Actualizado nov 2026$/], ['uk', /^Оновлено лист\. 2026/], ['ua', /^Оновлено лист\. 2026/], ['ru', /^Обновлено нояб\. 2026/]]) {
   assert.match(formatPresentationUpdated(locale), expected);
 }
 assert.equal(formatPresentationUpdated('ua'), formatPresentationUpdated('uk'));
-const expectedMetadata = `${deck.slides.length} slides · ${presentationMeta.estimatedDuration} · Updated Oct 2026`;
+const expectedMetadata = `${deck.slides.length} slides · ${presentationMeta.estimatedDuration} · Updated Nov 2026`;
 const browser = await launchBrowser();
 try {
   const page = await browser.newPage({ viewport: { width: 1920, height: 1080 }, reducedMotion: 'reduce' });
@@ -28,7 +28,7 @@ try {
   assert.equal(await page.locator('.studio-identity').innerText(), presentationMeta.title);
   assert.equal(await page.locator('.deck-count').getAttribute('title'), expectedMetadata);
   assert.equal(await page.locator('.metadata-updated').getAttribute('datetime'), presentationMeta.lastUpdated);
-  assert.match(await page.locator('.metadata-updated').innerText(), /Updated Oct 2026$/);
+  assert.match(await page.locator('.metadata-updated').innerText(), /Updated Nov 2026$/);
   assert.equal(await page.getByRole('link', { name: 'Download PDF' }).isVisible(), true);
   assert.equal(await page.getByRole('button', { name: 'Present', exact: true }).first().isVisible(), true);
   await page.screenshot({ path: join(tmpdir(), 'detelgy-viewer-metadata-desktop.png') });
@@ -66,7 +66,7 @@ try {
   assert.equal(await page.locator('.slide-header .brand').count(), deck.slides.length);
   assert.equal(await page.locator('[data-reveal-hidden]').count(), 0);
   assert.equal(await page.locator('.studio-header,.deck-controls,.metadata-updated').count(), 0);
-  assert(!(await slides.allTextContents()).some(text => text.includes('October 2026')));
+  assert(!(await slides.allTextContents()).some(text => text.includes('November 2026')));
   const geometry = await slides.evaluateAll(elements => elements.map(slide => {
     const canvas = slide.getBoundingClientRect();
     return ['.slide-header .brand', '.slide-folio'].map(selector => {

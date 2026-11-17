@@ -11,13 +11,13 @@ try {
  const slide=()=>page.locator('.scaled-slide .presentation-slide-layer:last-child .slide');
  await trigger.focus();await page.keyboard.press('Enter');
  await page.getByRole('listbox').waitFor();
- assert.deepEqual(await page.getByRole('option').allTextContents(),['English','Українська','Español']);
+ assert.deepEqual(await page.getByRole('option').allTextContents(),['English','Українська','Español','Русский']);
  assert.equal(await page.getByRole('option',{selected:true}).innerText(),'Українська');
  await page.keyboard.press('Home');
  await page.waitForFunction(()=>document.activeElement?.textContent==='English');
  assert.equal(await slide().getAttribute('data-slide'),'s14','Dropdown keyboard input advanced the deck');
  await page.keyboard.press('End');
- await page.waitForFunction(()=>document.activeElement?.textContent==='Español');
+ await page.waitForFunction(()=>document.activeElement?.textContent==='Русский');
  await page.keyboard.press('Escape');
  await page.getByRole('listbox').waitFor({state:'detached'});await page.waitForFunction(()=>document.activeElement?.matches('.language-selector [role=combobox]'));
  await trigger.click();await page.getByRole('listbox').waitFor();await page.mouse.click(400,100);await page.getByRole('listbox').waitFor({state:'detached'});
