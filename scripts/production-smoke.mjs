@@ -13,7 +13,7 @@ try{
  const file=await page.request.get(origin+'/downloads/detelgy-vision-en.pdf');assert.equal(file.status(),200);const pdf=await PDFDocument.load(await file.body());
  const printed=await PDFDocument.load(await page.pdf({preferCSSPageSize:true,printBackground:true}));assert.equal(printed.getPageCount(),deck.slides.length);
  if(process.env.REQUIRE_CURRENT_PDF==='1')assert.equal(pdf.getPageCount(),deck.slides.length);
- for(const locale of ['ru','fr'])assert.equal((await page.request.get(`${origin}/${locale}/vision`)).status(),404);
+ for(const locale of ['fr'])assert.equal((await page.request.get(`${origin}/${locale}/vision`)).status(),404);
  await page.screenshot({path:'qa/viewports/production-1366.png'});
  const phone=await b.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true});await phone.goto(origin+'/en/vision');await ready(phone);await phone.waitForSelector('.slide-viewport');await phone.screenshot({path:'qa/viewports/mobile-default.png',fullPage:true});
  assert.equal(await phone.locator('.reading-content,.mobile-reading-toggle').count(),0);

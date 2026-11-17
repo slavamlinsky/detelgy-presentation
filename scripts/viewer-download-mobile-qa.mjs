@@ -24,7 +24,7 @@ try {
  for(let i=0;i<3;i++) {
   await page.locator('.language-selector [role=combobox]').click();await page.getByRole('listbox').waitFor();
   await page.waitForFunction(()=>{const e=document.querySelector('[role=listbox]');return e&&getComputedStyle(e).opacity==='1'});
-  assert.deepEqual(await page.getByRole('option').allTextContents(),['English','Українська','Español']);await page.keyboard.press('Escape');await page.getByRole('listbox').waitFor({state:'detached'});
+  assert.deepEqual(await page.getByRole('option').allTextContents(),['English','Українська','Español','Русский']);await page.keyboard.press('Escape');await page.getByRole('listbox').waitFor({state:'detached'});
  }
  const phone=await browser.newPage({viewport:{width:390,height:844},isMobile:true,hasTouch:true,reducedMotion:'reduce'});
  for(const width of [320,390,430,768,1024]) {
