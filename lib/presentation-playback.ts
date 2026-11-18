@@ -1,4 +1,4 @@
-import type { SlideContent } from './presentation';
+import type { PresentationRoute, SlideContent } from './presentation';
 
 export type PresentationCheckpoint = { id: string; label: string };
 export type SlidePlayback = { checkpoints: readonly PresentationCheckpoint[] };
@@ -68,9 +68,9 @@ export function slideNavigationUrl(current: URL, id: string, index: number) {
   return `${url.pathname}${url.search}${url.hash}`;
 }
 
-export function localeNavigationUrl(current: URL, locale: string, id: string, index: number) {
+export function localeNavigationUrl(current: URL, locale: string, id: string, index: number, route: PresentationRoute = 'vision') {
   const url = new URL(current);
-  url.pathname = `/${locale}/vision`;
+  url.pathname = `/${locale}/${route}`;
   url.searchParams.delete('present');
   return slideNavigationUrl(url, id, index);
 }

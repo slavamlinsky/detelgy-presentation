@@ -1,15 +1,16 @@
 'use client';
 import { Globe2 } from 'lucide-react';
+import type { PresentationRoute } from '@/lib/presentation';
 import { localeDefinitions } from '@/lib/locales.mjs';
 import { localeNavigationUrl } from '@/lib/presentation-playback';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
 
-export function LanguageSelector({ locale, slideId, index, label }: {
-  locale: string; slideId: string; index: number; label: string;
+export function LanguageSelector({ locale, slideId, index, label, route }: {
+  locale: string; slideId: string; index: number; label: string; route?: PresentationRoute;
 }) {
   return <div className="language-selector" data-no-slide-advance>
     <Select value={locale} onValueChange={value => {
-      if (value !== locale) window.location.assign(localeNavigationUrl(new URL(window.location.href), value, slideId, index));
+      if (value !== locale) window.location.assign(localeNavigationUrl(new URL(window.location.href), value, slideId, index, route));
     }}>
       <SelectTrigger aria-label={label}>
         <Globe2 size={16} aria-hidden="true" />

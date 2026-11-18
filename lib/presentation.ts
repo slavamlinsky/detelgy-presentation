@@ -10,7 +10,23 @@ export type SlideId = `s${string}` | 'mission' | 'coopetition' | 'grow-pie';
 export type FeatureStatus = 'built' | 'planned' | 'concept';
 export interface SlideItem { title: string; body?: string; label?: string; outcome?: string; detail?: string; status?: string; secondaryStatus?: string; steps?: string[]; }
 export interface SlideContent { id: string; chapter: string; viewerTitle?: string; title: string; accent: string; lead: string; eyebrow: string; items: SlideItem[]; footer: string; note: string; sources: string[]; displayItems?: SlideItem[]; valueItems?: SlideItem[]; persona?: {name:string;detail:string;profession?:string}; stages?: string[]; prompt?: string; microcopy?: string; diagramAlt?: string; imageAlts?: string[]; comparisonLabels?: string[]; momentsLabel?: string; columns?: string[]; center?: string; foundation?: string; moments?: SlideItem[]; closing?: string; formula?: string; cta?: string; ctaLabels?: string[]; }
-export interface Deck { fallbackUi?: typeof english.ui; viewerTitle: string; translationStatus: 'draft' | 'released'; fallbackSlideIds: string[]; translatedSlideCount: number; locale: string; title: string; description: string; ui: typeof english.ui; slides: SlideContent[]; }
+export type PresentationRoute = 'vision' | 'value-proposition';
+export interface Deck {
+  route?: PresentationRoute;
+  fallbackLocale?: Locale;
+  downloadHref?: string;
+  revision?: { lastUpdated: string; estimatedDuration: string };
+  fallbackUi?: typeof english.ui;
+  viewerTitle: string;
+  translationStatus: 'draft' | 'released';
+  fallbackSlideIds: string[];
+  translatedSlideCount: number;
+  locale: string;
+  title: string;
+  description: string;
+  ui: typeof english.ui;
+  slides: SlideContent[];
+}
 export function slideHref(locale: Locale, id: string) { return `/${locale}/vision#${id}`; }
 const pdfManifests = { en: pdfManifest, es: spanishPdfManifest, uk: ukrainianPdfManifest, ru: russianPdfManifest };
 
