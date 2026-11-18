@@ -38,3 +38,11 @@ For an additional locale: enable it in the registry, add its complete UI/metadat
 ## Verification
 
 `node scripts/localization-qa.mjs` checks draft validation, partial override resolution, rejected malformed translations, locale switching, deep links/history, native language attributes, English fallback integrity, PDF gates, presenter checkpoints and mobile layout. Screenshots are written to the operating system temporary directory, not Git.
+
+## Value Proposition
+
+Russian is the source language for the nine-slide Value Proposition deck. Edit the copy and revision metadata in `content/value-proposition/ru.json`.
+
+To release another language, copy the complete source file to `content/value-proposition/<locale>.json`, preserve the slide IDs and item order, and translate the copy. Review layout and wrapping before adding the completed file to the content map in `lib/value-proposition.ts`. The viewer uses localized controls and explicitly identified Russian fallback slides for languages awaiting translation.
+
+With the local server running, use `npm run export:pdf -- <locale> value-proposition` to generate the corresponding download. Review the nine-page PDF and include it with the translation. The Russian viewer is at `/ru/value-proposition`, and the unlocalized route redirects there.
