@@ -96,7 +96,7 @@ function ValueSlideBody({ slide }: { slide: SlideContent }) {
         <div className="detelgybox">
           <h3>{prompt}</h3>
           <ul className="stack">{stages?.map(stage => <li key={stage}>{stage}</li>)}</ul>
-          <small>{footer}</small>
+          {footer ? <small>{footer}</small> : null}
         </div>
       </div>;
     case 'vp-09':
