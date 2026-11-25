@@ -1,0 +1,223 @@
+{
+  "title": "Value Proposition",
+  "description": "Detelgy connects polygraph examiners and clients, helping examiners grow their practice and clients choose with confidence.",
+  "revision": {
+    "lastUpdated": "2026-12-01",
+    "estimatedDuration": "5–7 min",
+    "release": 1
+  },
+  "slides": [
+    {
+      "id": "vp-01",
+      "chapter": "For examiners and clients",
+      "title": "Your expertise.\nNew opportunities.\nYour choice.\nGreater confidence.",
+      "accent": "New opportunities.",
+      "lead": "Detelgy connects polygraph examiners with the people who need their services. We help examiners grow their practice and clients find the right specialist.",
+      "items": [
+        {
+          "title": "For polygraph examiners"
+        },
+        {
+          "title": "For HR and businesses"
+        },
+        {
+          "title": "For private clients"
+        }
+      ],
+      "footer": ""
+    },
+    {
+      "id": "vp-02",
+      "chapter": "Two sides of one platform",
+      "title": "Two sides.\nOne platform.",
+      "accent": "One platform.",
+      "lead": "Examiners and clients have different goals. Both need trust.",
+      "items": [
+        {
+          "title": "How can I grow my practice?",
+          "body": "Get noticed and build your reputation,\nshare what you know with peers,\nand find new clients and opportunities.",
+          "label": "Polygraph examiner",
+          "outcome": "Outcome → Professional growth"
+        },
+        {
+          "title": "Who can I trust with the job?",
+          "body": "Find an examiner in the right location,\ncheck their qualifications, send a request,\nand arrange the examination.",
+          "label": "Client",
+          "outcome": "Outcome → An informed choice"
+        }
+      ],
+      "footer": ""
+    },
+    {
+      "id": "vp-03",
+      "chapter": "The problem we solve",
+      "title": "Skilled examiners are out there.\nFinding each other is hard.",
+      "accent": "Finding each other is hard.",
+      "lead": "The profession still relies heavily on personal connections and disconnected tools.",
+      "items": [
+        {
+          "title": "For examiners",
+          "steps": [
+            "Clients rarely see the full extent of my experience",
+            "My reputation is spread across different channels",
+            "I have few contacts outside my own network"
+          ]
+        },
+        {
+          "title": "For clients",
+          "steps": [
+            "It’s hard to compare examiners",
+            "I’m not sure what to look for when choosing an examiner",
+            "Finding an examiner and making arrangements takes time"
+          ]
+        }
+      ],
+      "footer": "Detelgy helps clients find the right examiner for their needs."
+    },
+    {
+      "id": "vp-04",
+      "chapter": "Value for polygraph examiners",
+      "title": "Make your experience\nwork for you.",
+      "accent": "work for you.",
+      "lead": "Your profile helps clients see your experience.\nDetelgy helps you find new work and grow alongside your peers.",
+      "items": [
+        {
+          "title": "Get noticed",
+          "body": "Show your qualifications, experience, and reviews in one place.",
+          "label": "01 · VISIBILITY"
+        },
+        {
+          "title": "Grow with your peers",
+          "body": "Discuss your work, share what you know, and find collaborators.",
+          "label": "02 · COMMUNITY"
+        },
+        {
+          "title": "Find clients",
+          "body": "Get inquiries that match your expertise and grow your practice.",
+          "label": "03 · OPPORTUNITIES"
+        }
+      ],
+      "footer": "Visibility → Trust → New opportunities"
+    },
+    {
+      "id": "vp-05",
+      "chapter": "Value for HR and businesses",
+      "title": "Find an examiner.\nSimplify the process.",
+      "accent": "Simplify the process.",
+      "lead": "When screening is part of the job, you need a qualified examiner\nand a clear process from start to finish.",
+      "items": [
+        {
+          "title": "Choose",
+          "body": "Find examiners by location, experience, and how they work.",
+          "label": "01"
+        },
+        {
+          "title": "Agree on details",
+          "body": "Share the brief and agree on the terms, date, and participants.",
+          "label": "02"
+        },
+        {
+          "title": "Coordinate",
+          "body": "Planned: manage the request in one place.",
+          "label": "03"
+        }
+      ],
+      "footer": "Less manual coordination. More clarity and control."
+    },
+    {
+      "id": "vp-06",
+      "chapter": "Value for private clients",
+      "title": "Need a polygraph examiner?\nKnow where to start.",
+      "accent": "Know where to start.",
+      "lead": "Start with what you need and find an examiner who can help.",
+      "items": [
+        {
+          "title": "Find examiners in your area"
+        },
+        {
+          "title": "Review their profiles and qualifications"
+        },
+        {
+          "title": "Send a request to an examiner"
+        }
+      ],
+      "footer": "",
+      "prompt": "“I need a polygraph examiner.\nWhere do I start?”",
+      "microcopy": "Tell us what you need"
+    },
+    {
+      "id": "vp-07",
+      "chapter": "How Detelgy creates value",
+      "title": "From finding an examiner\nto sharing feedback.",
+      "accent": "to sharing feedback.",
+      "lead": "Each step builds on the last, from finding someone qualified to helping the next client choose.",
+      "items": [
+        {
+          "title": "Find the right examiner",
+          "body": "Browse profiles by location and compare qualifications and reviews.",
+          "label": "1"
+        },
+        {
+          "title": "Discuss the details",
+          "body": "Send a request, clarify what you need, and agree on terms while keeping the conversation in one place.",
+          "label": "2"
+        },
+        {
+          "title": "Share your feedback",
+          "body": "Share how the booking went and suggest improvements to the platform.",
+          "label": "3"
+        }
+      ],
+      "footer": "An examiner’s experience and reviews help the next client make an informed choice."
+    },
+    {
+      "id": "vp-08",
+      "chapter": "What sets Detelgy apart",
+      "title": "A directory and community.\nBuilt around real work.",
+      "accent": "Built around real work.",
+      "lead": "Most tools cover one part of the job.\nDetelgy connects professional growth with finding and requesting services.",
+      "items": [
+        {
+          "title": "Social media",
+          "body": "Good for conversation. Booking takes extra steps."
+        },
+        {
+          "title": "Directories",
+          "body": "Help clients search, with few ways for examiners to grow."
+        },
+        {
+          "title": "Personal referrals",
+          "body": "Build on trust within a limited network."
+        },
+        {
+          "title": "Messaging apps",
+          "body": "Make it easy to talk. Details can get scattered."
+        }
+      ],
+      "prompt": "Detelgy brings these tools together on one platform.",
+      "stages": [
+        "Profiles and reputation",
+        "Community and shared knowledge",
+        "Search and service requests"
+      ]
+    },
+    {
+      "id": "vp-09",
+      "chapter": "The Detelgy promise",
+      "title": "For examiners.\nNew opportunities.\nFor clients.\nA confident choice.",
+      "accent": "New opportunities.",
+      "lead": "Clients can browse profiles, read reviews, and discuss what they need\nwith an examiner before booking.",
+      "items": [
+        {
+          "title": "For polygraph examiners",
+          "body": "Reputation · Community · Clients"
+        },
+        {
+          "title": "For clients",
+          "body": "Choice · Clear steps · Convenience"
+        }
+      ],
+      "footer": "Connecting expertise and trust."
+    }
+  ]
+}

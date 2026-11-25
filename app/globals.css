@@ -516,19 +516,8 @@ svg {
   .workspace {
     padding: 22px 20px 15px;
   }
-  .deck-heading {
-    display: grid;
-    grid-template-columns: minmax(0, 1fr);
-    grid-template-areas: "title" "count";
-    column-gap: 12px;
-    row-gap: 3px;
-  }
   .deck-heading h1 {
     font-size: 14px;
-    grid-area: title;
-  }
-  .deck-count {
-    grid-area: count;
   }
   .presentation-stage {
     height: calc(100dvh - 260px);
@@ -4198,6 +4187,19 @@ svg {
 
 /* Compact viewer metadata; slide artwork carries no revision date. */
 @media (max-width: 640px) {
+  .deck-heading {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas: "title" "count";
+    column-gap: 12px;
+    row-gap: 3px;
+  }
+  .deck-heading h1 {
+    grid-area: title;
+  }
+  .deck-count {
+    grid-area: count;
+  }
   .deck-count .metadata-duration {
     display: none;
   }
